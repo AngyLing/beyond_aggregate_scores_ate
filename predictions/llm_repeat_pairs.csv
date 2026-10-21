@@ -1,0 +1,26 @@
+pair_id,dataset,decision,model_key,base_path,repeat_path
+P01,CL-RuTerm3,primary_raw,glm_5_2,predictions/cl_ruterm3_1_1/llm/glm_5_2.jsonl.gz,predictions/cl_ruterm3_1_1/llm_repeats/pred_glm_5_2_repeat2.jsonl.gz
+P02,GENIA,primary_raw,glm_5_2,predictions/genia_3_02/llm/glm_5_2.jsonl.gz,predictions/genia_3_02/llm_repeats/pred_glm_5_2_repeat2.jsonl.gz
+P03,CL-RuTerm3,transport_contrast,qwen3_235b_a22b_instruct_2507,predictions/cl_ruterm3_1_1/llm/qwen3_235b_a22b_instruct_2507.jsonl.gz,predictions/cl_ruterm3_1_1/llm_repeats/pred_qwen3_235b_a22b_instruct_2507_repeat2.jsonl.gz
+P04,GENIA,primary_raw,qwen3_235b_a22b_instruct_2507,predictions/genia_3_02/llm/qwen3_235b_a22b_instruct_2507.jsonl.gz,predictions/genia_3_02/llm_repeats/pred_qwen3_235b_a22b_instruct_2507_repeat2.jsonl.gz
+P05,CL-RuTerm3,primary_raw,gpt_oss_120b,predictions/cl_ruterm3_1_1/llm/gpt_oss_120b.jsonl.gz,predictions/cl_ruterm3_1_1/llm_repeats/pred_gpt_oss_120b_repeat2.jsonl.gz
+P06,GENIA,primary_raw,deepseek_v4_pro,predictions/genia_3_02/llm/deepseek_v4_pro.jsonl.gz,predictions/genia_3_02/llm_repeats/pred_deepseek_v4_pro_repeat2.jsonl.gz
+P07,GENIA,primary_documented,gemini_3_1_flash_lite,predictions/genia_3_02/llm_repeats/pred_gemini_3_1_flash_lite.jsonl.gz,predictions/genia_3_02/llm/gemini_3_1_flash_lite.jsonl.gz
+P08,GENIA,primary_raw,mistral_large_3,predictions/genia_3_02/llm/mistral_large_3.jsonl.gz,predictions/genia_3_02/llm_repeats/pred_mistral_large_3_repeat2.jsonl.gz
+P09,GENIA,primary_raw,llama_4_maverick,predictions/genia_3_02/llm/llama_4_maverick.jsonl.gz,predictions/genia_3_02/llm_repeats/pred_llama_4_maverick_repeat2.jsonl.gz
+P10,GENIA,primary_raw,qwen3_235b_a22b_instruct_2507_deepinfra,predictions/genia_3_02/llm_repeats/pred_qwen3_235b_a22b_instruct_2507_deepinfra.jsonl.gz,predictions/genia_3_02/llm_repeats/pred_qwen3_235b_a22b_instruct_2507_deepinfra_repeat2.jsonl.gz
+P11,GENIA,primary_raw,claude_haiku_4_5,predictions/genia_3_02/llm/claude_haiku_4_5.jsonl.gz,predictions/genia_3_02/llm_repeats/pred_claude_haiku_4_5_repeat2.jsonl.gz
+P12,ACL RD-TEC 2.0,primary_raw,gpt_oss_120b,predictions/acl_rd_tec_2_0/llm/gpt_oss_120b.jsonl.gz,predictions/acl_rd_tec_2_0/llm_repeats/pred_gpt_oss_120b_repeat2.jsonl.gz
+P13,ACL RD-TEC 2.0,primary_raw,llama_4_maverick,predictions/acl_rd_tec_2_0/llm/llama_4_maverick.jsonl.gz,predictions/acl_rd_tec_2_0/llm_repeats/pred_llama_4_maverick_repeat2.jsonl.gz
+P14,ACL RD-TEC 2.0,primary_raw,mistral_large_3,predictions/acl_rd_tec_2_0/llm/mistral_large_3.jsonl.gz,predictions/acl_rd_tec_2_0/llm_repeats/pred_mistral_large_3_repeat2.jsonl.gz
+P15,ACL RD-TEC 2.0,primary_raw,glm_5_2,predictions/acl_rd_tec_2_0/llm/glm_5_2.jsonl.gz,predictions/acl_rd_tec_2_0/llm_repeats/pred_glm_5_2_repeat2.jsonl.gz
+P16,ACL RD-TEC 2.0,primary_raw,deepseek_v4_pro,predictions/acl_rd_tec_2_0/llm/deepseek_v4_pro.jsonl.gz,predictions/acl_rd_tec_2_0/llm_repeats/pred_deepseek_v4_pro_repeat2.jsonl.gz
+P17,ACL RD-TEC 2.0,transport_contrast,claude_haiku_4_5,predictions/acl_rd_tec_2_0/llm/claude_haiku_4_5.jsonl.gz,predictions/acl_rd_tec_2_0/llm_repeats/pred_claude_haiku_4_5_repeat2.jsonl.gz
+P18,CL-RuTerm3,primary_raw,deepseek_v4_pro,predictions/cl_ruterm3_1_1/llm/deepseek_v4_pro.jsonl.gz,predictions/cl_ruterm3_1_1/llm_repeats/pred_deepseek_v4_pro_repeat2.jsonl.gz
+P19,CL-RuTerm3,primary_raw,llama_4_maverick,predictions/cl_ruterm3_1_1/llm/llama_4_maverick.jsonl.gz,predictions/cl_ruterm3_1_1/llm_repeats/pred_llama_4_maverick_repeat2.jsonl.gz
+P20,CL-RuTerm3,primary_raw,mistral_large_3,predictions/cl_ruterm3_1_1/llm/mistral_large_3.jsonl.gz,predictions/cl_ruterm3_1_1/llm_repeats/pred_mistral_large_3_repeat2.jsonl.gz
+P21,CL-RuTerm3,transport_contrast,claude_haiku_4_5,predictions/cl_ruterm3_1_1/llm/claude_haiku_4_5.jsonl.gz,predictions/cl_ruterm3_1_1/llm_repeats/pred_claude_haiku_4_5_repeat2.jsonl.gz
+P22,GENIA,primary_raw,gpt_oss_120b,predictions/genia_3_02/llm/gpt_oss_120b.jsonl.gz,predictions/genia_3_02/llm_repeats/pred_gpt_oss_120b_repeat2.jsonl.gz
+P23,ACL RD-TEC 2.0,primary_raw,qwen3_235b_a22b_instruct_2507_deepinfra,predictions/acl_rd_tec_2_0/llm_repeats/pred_qwen3_235b_a22b_instruct_2507_deepinfra_repeat2.jsonl.gz,predictions/acl_rd_tec_2_0/llm_repeats/pred_qwen3_235b_a22b_instruct_2507_deepinfra_repeat3.jsonl.gz
+P24,ACL RD-TEC 2.0,primary_raw,gemini_3_1_flash_lite,predictions/acl_rd_tec_2_0/llm_repeats/pred_gemini_3_1_flash_lite_repeat2.jsonl.gz,predictions/acl_rd_tec_2_0/llm_repeats/pred_gemini_3_1_flash_lite_repeat3.jsonl.gz
+P25,CL-RuTerm3,primary_raw,gemini_3_1_flash_lite,predictions/cl_ruterm3_1_1/llm_repeats/pred_gemini_3_1_flash_lite_repeat2.jsonl.gz,predictions/cl_ruterm3_1_1/llm_repeats/pred_gemini_3_1_flash_lite_repeat3.jsonl.gz

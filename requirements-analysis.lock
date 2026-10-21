@@ -1,0 +1,3 @@
+# Versions used for local raw gold-ID analysis, Python 3.11.
+numpy==2.4.6
+scipy==1.17.1

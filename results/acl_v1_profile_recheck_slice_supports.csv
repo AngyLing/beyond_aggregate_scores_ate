@@ -1,0 +1,41 @@
+family,slice,support,active,core
+gold_class,Language Resource,54,True,False
+gold_class,Language Resource Product,8,False,False
+gold_class,Measures and Measurements,33,True,False
+gold_class,Model,46,True,False
+gold_class,Other,394,True,False
+gold_class,Technology and Method,244,True,False
+gold_class,Tool and Library,20,False,False
+length,1,271,True,True
+length,2,321,True,True
+length,3,134,True,True
+length,4-5,65,True,True
+length,6+,8,False,True
+length_x_frequency,1|0,114,True,False
+length_x_frequency,1|1,35,True,False
+length_x_frequency,1|2-5,48,True,False
+length_x_frequency,1|6+,74,True,False
+length_x_frequency,2|0,265,True,False
+length_x_frequency,2|1,31,True,False
+length_x_frequency,2|2-5,21,False,False
+length_x_frequency,2|6+,4,False,False
+length_x_frequency,3|0,125,True,False
+length_x_frequency,3|1,4,False,False
+length_x_frequency,3|2-5,4,False,False
+length_x_frequency,3|6+,1,False,False
+length_x_frequency,4-5|0,62,True,False
+length_x_frequency,4-5|1,2,False,False
+length_x_frequency,4-5|2-5,1,False,False
+length_x_frequency,4-5|6+,0,False,False
+length_x_frequency,6+|0,8,False,False
+length_x_frequency,6+|1,0,False,False
+length_x_frequency,6+|2-5,0,False,False
+length_x_frequency,6+|6+,0,False,False
+nesting,both,0,False,True
+nesting,flat,799,True,True
+nesting,inner-only,0,False,True
+nesting,outer-only,0,False,True
+train_frequency,0,574,True,True
+train_frequency,1,72,True,True
+train_frequency,2-5,74,True,True
+train_frequency,6+,79,True,True

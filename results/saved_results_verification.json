@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "sources": {
+    "files": 46,
+    "all_source_sha256_match": true,
+    "no_text_surface_norm_columns": true
+  },
+  "headlines": {
+    "ACL RD-TEC 2.0": {
+      "pairs": 45,
+      "main_table_medians": [
+        0.10923565971819942,
+        0.014919083268428057,
+        0.05160670481129434,
+        -0.00708756230002941,
+        0.37482431095340507,
+        0.06247063007514897
+      ],
+      "relaxed_excess_positive": 15,
+      "relaxed_excess_ci_lower_positive": 9,
+      "fp_no_witness_excess_positive": 44,
+      "fp_no_witness_excess_ci_lower_positive": 41,
+      "resolved_fraction_median": 0.30302320460440346,
+      "common_six_fp_excess_median": 0.03962351272749459,
+      "common_six_fp_excess_positive": 14
+    },
+    "GENIA": {
+      "pairs": 45,
+      "main_table_medians": [
+        0.11550338837345707,
+        0.04633071087084248,
+        0.10487754859740502,
+        0.04362632336914311,
+        0.3794488732861513,
+        0.07294655481129281
+      ],
+      "relaxed_excess_positive": 43,
+      "relaxed_excess_ci_lower_positive": 40,
+      "fp_no_witness_excess_positive": 40,
+      "fp_no_witness_excess_ci_lower_positive": 39,
+      "resolved_fraction_median": 0.16253401466325135,
+      "common_six_fp_excess_median": 0.08297837986728926,
+      "common_six_fp_excess_positive": 13
+    },
+    "CL-RuTerm3": {
+      "pairs": 55,
+      "main_table_medians": [
+        0.24457609240991457,
+        0.09675550092516486,
+        0.20461075376246035,
+        0.09035303133539925,
+        0.5095049821442327,
+        0.10576569856129825
+      ],
+      "relaxed_excess_positive": 53,
+      "relaxed_excess_ci_lower_positive": 52,
+      "fp_no_witness_excess_positive": 55,
+      "fp_no_witness_excess_ci_lower_positive": 55,
+      "resolved_fraction_median": 0.13090966574282356,
+      "common_six_fp_excess_median": 0.09557186458282141,
+      "common_six_fp_excess_positive": 15
+    }
+  },
+  "sensitivity": {
+    "distance_threshold_dataset_summaries_checked": 18,
+    "genia_duplicate_removal": "Saved estimate only; assignments are not included",
+    "raw_matching": "Not rerun"
+  },
+  "calibration_and_nesting": {
+    "within_configuration_joint_passes": [
+      0,
+      1,
+      9
+    ],
+    "nested_intervals_lower_positive": 8,
+    "nested_difference_ranges": {
+      "GENIA": [
+        0.09444412796803676,
+        0.17233930391926186
+      ],
+      "CL-RuTerm3": [
+        0.09827517432490457,
+        0.1358747300237516
+      ]
+    }
+  },
+  "llm_repeats": {
+    "comparable": {
+      "acl": {
+        "comparable_pairs": 7,
+        "median_absolute_f1_delta": 0.001779469634322739,
+        "maximum_absolute_f1_delta": 0.0077681459787372065
+      },
+      "genia": {
+        "comparable_pairs": 9,
+        "median_absolute_f1_delta": 0.0022926794636709547,
+        "maximum_absolute_f1_delta": 0.01223576239498847
+      },
+      "cl": {
+        "comparable_pairs": 6,
+        "median_absolute_f1_delta": 0.006066172057339947,
+        "maximum_absolute_f1_delta": 0.03242335884725567
+      }
+    },
+    "transport_contrasts": {
+      "P03": 0.00010871304753107269,
+      "P17": 0.009464861312769024,
+      "P21": 0.004937541614364882
+    },
+    "cl_maximum_without_llama": 0.01162553661262511
+  },
+  "scope": "Saved aggregate arithmetic and manuscript consistency; no new raw matching or bootstrap"
+}

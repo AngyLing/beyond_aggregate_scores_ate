@@ -1,0 +1,17 @@
+{
+  "status": "EXPLORATORY_FIXED_OUTPUT_GOLD_ID_MATCHING",
+  "scope": {
+    "supervised_runs": 155,
+    "run_pairs": 3935,
+    "configuration_pairs": 145
+  },
+  "matching": "Exact offsets anchored; residual one-to-one maximum cardinality, then maximum total character IoU, then lexicographic edge list; within original text unit",
+  "thresholds": [
+    1.0,
+    0.75,
+    0.5
+  ],
+  "primary": "Unlabeled covered gold offset IDs; exact exclusive gold IDs resolved by other run's IoU>=0.5 match",
+  "bootstrap": "Existing shared document draws, fixed runs, nominal 95% percentile intervals; no multiplicity correction",
+  "interpretation": "Formal gold coverage, not semantic term validity, profile equivalence, or a causal decoder effect"
+}

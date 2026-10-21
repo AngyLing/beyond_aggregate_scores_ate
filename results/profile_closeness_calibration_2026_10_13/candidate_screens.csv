@@ -1,0 +1,146 @@
+dataset,model_a,model_b,delta_p,delta_r,mean_maximum_profile,run_pairs,original_mean_pass,original_run_pass,original_stable_pass,componentwise_q80_mean_pass,componentwise_q80_run_pass,componentwise_q80_stable_pass,radial_q80_mean_pass,radial_q80_run_pass,radial_q80_stable_pass
+ACL RD-TEC 2.0,csroberta_bio,csroberta_span,0.03105047014527007,0.039299123904880995,0.18260869565217375,25,False,0,False,True,5,False,True,11,False
+ACL RD-TEC 2.0,csroberta_bio,mbert_class_bio,0.026231644469440818,0.07183979974968702,0.12608695652173896,25,False,0,False,False,9,False,True,14,False
+ACL RD-TEC 2.0,csroberta_bio,mbert_span,0.07455842579086192,0.12390488110137665,0.33478260869565213,25,False,0,False,False,0,False,False,1,False
+ACL RD-TEC 2.0,csroberta_bio,mbert_unlabeled_bio,0.02915404768561425,0.005506883604505575,0.05714285714285716,25,False,0,False,True,21,True,True,25,True
+ACL RD-TEC 2.0,csroberta_bio,scibert_bio,0.023929857729250825,0.04430538172715881,0.08695652173913038,25,False,0,False,True,17,False,True,21,True
+ACL RD-TEC 2.0,csroberta_bio,scibert_span,0.057730635000110886,0.08235294117647052,0.28695652173913033,25,False,0,False,False,0,False,False,0,False
+ACL RD-TEC 2.0,csroberta_bio,xlmr_bio,0.041874757545066976,0.040300375469336625,0.11304347826086958,25,False,0,False,True,15,False,True,20,True
+ACL RD-TEC 2.0,csroberta_bio,xlmr_span_classifier,0.10510934187648735,0.05732165206508133,0.25652173913043474,25,False,0,False,False,0,False,False,1,False
+ACL RD-TEC 2.0,csroberta_bio,xlmr_span_unlabeled,0.07467403826038377,0.0565707133917398,0.11111111111111127,25,False,0,False,False,7,False,True,11,False
+ACL RD-TEC 2.0,csroberta_span,mbert_class_bio,0.0048188256758292525,0.03254067584480602,0.12962962962962965,25,False,0,False,True,8,False,True,14,False
+ACL RD-TEC 2.0,csroberta_span,mbert_span,0.043507955645591845,0.08460575719649566,0.1636363636363637,25,False,0,False,False,0,False,False,11,False
+ACL RD-TEC 2.0,csroberta_span,mbert_unlabeled_bio,0.06020451783088432,0.03379224030037542,0.16521739130434776,25,False,0,False,True,3,False,True,8,False
+ACL RD-TEC 2.0,csroberta_span,scibert_bio,0.007120612416019245,0.005006257822277815,0.09583333333333333,25,False,0,False,True,17,False,True,21,True
+ACL RD-TEC 2.0,csroberta_span,scibert_span,0.026680164854840815,0.04305381727158952,0.1428571428571428,25,False,0,False,True,5,False,True,6,False
+ACL RD-TEC 2.0,csroberta_span,xlmr_bio,0.010824287399796906,0.0010012515644556297,0.08750000000000002,25,False,0,False,True,22,True,True,24,True
+ACL RD-TEC 2.0,csroberta_span,xlmr_span_classifier,0.07405887173121728,0.018022528160200335,0.08571428571428563,25,False,0,False,False,4,False,True,12,False
+ACL RD-TEC 2.0,csroberta_span,xlmr_span_unlabeled,0.0436235681151137,0.0958698372966208,0.21739130434782583,25,False,0,False,False,3,False,False,3,False
+ACL RD-TEC 2.0,mbert_class_bio,mbert_span,0.0483267813214211,0.052065081351689635,0.20869565217391317,25,False,0,False,False,6,False,False,10,False
+ACL RD-TEC 2.0,mbert_class_bio,mbert_unlabeled_bio,0.055385692155055066,0.06633291614518144,0.12121212121212122,25,False,0,False,False,6,False,True,11,False
+ACL RD-TEC 2.0,mbert_class_bio,scibert_bio,0.0023017867401899927,0.027534418022528206,0.11851851851851858,25,False,0,False,True,16,False,True,19,False
+ACL RD-TEC 2.0,mbert_class_bio,scibert_span,0.03149899053067007,0.010513141426783501,0.16086956521739137,25,False,0,False,True,4,False,True,4,False
+ACL RD-TEC 2.0,mbert_class_bio,xlmr_bio,0.01564311307562616,0.03153942428035039,0.11481481481481493,25,False,0,False,True,15,False,True,18,False
+ACL RD-TEC 2.0,mbert_class_bio,xlmr_span_classifier,0.07887769740704653,0.014518147684605687,0.1304347826086958,25,False,0,False,False,4,False,True,10,False
+ACL RD-TEC 2.0,mbert_class_bio,xlmr_span_unlabeled,0.04844239379094295,0.12841051314142682,0.23703703703703716,25,False,0,False,False,1,False,False,3,False
+ACL RD-TEC 2.0,mbert_span,mbert_unlabeled_bio,0.10371247347647616,0.11839799749687108,0.31739130434782614,25,False,0,False,False,0,False,False,1,False
+ACL RD-TEC 2.0,mbert_span,scibert_bio,0.05062856806161109,0.07959949937421784,0.24782608695652175,25,False,0,False,False,5,False,False,8,False
+ACL RD-TEC 2.0,mbert_span,scibert_span,0.01682779079075103,0.041551939924906134,0.07910447761194028,25,False,0,False,True,9,False,True,15,False
+ACL RD-TEC 2.0,mbert_span,xlmr_bio,0.03268366824579494,0.08360450563204003,0.22173913043478255,25,False,0,False,False,3,False,False,8,False
+ACL RD-TEC 2.0,mbert_span,xlmr_span_classifier,0.030550916085625435,0.06658322903629532,0.13225806451612898,25,False,0,False,False,13,False,True,16,False
+ACL RD-TEC 2.0,mbert_span,xlmr_span_unlabeled,0.000115612469521853,0.18047559449311645,0.3695652173913042,25,False,0,False,False,0,False,False,0,False
+ACL RD-TEC 2.0,mbert_unlabeled_bio,scibert_bio,0.053083905414865074,0.038798498122653235,0.06956521739130439,25,False,0,False,True,14,False,True,19,False
+ACL RD-TEC 2.0,mbert_unlabeled_bio,scibert_span,0.08688468268572513,0.07684605757196494,0.26956521739130435,25,False,0,False,False,0,False,False,0,False
+ACL RD-TEC 2.0,mbert_unlabeled_bio,xlmr_bio,0.07102880523068122,0.03479349186483105,0.09565217391304359,25,False,0,False,False,8,False,True,15,False
+ACL RD-TEC 2.0,mbert_unlabeled_bio,xlmr_span_classifier,0.1342633895621016,0.051814768460575755,0.23913043478260876,25,False,0,False,False,0,False,False,0,False
+ACL RD-TEC 2.0,mbert_unlabeled_bio,xlmr_span_unlabeled,0.10382808594599802,0.06207759699624538,0.13333333333333341,25,False,0,False,False,2,False,False,8,False
+ACL RD-TEC 2.0,scibert_bio,scibert_span,0.03380077727086006,0.03804755944931171,0.19999999999999996,25,False,0,False,False,5,False,True,6,False
+ACL RD-TEC 2.0,scibert_bio,xlmr_bio,0.01794489981581615,0.004005006257822186,0.042424242424242364,25,True,0,False,True,20,True,True,25,True
+ACL RD-TEC 2.0,scibert_bio,xlmr_span_classifier,0.08117948414723652,0.01301627033792252,0.16956521739130437,25,False,0,False,False,6,False,True,9,False
+ACL RD-TEC 2.0,scibert_bio,xlmr_span_unlabeled,0.05074418053113294,0.10087609511889861,0.13283018867924523,25,False,0,False,False,3,False,False,6,False
+ACL RD-TEC 2.0,scibert_span,xlmr_bio,0.01585587745504391,0.04205256570713389,0.17391304347826075,25,False,0,False,True,7,False,True,8,False
+ACL RD-TEC 2.0,scibert_span,xlmr_span_classifier,0.047378706876376464,0.025031289111389188,0.11612903225806448,25,False,0,False,True,14,False,True,19,False
+ACL RD-TEC 2.0,scibert_span,xlmr_span_unlabeled,0.016943403260272882,0.13892365456821032,0.3217391304347824,25,False,0,False,False,0,False,False,0,False
+ACL RD-TEC 2.0,xlmr_bio,xlmr_span_classifier,0.06323458433142037,0.017021276595744705,0.14347826086956517,25,False,0,False,False,8,False,True,15,False
+ACL RD-TEC 2.0,xlmr_bio,xlmr_span_unlabeled,0.03279928071531679,0.09687108886107643,0.14782608695652166,25,False,0,False,False,4,False,False,8,False
+ACL RD-TEC 2.0,xlmr_span_classifier,xlmr_span_unlabeled,0.03043530361610358,0.11389236545682113,0.29130434782608683,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_class_bio,mbert_span,0.04169478081041955,0.03982433590402745,0.6764604987668671,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_class_bio,mbert_unlabeled_bio,0.08055135010790404,0.03350471293916024,0.1428571428571428,25,False,0,False,False,0,False,True,25,True
+GENIA,mbert_class_bio,pubmedbert_bio,0.037144515871591066,0.02437874892887737,0.08108108108108103,25,False,0,False,True,12,False,True,25,True
+GENIA,mbert_class_bio,pubmedbert_span,0.00822553528139569,0.1090509854327335,0.6229180116204003,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_class_bio,scibert_bio,0.01406379898731358,0.005098543273350353,0.07906976744186045,25,False,0,False,True,25,True,True,25,True
+GENIA,mbert_class_bio,scibert_span,0.030074491100867018,0.061932305055698356,0.6130986282793511,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_class_bio,xlmr_bio,0.01904153685050103,0.0026992287917737556,0.09767441860465109,25,False,0,False,True,24,True,True,24,True
+GENIA,mbert_class_bio,xlmr_span_classifier,0.057730747571485,0.02905955441302477,0.6551375073578172,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_class_bio,xlmr_span_unlabeled,0.02153991147581147,0.14652956298200515,0.6172369270497096,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_span,mbert_unlabeled_bio,0.12224613091832359,0.006319622964867211,0.7697890634895799,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_span,pubmedbert_bio,0.07883929668201062,0.015445586975150083,0.7213319325539636,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_span,pubmedbert_span,0.03346924552902386,0.06922664952870605,0.22790697674418592,25,False,0,False,False,0,False,True,5,False
+GENIA,mbert_span,scibert_bio,0.02763098182310597,0.0347257926306771,0.7054315965159339,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_span,scibert_span,0.011620289709552534,0.022107969151670903,0.2551724137931034,25,False,0,False,True,2,False,True,10,False
+GENIA,mbert_span,xlmr_bio,0.022653243959918523,0.04252356469580121,0.697067453487419,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_span,xlmr_span_classifier,0.016035966761065445,0.010764781491002684,0.2896551724137931,25,False,0,False,True,5,False,True,7,False
+GENIA,mbert_span,xlmr_span_unlabeled,0.06323469228623102,0.1067052270779777,0.4522522522522523,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_unlabeled_bio,pubmedbert_bio,0.043406834236312974,0.009125964010282872,0.09523809523809523,25,False,0,False,False,6,False,True,25,True
+GENIA,mbert_unlabeled_bio,pubmedbert_span,0.08877688538929973,0.07554627249357326,0.7099501531171066,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_unlabeled_bio,scibert_bio,0.09461514909521762,0.02840616966580989,0.17674418604651154,25,False,0,False,False,0,False,True,25,True
+GENIA,mbert_unlabeled_bio,scibert_span,0.11062584120877106,0.028427592116538114,0.7064271930020639,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_unlabeled_bio,xlmr_bio,0.09959288695840507,0.036203941730934,0.19534883720930218,25,False,0,False,False,0,False,True,19,False
+GENIA,mbert_unlabeled_bio,xlmr_span_classifier,0.13828209767938904,0.004445158526135473,0.74846607208053,25,False,0,False,False,0,False,False,0,False
+GENIA,mbert_unlabeled_bio,xlmr_span_unlabeled,0.05901143863209257,0.1130248500428449,0.7009103575712871,25,False,0,False,False,0,False,False,0,False
+GENIA,pubmedbert_bio,pubmedbert_span,0.04537005115298676,0.08467223650385614,0.6614930221814903,25,False,0,False,False,0,False,False,0,False
+GENIA,pubmedbert_bio,scibert_bio,0.05120831485890465,0.019280205655527016,0.158139534883721,25,False,0,False,False,2,False,True,25,True
+GENIA,pubmedbert_bio,scibert_span,0.06721900697245808,0.037553556126820986,0.6579700620664476,25,False,0,False,False,0,False,False,0,False
+GENIA,pubmedbert_bio,xlmr_bio,0.056186052722092095,0.027077977720651125,0.17674418604651165,25,False,0,False,False,0,False,True,21,True
+GENIA,pubmedbert_bio,xlmr_span_classifier,0.09487526344307606,0.004680805484147399,0.7000089411449136,25,False,0,False,False,0,False,False,0,False
+GENIA,pubmedbert_bio,xlmr_span_unlabeled,0.015604604395779598,0.12215081405312778,0.6524532266356707,25,False,0,False,False,0,False,False,0,False
+GENIA,pubmedbert_span,scibert_bio,0.00583826370591789,0.10395244215938315,0.6455926861434607,25,False,0,False,False,0,False,False,0,False
+GENIA,pubmedbert_span,scibert_span,0.021848955819471327,0.04711868037703515,0.31379310344827593,25,False,0,False,False,1,False,False,7,False
+GENIA,pubmedbert_span,xlmr_bio,0.010816001569105338,0.11175021422450726,0.6372285431149458,25,False,0,False,False,0,False,False,0,False
+GENIA,pubmedbert_span,xlmr_span_classifier,0.04950521229008931,0.07999143101970874,0.4744186046511627,25,False,0,False,False,0,False,False,2,False
+GENIA,pubmedbert_span,xlmr_span_unlabeled,0.02976544675720716,0.03747857754927164,0.35897435897435903,25,False,0,False,False,1,False,False,3,False
+GENIA,scibert_bio,scibert_span,0.016010692113553437,0.056833761782348,0.6420697260284179,25,False,0,False,False,0,False,False,0,False
+GENIA,scibert_bio,xlmr_bio,0.004977737863187448,0.007797772065124109,0.055714285714285716,25,False,0,False,True,25,True,True,25,True
+GENIA,scibert_bio,xlmr_span_classifier,0.04366694858417142,0.023961011139674415,0.684108605106884,25,False,0,False,False,0,False,False,0,False
+GENIA,scibert_bio,xlmr_span_unlabeled,0.03560371046312505,0.1414310197086548,0.6365528905976411,25,False,0,False,False,0,False,False,0,False
+GENIA,scibert_span,xlmr_bio,0.01103295425036599,0.06463153384747211,0.6337055829999031,25,False,0,False,False,0,False,False,0,False
+GENIA,scibert_span,xlmr_span_classifier,0.02765625647061798,0.03287275064267359,0.3069767441860466,25,False,0,False,True,1,False,True,6,False
+GENIA,scibert_span,xlmr_span_unlabeled,0.051614402576678486,0.08459725792630679,0.4256410256410256,25,False,0,False,False,0,False,False,2,False
+GENIA,xlmr_bio,xlmr_span_classifier,0.03868921072098397,0.031758783204798524,0.6757444620783691,25,False,0,False,False,0,False,False,0,False
+GENIA,xlmr_bio,xlmr_span_unlabeled,0.0405814483263125,0.1492287917737789,0.6294117647058823,25,False,0,False,False,0,False,False,0,False
+GENIA,xlmr_span_classifier,xlmr_span_unlabeled,0.07927065904729647,0.11747000856898038,0.586046511627907,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_class_bio,mbert_span,0.005685553724288028,0.1027626223261453,0.49320388349514566,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_class_bio,mbert_unlabeled_bio,0.03920420775046585,0.011067809820732744,0.04615384615384615,25,False,0,False,True,25,True,True,25,True
+CL-RuTerm3,mbert_class_bio,rubert_bio,0.05080823954424629,0.007551745042002234,0.08799999999999986,25,False,0,False,True,18,False,True,25,True
+CL-RuTerm3,mbert_class_bio,rubert_span,0.08280848075843417,0.048410842643110796,0.47540453074433664,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_class_bio,rubert_span_unlabeled,0.09207993301851058,0.10762968736468348,0.4822006472491909,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_class_bio,ruroberta_bio,0.048131668838471975,0.013769810340348132,0.08266666666666656,25,False,0,False,True,22,True,True,25,True
+CL-RuTerm3,mbert_class_bio,ruroberta_span,0.059971896251070245,0.10141162206633769,0.4919093851132684,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_class_bio,xlmr_bio,0.016457400282922863,0.02126959383389626,0.08169014084507048,25,False,0,False,True,20,True,True,23,True
+CL-RuTerm3,mbert_class_bio,xlmr_span_classifier,0.05463529610368412,0.13142807655668143,0.5181229773462782,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_class_bio,xlmr_span_unlabeled,0.06255473565255865,0.2225513120290985,0.5006472491909385,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_span,mbert_unlabeled_bio,0.03351865402617782,0.09169481250541256,0.5165048543689321,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_span,rubert_bio,0.045122685819958264,0.09521087728414307,0.4980582524271845,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_span,rubert_span,0.07712292703414614,0.05435177968303451,0.16508875739644968,25,False,0,False,False,0,False,True,3,False
+CL-RuTerm3,mbert_span,rubert_span_unlabeled,0.08639437929422256,0.004867065038538176,0.14354354354354354,25,False,0,False,False,1,False,False,4,False
+CL-RuTerm3,mbert_span,ruroberta_bio,0.04244611511418395,0.08899281198579717,0.5006472491909385,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_span,ruroberta_span,0.054286342526782216,0.001351000259807611,0.14894894894894897,25,False,0,False,False,1,False,True,10,False
+CL-RuTerm3,mbert_span,xlmr_bio,0.010771846558634834,0.08149302849224904,0.4996763754045308,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_span,xlmr_span_classifier,0.04894974237939609,0.028665454230536125,0.19199999999999984,25,False,0,False,False,1,False,True,9,False
+CL-RuTerm3,mbert_span,xlmr_span_unlabeled,0.05686918192827062,0.1197886897029532,0.2506666666666666,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_unlabeled_bio,rubert_bio,0.011604031793780445,0.00351606477873051,0.05066666666666675,25,False,1,False,True,24,True,True,25,True
+CL-RuTerm3,mbert_unlabeled_bio,rubert_span,0.04360427300796832,0.03734303282237805,0.4987055016181231,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_unlabeled_bio,rubert_span_unlabeled,0.05287572526804474,0.09656187754395074,0.5055016181229773,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_unlabeled_bio,ruroberta_bio,0.008927461088006128,0.0027020005196153885,0.05074626865671644,25,False,0,False,True,25,True,True,25,True
+CL-RuTerm3,mbert_unlabeled_bio,ruroberta_span,0.020767688500604398,0.09034381224560495,0.5152103559870549,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_unlabeled_bio,xlmr_bio,0.022746807467542984,0.010201784013163517,0.0753521126760564,25,False,1,False,True,20,True,True,24,True
+CL-RuTerm3,mbert_unlabeled_bio,xlmr_span_classifier,0.01543108835321827,0.12036026673594868,0.5414239482200647,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,mbert_unlabeled_bio,xlmr_span_unlabeled,0.0233505279020928,0.21148350220836576,0.523948220064725,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_bio,rubert_span,0.032000241214187874,0.04085909760110856,0.4802588996763755,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_bio,rubert_span_unlabeled,0.04127169347426429,0.10007794232268125,0.4870550161812297,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_bio,ruroberta_bio,0.002676570705774317,0.006218065298345898,0.046811492641906094,25,True,0,False,True,25,True,True,25,True
+CL-RuTerm3,rubert_bio,ruroberta_span,0.009163656706823953,0.09385987702433546,0.49676375404530726,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_bio,xlmr_bio,0.03435083926132343,0.013717848791894027,0.07887323943661984,25,False,0,False,True,20,True,True,23,True
+CL-RuTerm3,rubert_bio,xlmr_span_classifier,0.0038270565594378247,0.1238763315146792,0.522977346278317,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_bio,xlmr_span_unlabeled,0.011746496108312354,0.21499956698709627,0.5055016181229773,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_span,rubert_span_unlabeled,0.009271452260076418,0.05921884472157268,0.09638602065131058,25,False,0,False,True,10,False,True,15,False
+CL-RuTerm3,rubert_span,ruroberta_bio,0.03467681191996219,0.034641032302762664,0.4828478964401295,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_span,ruroberta_span,0.022836584507363922,0.053000779423226896,0.10352112676056341,25,False,0,False,True,12,False,True,15,False
+CL-RuTerm3,rubert_span,xlmr_bio,0.0663510804755113,0.027141248809214535,0.4818770226537218,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_span,xlmr_span_classifier,0.02817318465475005,0.08301723391357063,0.1852112676056339,25,False,0,False,False,2,False,True,8,False
+CL-RuTerm3,rubert_span,xlmr_span_unlabeled,0.02025374510587552,0.1741404693859877,0.24523431294678316,25,False,0,False,False,0,False,False,1,False
+CL-RuTerm3,rubert_span_unlabeled,ruroberta_bio,0.04394826418003861,0.09385987702433535,0.4896440129449837,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_span_unlabeled,ruroberta_span,0.03210803676744034,0.006218065298345787,0.0941836019621584,25,False,0,False,True,11,False,True,18,False
+CL-RuTerm3,rubert_span_unlabeled,xlmr_bio,0.07562253273558772,0.08636009353078722,0.488673139158576,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,rubert_span_unlabeled,xlmr_span_classifier,0.03744463691482647,0.02379838919199795,0.10161177295024529,25,False,0,False,True,10,False,True,16,False
+CL-RuTerm3,rubert_span_unlabeled,xlmr_span_unlabeled,0.02952519736595194,0.11492162466441502,0.14884829229547258,25,False,0,False,False,1,False,False,5,False
+CL-RuTerm3,ruroberta_bio,ruroberta_span,0.01184022741259827,0.08764181172598956,0.4993527508090613,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,ruroberta_bio,xlmr_bio,0.03167426855554911,0.007499783493548129,0.07200000000000006,25,False,1,False,True,20,True,True,23,True
+CL-RuTerm3,ruroberta_bio,xlmr_span_classifier,0.006503627265212142,0.1176582662163333,0.5255663430420711,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,ruroberta_bio,xlmr_span_unlabeled,0.014423066814086671,0.20878150168875037,0.5080906148867314,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,ruroberta_span,xlmr_bio,0.04351449596814738,0.08014202823244143,0.4983818770226536,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,ruroberta_span,xlmr_span_classifier,0.005336600147386128,0.030016454490343736,0.09829659318637285,25,False,0,False,True,10,False,True,17,False
+CL-RuTerm3,ruroberta_span,xlmr_span_unlabeled,0.0025828394014884015,0.12113968996276081,0.18787575150300595,25,False,0,False,False,2,False,False,8,False
+CL-RuTerm3,xlmr_bio,xlmr_span_classifier,0.038177895820761254,0.11015848272278517,0.5245954692556634,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,xlmr_bio,xlmr_span_unlabeled,0.046097335369635783,0.20128171819520224,0.5071197411003237,25,False,0,False,False,0,False,False,0,False
+CL-RuTerm3,xlmr_span_classifier,xlmr_span_unlabeled,0.00791943954887453,0.09112323547241707,0.11898332009531376,25,False,0,False,False,10,False,False,12,False

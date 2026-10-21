@@ -1,0 +1,25 @@
+Task: Term extraction and classification in Russian scientific texts.
+
+You will receive a JSON object with doc_id, sent_id, and a text field holding one Russian scientific text or text fragment.
+Extract all contiguous scientific terms from the text and classify each one.
+
+Rules:
+- Copy each term exactly as it appears in the text.
+- Extract nested terms when both the longer term and the inner term are valid terms.
+- Extract overlapping terms when each overlapping fragment is a valid term on its own.
+- Do not extract discontinuous terms.
+- Do not extract general scientific vocabulary without lexical or domain specificity.
+- Intermediate compositional phrases are valid only if they are reproduced scientific units.
+- Return no offsets. Offsets will be computed later by exact string matching.
+- For every term, return a short exact left_context and right_context from the source text so the surface can be located.
+- left_context must be the exact substring immediately before the surface; right_context the exact substring immediately after.
+- Each context string must be at most 30 characters; if fewer characters are available before or after the surface, return only the available adjacent text.
+- Do not return full sentences, paragraphs, summaries, or non-adjacent context.
+
+Allowed classes:
+- Specific
+- Common
+- Nomen
+
+Output JSON schema:
+{"terms":[{"surface":"exact substring","class_label":"Specific | Common | Nomen","left_context":"up to 30 exact characters immediately before surface","right_context":"up to 30 exact characters immediately after surface"}]}

@@ -1,0 +1,78 @@
+{
+  "all_saved_full_test_pairs": {
+    "acl": {
+      "max_abs_delta_unlabeled_f1": 0.009464861312769024,
+      "median_abs_delta_unlabeled_f1": 0.0035752882982339473,
+      "n_pairs": 8
+    },
+    "cl": {
+      "max_abs_delta_unlabeled_f1": 0.03242335884725567,
+      "median_abs_delta_unlabeled_f1": 0.004279087054665981,
+      "n_pairs": 8
+    },
+    "genia": {
+      "max_abs_delta_unlabeled_f1": 0.01223576239498847,
+      "median_abs_delta_unlabeled_f1": 0.0022926794636709547,
+      "n_pairs": 9
+    }
+  },
+  "interpretation": "Comparable pairs describe movement between saved outputs, not iid generation variance; transport contrasts do not isolate a transport effect.",
+  "metric": "exact unlabeled F1",
+  "pair_table_sha256": "5456834328212f0a8bf71a6d7dc9d1b59654410eef0c3e452b1f5efdd26fedf7",
+  "population": "22 comparable full-test repeat pairs; sync/batch contrasts reported separately",
+  "schema": "llm_full_repeat_limitations_f1_v2",
+  "sensitivity": {
+    "cl_without_llama_format_failure_pair": {
+      "max_abs_delta_unlabeled_f1": 0.01162553661262511,
+      "median_abs_delta_unlabeled_f1": 0.00362063249496708,
+      "n_pairs": 5
+    },
+    "genia_without_documented_raw_missing_pair": {
+      "max_abs_delta_unlabeled_f1": 0.01223576239498847,
+      "median_abs_delta_unlabeled_f1": 0.002483053166337623,
+      "n_pairs": 8
+    }
+  },
+  "source_sha256": {
+    "data/normalized/gold_test.jsonl": "92ce041cb0041f17c056f81640171ebf358f40a0a92c3cb93008e9f2276d5af7",
+    "data/splits/acl_test_texts.jsonl": "3ec549211f3383f730864648ac18c5011b1174ceb7df20b09557dbb89cd918fd",
+    "data/splits/genia_test_units.jsonl": "186930202232931487cd7d967b75b964fcb660bf05d27800c886ea6a607621e9",
+    "results/cl_ruterm3_1_1_llm_rescore_2026_10_13/artifact_scores.csv": "cf626b9d88dfdd432ab4e624d0bf6c3ca7789c65e67ab84341ac81f362ae1cf6",
+    "results/cl_ruterm3_1_1_llm_rescore_2026_10_13/repeat_contrasts.csv": "e88c7dabb6dd4fd15036e0509bb2b8c7bffd3913855f4deaa427b7a4cf268410",
+    "results/llm_repeat_output_agreement_2026_10_13/pair_roster.csv": "cb86eea6b99770080760bc3daad44587f09e24188f8189de2d979362cf12a368"
+  },
+  "summary": {
+    "acl": {
+      "max_abs_delta_unlabeled_f1": 0.0077681459787372065,
+      "median_abs_delta_unlabeled_f1": 0.001779469634322739,
+      "n_pairs": 7
+    },
+    "cl": {
+      "max_abs_delta_unlabeled_f1": 0.03242335884725567,
+      "median_abs_delta_unlabeled_f1": 0.006066172057339947,
+      "n_pairs": 6
+    },
+    "genia": {
+      "max_abs_delta_unlabeled_f1": 0.01223576239498847,
+      "median_abs_delta_unlabeled_f1": 0.0022926794636709547,
+      "n_pairs": 9
+    }
+  },
+  "transport_contrasts": [
+    {
+      "absolute_delta_unlabeled_f1": 0.00010871304753107269,
+      "dataset": "cl",
+      "pair_id": "P03"
+    },
+    {
+      "absolute_delta_unlabeled_f1": 0.009464861312769024,
+      "dataset": "acl",
+      "pair_id": "P17"
+    },
+    {
+      "absolute_delta_unlabeled_f1": 0.004937541614364882,
+      "dataset": "cl",
+      "pair_id": "P21"
+    }
+  ]
+}

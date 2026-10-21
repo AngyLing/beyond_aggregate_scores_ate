@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "sources": [
+    "results/relaxed_gold_id_agreement_2026_10_13/run_pairs.csv",
+    "results/relaxed_gold_id_agreement_2026_10_13/configuration_pairs.csv",
+    "results/relaxed_gold_id_agreement_2026_10_13/assignments_05.csv.gz"
+  ],
+  "limitations": "ACL IoU=0.75 pair counts are independently checked against raw gold and predictions; GENIA and CL IoU=0.75 use accepted producer pair counts. All summaries are fixed-output point estimates.",
+  "results": {
+    "exact_smaller_set": {
+      "ACL RD-TEC 2.0": {
+        "median_excess": 0.014919083268428071,
+        "positive_pairs": 29,
+        "pairs": 45
+      },
+      "CL-RuTerm3": {
+        "median_excess": 0.09675550092516484,
+        "positive_pairs": 54,
+        "pairs": 55
+      },
+      "GENIA": {
+        "median_excess": 0.04633071087084245,
+        "positive_pairs": 38,
+        "pairs": 45
+      }
+    },
+    "exact_jaccard": {
+      "ACL RD-TEC 2.0": {
+        "median_excess": 0.043060371332417996,
+        "positive_pairs": 43,
+        "pairs": 45
+      },
+      "CL-RuTerm3": {
+        "median_excess": 0.20222717959016162,
+        "positive_pairs": 55,
+        "pairs": 55
+      },
+      "GENIA": {
+        "median_excess": 0.1474602517451558,
+        "positive_pairs": 44,
+        "pairs": 45
+      }
+    },
+    "relaxed_05_smaller_set": {
+      "ACL RD-TEC 2.0": {
+        "median_excess": -0.0070875623000294236,
+        "positive_pairs": 15,
+        "pairs": 45
+      },
+      "CL-RuTerm3": {
+        "median_excess": 0.09035303133539925,
+        "positive_pairs": 53,
+        "pairs": 55
+      },
+      "GENIA": {
+        "median_excess": 0.043626323369143086,
+        "positive_pairs": 43,
+        "pairs": 45
+      }
+    },
+    "relaxed_05_jaccard": {
+      "ACL RD-TEC 2.0": {
+        "median_excess": 0.014058864207155977,
+        "positive_pairs": 36,
+        "pairs": 45
+      },
+      "CL-RuTerm3": {
+        "median_excess": 0.17233189702492208,
+        "positive_pairs": 55,
+        "pairs": 55
+      },
+      "GENIA": {
+        "median_excess": 0.11998664411998644,
+        "positive_pairs": 44,
+        "pairs": 45
+      }
+    },
+    "relaxed_075_smaller_set": {
+      "ACL RD-TEC 2.0": {
+        "median_excess": 0.008338604459439236,
+        "positive_pairs": 27,
+        "pairs": 45
+      },
+      "CL-RuTerm3": {
+        "median_excess": 0.10253231637003171,
+        "positive_pairs": 54,
+        "pairs": 55
+      },
+      "GENIA": {
+        "median_excess": 0.0451303365369283,
+        "positive_pairs": 39,
+        "pairs": 45
+      }
+    },
+    "relaxed_075_jaccard": {
+      "ACL RD-TEC 2.0": {
+        "median_excess": 0.03512981722262798,
+        "positive_pairs": 42,
+        "pairs": 45
+      },
+      "CL-RuTerm3": {
+        "median_excess": 0.1974221873738254,
+        "positive_pairs": 55,
+        "pairs": 55
+      },
+      "GENIA": {
+        "median_excess": 0.1455089530100491,
+        "positive_pairs": 44,
+        "pairs": 45
+      }
+    },
+    "acl_metric_sign_changes": {
+      "smaller_set_negative_jaccard_positive": 23,
+      "smaller_set_positive_jaccard_negative": 2
+    },
+    "genia_without_exact_train_test_text_duplicate": {
+      "median_excess": 0.043731034588878115,
+      "positive_pairs": 43,
+      "pairs": 45,
+      "excluded_test_doc_id": "MEDLINE:97218353#2"
+    },
+    "acl_relaxed_075_independent_raw_check": {
+      "runs_checked": 50,
+      "run_pairs_checked": 1225,
+      "gold_offsets": 799
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "source_rosters": [
+    "results/acl_v1_profile_recheck_run_scores.csv",
+    "results/genia_v1_profile_recheck_run_scores.csv",
+    "results/cl_ruterm3_1_1_output_agreement_2026_10_13/run_scores.csv",
+    "results/llm_repeat_output_agreement_2026_10_13/pair_roster.csv",
+    "results/llm_repeat_output_agreement_2026_10_13/limitations_full_repeat_f1.csv"
+  ],
+  "base_outputs": 185,
+  "published_repeat_pairs": 25,
+  "released_files": 214,
+  "released_bytes": 28694902,
+  "released_rows": 1923533,
+  "null_spans": 0,
+  "excluded_fields": [
+    "text",
+    "surface",
+    "norm",
+    "language",
+    "domain"
+  ],
+  "unit_hash_recipe": "SHA256(compact UTF-8 JSON array [dataset,doc_id,sent_id,text])"
+}

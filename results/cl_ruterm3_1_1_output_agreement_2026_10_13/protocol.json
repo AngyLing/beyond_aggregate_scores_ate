@@ -1,0 +1,23 @@
+{
+  "schema": "cl_full_panel_output_agreement_v1",
+  "dataset": "CL-RuTerm3",
+  "dataset_release": "1.1",
+  "reference": "v4",
+  "base_runs": 65,
+  "configurations": 21,
+  "targets": [
+    "tp_turnover",
+    "fp_turnover",
+    "flat_tp_turnover",
+    "fp_no_witness_share"
+  ],
+  "draw_source": "results/cl_ruterm3_1_1_dependencies_2026_10_13/statistics/document_draws.npz",
+  "draw_seed": 12345,
+  "draws": 10000,
+  "sampling": "317 full text units with replacement; shared multiplicities across all fixed outputs",
+  "run_weighting": "equal actual fixed run pairs; no training seed resampling",
+  "within_reference": "larger available within-configuration mean, recomputed in each draw",
+  "zero_denominators": "undefined constituent invalidates fixed-population mean",
+  "intervals": "nominal exploratory percentile 95%; no multiplicity adjustment or equivalence claim",
+  "profile": "current CL raw recall slices at support >=30 plus applicable Class/Boundary/Nested gaps; family weighting exploratory"
+}

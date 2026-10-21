@@ -1,0 +1,156 @@
+dataset,run,model,exact_tp,relaxed_05_tp,new_05_tp,ambiguous_gold,relaxed_075_tp
+ACL RD-TEC 2.0,mbert_class_bio_seed42,mbert_class_bio,600,713,113,0,628
+ACL RD-TEC 2.0,mbert_class_bio_seed43,mbert_class_bio,589,701,112,0,623
+ACL RD-TEC 2.0,mbert_class_bio_seed44,mbert_class_bio,568,666,98,0,594
+ACL RD-TEC 2.0,mbert_class_bio_seed45,mbert_class_bio,639,730,91,0,665
+ACL RD-TEC 2.0,mbert_class_bio_seed46,mbert_class_bio,531,624,93,0,554
+ACL RD-TEC 2.0,mbert_unlabeled_bio_seed42,mbert_unlabeled_bio,658,735,77,0,676
+ACL RD-TEC 2.0,mbert_unlabeled_bio_seed43,mbert_unlabeled_bio,654,739,85,0,685
+ACL RD-TEC 2.0,mbert_unlabeled_bio_seed44,mbert_unlabeled_bio,609,692,83,0,628
+ACL RD-TEC 2.0,mbert_unlabeled_bio_seed45,mbert_unlabeled_bio,631,713,82,0,646
+ACL RD-TEC 2.0,mbert_unlabeled_bio_seed46,mbert_unlabeled_bio,640,727,87,0,661
+ACL RD-TEC 2.0,xlmr_bio_seed42,xlmr_bio,606,696,90,0,635
+ACL RD-TEC 2.0,xlmr_bio_seed43,xlmr_bio,632,725,93,0,661
+ACL RD-TEC 2.0,xlmr_bio_seed44,xlmr_bio,590,710,120,0,627
+ACL RD-TEC 2.0,xlmr_bio_seed45,xlmr_bio,597,688,91,0,625
+ACL RD-TEC 2.0,xlmr_bio_seed46,xlmr_bio,628,718,90,0,657
+ACL RD-TEC 2.0,xlmr_span_classifier_seed42,xlmr_span_classifier,601,648,47,0,610
+ACL RD-TEC 2.0,xlmr_span_classifier_seed43,xlmr_span_classifier,596,642,46,0,606
+ACL RD-TEC 2.0,xlmr_span_classifier_seed44,xlmr_span_classifier,584,628,44,0,592
+ACL RD-TEC 2.0,xlmr_span_classifier_seed45,xlmr_span_classifier,607,645,38,0,617
+ACL RD-TEC 2.0,xlmr_span_classifier_seed46,xlmr_span_classifier,597,630,33,0,607
+ACL RD-TEC 2.0,scibert_bio_seed42,scibert_bio,613,706,93,0,638
+ACL RD-TEC 2.0,scibert_bio_seed43,scibert_bio,594,710,116,0,632
+ACL RD-TEC 2.0,scibert_bio_seed44,scibert_bio,603,690,87,0,626
+ACL RD-TEC 2.0,scibert_bio_seed45,scibert_bio,612,711,99,0,650
+ACL RD-TEC 2.0,scibert_bio_seed46,scibert_bio,615,707,92,0,642
+ACL RD-TEC 2.0,scibert_span_seed42,scibert_span,618,662,44,0,636
+ACL RD-TEC 2.0,scibert_span_seed43,scibert_span,561,604,43,0,572
+ACL RD-TEC 2.0,scibert_span_seed44,scibert_span,564,599,35,0,571
+ACL RD-TEC 2.0,scibert_span_seed45,scibert_span,583,627,44,0,596
+ACL RD-TEC 2.0,scibert_span_seed46,scibert_span,559,605,46,0,570
+ACL RD-TEC 2.0,xlmr_span_unlabeled_seed42,xlmr_span_unlabeled,679,720,41,0,689
+ACL RD-TEC 2.0,xlmr_span_unlabeled_seed43,xlmr_span_unlabeled,679,730,51,0,693
+ACL RD-TEC 2.0,xlmr_span_unlabeled_seed44,xlmr_span_unlabeled,710,751,41,0,721
+ACL RD-TEC 2.0,xlmr_span_unlabeled_seed45,xlmr_span_unlabeled,712,748,36,0,725
+ACL RD-TEC 2.0,xlmr_span_unlabeled_seed46,xlmr_span_unlabeled,660,694,34,0,665
+ACL RD-TEC 2.0,mbert_span_seed42,mbert_span,554,587,33,0,562
+ACL RD-TEC 2.0,mbert_span_seed43,mbert_span,506,552,46,0,518
+ACL RD-TEC 2.0,mbert_span_seed44,mbert_span,525,571,46,0,533
+ACL RD-TEC 2.0,mbert_span_seed45,mbert_span,575,637,62,0,591
+ACL RD-TEC 2.0,mbert_span_seed46,mbert_span,559,609,50,0,572
+ACL RD-TEC 2.0,csroberta_bio_seed42,csroberta_bio,648,738,90,0,667
+ACL RD-TEC 2.0,csroberta_bio_seed43,csroberta_bio,633,721,88,0,658
+ACL RD-TEC 2.0,csroberta_bio_seed44,csroberta_bio,646,718,72,0,666
+ACL RD-TEC 2.0,csroberta_bio_seed45,csroberta_bio,634,719,85,0,660
+ACL RD-TEC 2.0,csroberta_bio_seed46,csroberta_bio,653,734,81,0,677
+ACL RD-TEC 2.0,csroberta_span_seed42,csroberta_span,629,662,33,0,635
+ACL RD-TEC 2.0,csroberta_span_seed43,csroberta_span,636,674,38,0,649
+ACL RD-TEC 2.0,csroberta_span_seed44,csroberta_span,582,616,34,0,594
+ACL RD-TEC 2.0,csroberta_span_seed45,csroberta_span,583,614,31,0,588
+ACL RD-TEC 2.0,csroberta_span_seed46,csroberta_span,627,657,30,0,632
+GENIA,mbert_class_bio_seed42,mbert_class_bio,12289,13844,1555,0,12808
+GENIA,mbert_class_bio_seed43,mbert_class_bio,12453,13954,1501,0,12892
+GENIA,mbert_class_bio_seed44,mbert_class_bio,12244,13706,1462,0,12665
+GENIA,mbert_class_bio_seed45,mbert_class_bio,12394,13900,1506,0,12863
+GENIA,mbert_class_bio_seed46,mbert_class_bio,12541,14099,1558,2,13011
+GENIA,mbert_span_seed42,mbert_span,12625,13298,673,0,12759
+GENIA,mbert_span_seed43,mbert_span,13325,14103,778,0,13481
+GENIA,mbert_span_seed44,mbert_span,13352,14087,735,0,13504
+GENIA,mbert_span_seed45,mbert_span,12583,13303,720,0,12731
+GENIA,mbert_span_seed46,mbert_span,13754,14561,807,0,13927
+GENIA,mbert_unlabeled_bio_seed42,mbert_unlabeled_bio,12989,14008,1019,0,13229
+GENIA,mbert_unlabeled_bio_seed43,mbert_unlabeled_bio,13039,14133,1094,0,13330
+GENIA,mbert_unlabeled_bio_seed44,mbert_unlabeled_bio,13149,14111,962,0,13402
+GENIA,mbert_unlabeled_bio_seed45,mbert_unlabeled_bio,12857,13880,1023,0,13108
+GENIA,mbert_unlabeled_bio_seed46,mbert_unlabeled_bio,13015,14015,1000,0,13238
+GENIA,xlmr_bio_seed42,xlmr_bio,12196,13759,1563,0,12691
+GENIA,xlmr_bio_seed43,xlmr_bio,12468,14271,1803,4,13032
+GENIA,xlmr_bio_seed44,xlmr_bio,12422,14177,1755,0,12989
+GENIA,xlmr_bio_seed45,xlmr_bio,12097,13754,1657,0,12605
+GENIA,xlmr_bio_seed46,xlmr_bio,12486,14097,1611,0,12993
+GENIA,xlmr_span_classifier_seed42,xlmr_span_classifier,12390,13090,700,0,12544
+GENIA,xlmr_span_classifier_seed43,xlmr_span_classifier,12322,13058,736,2,12491
+GENIA,xlmr_span_classifier_seed44,xlmr_span_classifier,13585,14417,832,0,13794
+GENIA,xlmr_span_classifier_seed45,xlmr_span_classifier,12669,13409,740,2,12841
+GENIA,xlmr_span_classifier_seed46,xlmr_span_classifier,13668,14464,796,2,13860
+GENIA,xlmr_span_unlabeled_seed42,xlmr_span_unlabeled,15095,15945,850,0,15273
+GENIA,xlmr_span_unlabeled_seed43,xlmr_span_unlabeled,15410,16176,766,0,15575
+GENIA,xlmr_span_unlabeled_seed44,xlmr_span_unlabeled,14924,15790,866,0,15093
+GENIA,xlmr_span_unlabeled_seed45,xlmr_span_unlabeled,14959,15749,790,0,15097
+GENIA,xlmr_span_unlabeled_seed46,xlmr_span_unlabeled,15213,15917,704,2,15363
+GENIA,pubmedbert_bio_seed42,pubmedbert_bio,13020,14260,1240,0,13327
+GENIA,pubmedbert_bio_seed43,pubmedbert_bio,12762,14025,1263,0,13101
+GENIA,pubmedbert_bio_seed44,pubmedbert_bio,12975,14280,1305,0,13316
+GENIA,pubmedbert_bio_seed45,pubmedbert_bio,12726,14010,1284,0,13093
+GENIA,pubmedbert_bio_seed46,pubmedbert_bio,12714,13978,1264,0,13061
+GENIA,pubmedbert_span_seed42,pubmedbert_span,14532,15149,617,2,14683
+GENIA,pubmedbert_span_seed43,pubmedbert_span,15242,15881,639,2,15400
+GENIA,pubmedbert_span_seed44,pubmedbert_span,14587,15227,640,0,14735
+GENIA,pubmedbert_span_seed45,pubmedbert_span,13922,14552,630,0,14071
+GENIA,pubmedbert_span_seed46,pubmedbert_span,13819,14390,571,0,13950
+GENIA,scibert_bio_seed42,scibert_bio,12352,13878,1526,0,12807
+GENIA,scibert_bio_seed43,scibert_bio,12587,14170,1583,0,13051
+GENIA,scibert_bio_seed44,scibert_bio,12577,14179,1602,0,13070
+GENIA,scibert_bio_seed45,scibert_bio,12572,14155,1583,0,13007
+GENIA,scibert_bio_seed46,scibert_bio,12309,13863,1554,0,12805
+GENIA,scibert_span_seed42,scibert_span,13132,13831,699,0,13287
+GENIA,scibert_span_seed43,scibert_span,14107,14847,740,0,14298
+GENIA,scibert_span_seed44,scibert_span,13108,13820,712,0,13286
+GENIA,scibert_span_seed45,scibert_span,14589,15360,771,0,14786
+GENIA,scibert_span_seed46,scibert_span,12767,13412,645,0,12895
+CL-RuTerm3,mbert_class_bio_seed42,mbert_class_bio,4126,5187,1061,4,4543
+CL-RuTerm3,mbert_class_bio_seed43,mbert_class_bio,4346,5259,913,0,4691
+CL-RuTerm3,mbert_class_bio_seed44,mbert_class_bio,4039,4899,860,0,4365
+CL-RuTerm3,mbert_class_bio_seed45,mbert_class_bio,4583,5558,975,0,4883
+CL-RuTerm3,mbert_class_bio_seed46,mbert_class_bio,4192,5197,1005,0,4564
+CL-RuTerm3,mbert_span_seed42,mbert_span,5309,5742,433,0,5394
+CL-RuTerm3,mbert_span_seed43,mbert_span,6354,6806,452,0,6440
+CL-RuTerm3,mbert_span_seed44,mbert_span,5469,5883,414,0,5562
+CL-RuTerm3,mbert_span_seed45,mbert_span,4295,4608,313,0,4353
+CL-RuTerm3,mbert_span_seed46,mbert_span,5792,6239,447,0,5894
+CL-RuTerm3,mbert_unlabeled_bio_seed42,mbert_unlabeled_bio,4506,5357,851,0,4756
+CL-RuTerm3,mbert_unlabeled_bio_seed43,mbert_unlabeled_bio,4727,5634,907,0,5003
+CL-RuTerm3,mbert_unlabeled_bio_seed44,mbert_unlabeled_bio,4061,4823,762,0,4307
+CL-RuTerm3,mbert_unlabeled_bio_seed45,mbert_unlabeled_bio,4086,4989,903,2,4395
+CL-RuTerm3,mbert_unlabeled_bio_seed46,mbert_unlabeled_bio,4545,5457,912,0,4843
+CL-RuTerm3,rubert_bio_seed42,rubert_bio,4586,5494,908,0,4842
+CL-RuTerm3,rubert_bio_seed43,rubert_bio,4231,5035,804,0,4471
+CL-RuTerm3,rubert_bio_seed44,rubert_bio,4081,4872,791,0,4323
+CL-RuTerm3,rubert_bio_seed45,rubert_bio,4507,5318,811,0,4727
+CL-RuTerm3,rubert_bio_seed46,rubert_bio,4317,5103,786,0,4536
+CL-RuTerm3,rubert_span_seed42,rubert_span,5329,5642,313,0,5382
+CL-RuTerm3,rubert_span_seed43,rubert_span,5578,5902,324,0,5633
+CL-RuTerm3,rubert_span_seed44,rubert_span,4279,4520,241,0,4334
+CL-RuTerm3,rubert_span_seed45,rubert_span,4442,4716,274,0,4501
+CL-RuTerm3,rubert_span_seed46,rubert_span,4453,4770,317,0,4530
+CL-RuTerm3,rubert_span_unlabeled_seed42,rubert_span_unlabeled,6621,7066,445,0,6707
+CL-RuTerm3,rubert_span_unlabeled_seed43,rubert_span_unlabeled,5432,5768,336,0,5498
+CL-RuTerm3,rubert_span_unlabeled_seed44,rubert_span_unlabeled,4981,5273,292,0,5042
+CL-RuTerm3,rubert_span_unlabeled_seed45,rubert_span_unlabeled,5107,5434,327,0,5185
+CL-RuTerm3,rubert_span_unlabeled_seed46,rubert_span_unlabeled,5359,5695,336,0,5436
+CL-RuTerm3,ruroberta_bio_seed42,ruroberta_bio,4252,5165,913,0,4581
+CL-RuTerm3,ruroberta_bio_seed43,ruroberta_bio,4578,5411,833,0,4869
+CL-RuTerm3,ruroberta_bio_seed44,ruroberta_bio,4460,5346,886,0,4759
+CL-RuTerm3,ruroberta_bio_seed45,ruroberta_bio,4640,5534,894,0,4960
+CL-RuTerm3,ruroberta_bio_seed46,ruroberta_bio,4151,5070,919,0,4497
+CL-RuTerm3,ruroberta_span_seed42,ruroberta_span,4936,5254,318,0,4992
+CL-RuTerm3,ruroberta_span_seed43,ruroberta_span,6086,6526,440,0,6161
+CL-RuTerm3,ruroberta_span_seed44,ruroberta_span,5572,5921,349,0,5631
+CL-RuTerm3,ruroberta_span_seed45,ruroberta_span,6042,6438,396,0,6120
+CL-RuTerm3,ruroberta_span_seed46,ruroberta_span,4505,4783,278,0,4545
+CL-RuTerm3,xlmr_bio_seed42,xlmr_bio,4454,5481,1027,0,4790
+CL-RuTerm3,xlmr_bio_seed43,xlmr_bio,4730,5755,1025,2,5129
+CL-RuTerm3,xlmr_bio_seed44,xlmr_bio,4312,5328,1016,0,4715
+CL-RuTerm3,xlmr_bio_seed45,xlmr_bio,4410,5384,974,0,4762
+CL-RuTerm3,xlmr_bio_seed46,xlmr_bio,4608,5594,986,0,4970
+CL-RuTerm3,xlmr_span_classifier_seed42,xlmr_span_classifier,5473,5894,421,2,5552
+CL-RuTerm3,xlmr_span_classifier_seed43,xlmr_span_classifier,5043,5385,342,0,5129
+CL-RuTerm3,xlmr_span_classifier_seed44,xlmr_span_classifier,6153,6592,439,0,6248
+CL-RuTerm3,xlmr_span_classifier_seed45,xlmr_span_classifier,6518,6923,405,0,6605
+CL-RuTerm3,xlmr_span_classifier_seed46,xlmr_span_classifier,5687,6047,360,0,5759
+CL-RuTerm3,xlmr_span_unlabeled_seed42,xlmr_span_unlabeled,7470,7979,509,0,7591
+CL-RuTerm3,xlmr_span_unlabeled_seed43,xlmr_span_unlabeled,6575,6951,376,0,6659
+CL-RuTerm3,xlmr_span_unlabeled_seed44,xlmr_span_unlabeled,6501,6895,394,2,6598
+CL-RuTerm3,xlmr_span_unlabeled_seed45,xlmr_span_unlabeled,6626,7002,376,0,6710
+CL-RuTerm3,xlmr_span_unlabeled_seed46,xlmr_span_unlabeled,6963,7393,430,2,7050

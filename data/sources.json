@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "scope": "Source identities for acl_draft_v1_revised; no source corpus or gold annotation payloads are distributed.",
+  "hash_algorithm": "SHA-256",
+  "local_directory": "data/local/sources",
+  "datasets": [
+    {
+      "id": "acl_rd_tec_2_0",
+      "name": "ACL RD-TEC 2.0",
+      "release": "2.0",
+      "source_url": "https://github.com/languagerecipes/acl-rd-tec-2.0",
+      "source_revision": null,
+      "source_revision_note": "No upstream Git commit was recorded in the research inputs; input XML identity is pinned by the tree checksum.",
+      "local_path": "data/local/sources/acl-rd-tec-2.0",
+      "source_subdirectory": "distribution/annoitation_files",
+      "tree_checksum": {
+        "recipe": "sha256sum-lines-v1",
+        "scope": [
+          "annotator1/**/*.xml",
+          "annotator2/**/*.xml"
+        ],
+        "sort": "Lexicographic by POSIX path relative to distribution/annoitation_files.",
+        "line_format": "lowercase_hex_sha256 + two ASCII spaces + relative_posix_path + LF",
+        "encoding": "UTF-8",
+        "file_hashes": "SHA-256 of unchanged original bytes, with no newline normalization.",
+        "tree_hash": "SHA-256 of the concatenated sorted lines.",
+        "files": 471,
+        "layer_counts": {
+          "annotator1": 189,
+          "annotator2": 282
+        },
+        "size_bytes": 641498,
+        "sha256": "bea0af16cf1d810c5df72b1f5bd719d926c15ab30e335d5e40c7ab9e329297bc",
+        "exclude_note": "Duplicate derived XML under double_annotated_files and all other directories are excluded."
+      },
+      "license_notice_url": "https://raw.githubusercontent.com/languagerecipes/acl-rd-tec-2.0/39142690c8a062704b134e4013c0d5bc1c96e7f9/distribution/license/readme-license.txt",
+      "license_notice_path": "LICENSES/ACL-RD-TEC-2.0-LICENSE.txt",
+      "license_scope": {
+        "corpus": "CC-BY-NC-SA-4.0",
+        "underlying_acl_arc_material": "CC-BY-NC-SA-3.0"
+      },
+      "citation_url": "https://aclanthology.org/L16-1294/",
+      "split_documents": {
+        "train": 214,
+        "dev": 25,
+        "test": 60
+      },
+      "verified_acquisition": {
+        "date": "2026-10-15",
+        "source_revision": "39142690c8a062704b134e4013c0d5bc1c96e7f9",
+        "consumed_xml_tree_matches": true,
+        "note": "Independently reacquired matching revision; original research commit remains unrecorded."
+      },
+      "license_notice_sha256": "22bc0d6c10b349170f195fa7abab2d62e9f8f29a9e2a3fcd4622aace82811e95"
+    },
+    {
+      "id": "genia",
+      "name": "GENIA term corpus",
+      "release": "3.02",
+      "source_url": "http://www.nactem.ac.uk/genia/genia-corpus/term-corpus",
+      "paper_source_url": "https://web.archive.org/web/20131215201031/http://www.nactem.ac.uk/genia/genia-corpus/term-corpus",
+      "source_archive_note": "The dataset page and extracted XML identity were preserved; an exact archive retrieval URL and archive checksum were not recorded. Historical page URLs may redirect or be unavailable.",
+      "files": [
+        {
+          "name": "GENIAcorpus3.02.xml",
+          "local_path": "data/local/sources/GENIA_term_3.02/GENIAcorpus3.02.xml",
+          "size_bytes": 9259109,
+          "sha256": "c6d6966ea48522e48aa4b268323934897d9336fab3942fb48134ac174d989c5e"
+        }
+      ],
+      "license_notice_url": "https://www.nactem.ac.uk/GENIA/current/GENIA-corpus/Term/GENIAcorpus3.02.tgz",
+      "license_notice_path": "LICENSES/GENIA-LICENSE.txt",
+      "license_scope": {
+        "genia_project_annotations": "CC-BY-3.0",
+        "abstract_text": "Separate copyright and reuse conditions; not covered by the GENIA annotation license."
+      },
+      "required_annotation_attribution": "Corpus annotations (c) GENIA Project",
+      "abstract_rights_url": "https://www.nlm.nih.gov/databases/download.html",
+      "citation_url": "https://doi.org/10.1093/bioinformatics/btg1023",
+      "split_documents": {
+        "train": 1442,
+        "dev": 158,
+        "test": 400
+      },
+      "observed_classes": 36,
+      "verified_acquisition": {
+        "date": "2026-10-15",
+        "archive_url": "https://www.nactem.ac.uk/GENIA/current/GENIA-corpus/Term/GENIAcorpus3.02.tgz",
+        "archive_bytes": 1651614,
+        "archive_sha256": "85b2aede313308c33783ba508d054d0af0ff9c7e48490f0db5168a9f88d74d1c",
+        "extracted_xml_matches": true,
+        "note": "Fresh acquisition; not a claim about the original archive retrieval history."
+      },
+      "license_notice_mirror_url": "https://github.com/allenai/genia-dependency-trees/blob/master/GENIA_LICENSE",
+      "license_notice_member": "GENIA_term_3.02/LICENSE",
+      "license_notice_sha256": "ec7ff63a1f9a81e2ee19d543098f99b0251ac0afbd4d54f8d6b04dcb5e84e902"
+    },
+    {
+      "id": "cl_ruterm3",
+      "name": "CL-RuTerm3",
+      "release": "1.1",
+      "test_reference_revision": "v4",
+      "source_url": "https://github.com/mlsa-iai-msu-lab/cl-ruterm3",
+      "source_revision": "4fd9befb1e1f7ec11fa8de57aeec7970aacc97ec",
+      "source_readme_url": "https://github.com/mlsa-iai-msu-lab/cl-ruterm3/blob/4fd9befb1e1f7ec11fa8de57aeec7970aacc97ec/README.md",
+      "local_path": "data/local/sources/CL-RuTerm3",
+      "files": [
+        {
+          "role": "train",
+          "upstream_path": "data/train.jsonl",
+          "local_path": "data/local/sources/CL-RuTerm3/train.jsonl",
+          "url": "https://raw.githubusercontent.com/mlsa-iai-msu-lab/cl-ruterm3/4fd9befb1e1f7ec11fa8de57aeec7970aacc97ec/data/train.jsonl",
+          "size_bytes": 1576856,
+          "sha256": "a72c86113e6bf731e32fb9d0577d23b2b2a9967308a8d7e35e5b763dd3f30e98"
+        },
+        {
+          "role": "dev_texts",
+          "upstream_path": "data/dev.jsonl",
+          "local_path": "data/local/sources/CL-RuTerm3/dev.jsonl",
+          "url": "https://raw.githubusercontent.com/mlsa-iai-msu-lab/cl-ruterm3/4fd9befb1e1f7ec11fa8de57aeec7970aacc97ec/data/dev.jsonl",
+          "size_bytes": 128992,
+          "sha256": "c43074bfc96bdf726f05ca6ab271a65d7e634ff560b9fb9f9de3af9e257aadc9"
+        },
+        {
+          "role": "dev_reference",
+          "upstream_path": "data/dev_ref.jsonl",
+          "local_path": "data/local/sources/CL-RuTerm3/dev_ref.jsonl",
+          "url": "https://raw.githubusercontent.com/mlsa-iai-msu-lab/cl-ruterm3/4fd9befb1e1f7ec11fa8de57aeec7970aacc97ec/data/dev_ref.jsonl",
+          "size_bytes": 55251,
+          "sha256": "d5e1576d8adb259aa79e01098fcbe7efa5e66ed62add5f5b9a113b07e6b175bd"
+        },
+        {
+          "role": "test",
+          "upstream_path": "data/test_ref_v4.jsonl",
+          "local_path": "data/local/sources/CL-RuTerm3/test_ref_v4.jsonl",
+          "url": "https://raw.githubusercontent.com/mlsa-iai-msu-lab/cl-ruterm3/4fd9befb1e1f7ec11fa8de57aeec7970aacc97ec/data/test_ref_v4.jsonl",
+          "size_bytes": 962698,
+          "sha256": "6698e4d97d29054c5519761929f23c3768e93f11e42a51a82d7e213f49ba5530"
+        },
+        {
+          "role": "test_texts",
+          "upstream_path": "data/test.jsonl",
+          "local_path": "data/local/sources/CL-RuTerm3/test.jsonl",
+          "url": "https://raw.githubusercontent.com/mlsa-iai-msu-lab/cl-ruterm3/4fd9befb1e1f7ec11fa8de57aeec7970aacc97ec/data/test.jsonl",
+          "size_bytes": 681380,
+          "sha256": "7ef82a7c54f28653051a3e910256219971927ecb036a784797a171623b1ff870"
+        }
+      ],
+      "source_identity_note": "Research source protocol recorded all five local files as byte-identical to the pinned upstream commit; all five local file hashes were rechecked for this release.",
+      "license_scope": {
+        "public_data_license": null,
+        "study_permission": "The study authors report permission for educational and scientific use and publication of derived materials. This individual permission is not a third-party license."
+      },
+      "citation_url": "https://doi.org/10.28995/2075-7182-2025-23-245-256",
+      "split_documents": {
+        "train": 850,
+        "dev": 103,
+        "test": 317
+      },
+      "permission_evidence": {
+        "type": "USER_REPORTED_INDIVIDUAL_PERMISSION",
+        "reported_date": "2026-10-13",
+        "scope": "Educational and scientific use and publication of derived materials by the study authors.",
+        "public_corpus_license": false,
+        "record": "retained acquisition-audit record, section 10"
+      }
+    }
+  ]
+}

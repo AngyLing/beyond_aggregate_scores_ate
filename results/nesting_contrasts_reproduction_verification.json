@@ -1,0 +1,49 @@
+{
+  "schema": "nested_contrasts_release_reproduction_v1",
+  "status": "PASS",
+  "validated_date": "2026-10-15",
+  "checks_against_saved_results": {
+    "rows": 8,
+    "cells": 136,
+    "all_saved_values_match": true
+  },
+  "protocol": "Shared document draws; nonflat minus flat after full-gold exact-priority IoU>=0.5 matching; 98.75% nominal percentile intervals within each four-pair corpus group; fixed runs and post-hoc pair selection",
+  "prepared_gold": [
+    {
+      "path": "data/local/processed/genia/test.jsonl",
+      "bytes": 10292230,
+      "sha256": "a2574c6264407766dd48e881ec271230f58b7572e9d08aaca14358b9eb331113",
+      "dataset": "GENIA"
+    },
+    {
+      "path": "data/local/processed/cl/test.jsonl",
+      "bytes": 32478089,
+      "sha256": "5e4cc090579446b781ffb3e5878a50449fc9d5996dd22a29bd4f8464536985c4",
+      "dataset": "CL-RuTerm3"
+    }
+  ],
+  "upstream": "Completed reproduce_gold_agreement.py raw assignment output, whose SHA-256 is checked against its manifest",
+  "implementation": [
+    {
+      "path": "scripts/reproduce_nesting_contrasts.py",
+      "bytes": 10689,
+      "sha256": "c1250aa7c47ea0631bad064baa6311d333bd9848261313d6647b05f657e3df36"
+    },
+    {
+      "path": "src/ate_paper/analysis/io.py",
+      "bytes": 4538,
+      "sha256": "1bbe4d8b5dde288887f8bcea96f7515065cbb88de3f22d28d4fe877a59fd3f63"
+    }
+  ],
+  "output": {
+    "path": "nested_contrasts.csv",
+    "bytes": 2287,
+    "sha256": "4c9bdac403fc1647bf32ad6e5f76f996845a82a0cc04bcba6b0edbe9d60732c6"
+  },
+  "output_byte_identical_to_saved": true,
+  "limitations": [
+    "Four post-hoc comparisons per corpus",
+    "98.75% paired document-percentile bounds adjust four contrasts within corpus, not post-hoc selection",
+    "Fixed saved runs; no semantic or causal decoder conclusion"
+  ]
+}

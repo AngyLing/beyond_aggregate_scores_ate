@@ -1,0 +1,120 @@
+{
+  "schema": "no_witness_release_reproduction_v1",
+  "status": "PASS",
+  "validated_date": "2026-10-15",
+  "fixed_supervised_runs": 155,
+  "input_contract": "Published text-free prediction exports + source-backed prepared local test gold + retained shared document multiplicities",
+  "checks_against_saved_results": {
+    "run_pairs": {
+      "rows": 3935,
+      "cells": 59025,
+      "all_saved_values_match": true
+    },
+    "configuration_pairs": {
+      "rows": 145,
+      "cells": 3190,
+      "all_saved_values_match": true
+    },
+    "bootstrap": {
+      "rows": 145,
+      "cells": 2610,
+      "all_saved_values_match": true
+    }
+  },
+  "summary": {
+    "ACL RD-TEC 2.0": {
+      "configuration_pairs": 45,
+      "median_share": 0.37482431095340507,
+      "median_excess": 0.06247063007514897,
+      "positive_excess": 44,
+      "positive_interval_lower": 41,
+      "shared_model_count": 6,
+      "shared_configuration_pairs": 15,
+      "shared_median_excess": 0.03962351272749459,
+      "shared_positive_excess": 14
+    },
+    "GENIA": {
+      "configuration_pairs": 45,
+      "median_share": 0.3794488732861513,
+      "median_excess": 0.07294655481129281,
+      "positive_excess": 40,
+      "positive_interval_lower": 39,
+      "shared_model_count": 6,
+      "shared_configuration_pairs": 15,
+      "shared_median_excess": 0.08297837986728926,
+      "shared_positive_excess": 13
+    },
+    "CL-RuTerm3": {
+      "configuration_pairs": 55,
+      "median_share": 0.5095049821442327,
+      "median_excess": 0.10576569856129825,
+      "positive_excess": 55,
+      "positive_interval_lower": 55,
+      "shared_model_count": 6,
+      "shared_configuration_pairs": 15,
+      "shared_median_excess": 0.09557186458282141,
+      "shared_positive_excess": 15
+    }
+  },
+  "prepared_gold": [
+    {
+      "path": "data/local/processed/acl/test.jsonl",
+      "bytes": 482095,
+      "sha256": "025b71ecff99c2dad85d227b4c01edd2eb0b27a5fb2fdfdd67a727612c74946b",
+      "dataset": "ACL RD-TEC 2.0"
+    },
+    {
+      "path": "data/local/processed/genia/test.jsonl",
+      "bytes": 10292230,
+      "sha256": "a2574c6264407766dd48e881ec271230f58b7572e9d08aaca14358b9eb331113",
+      "dataset": "GENIA"
+    },
+    {
+      "path": "data/local/processed/cl/test.jsonl",
+      "bytes": 32478089,
+      "sha256": "5e4cc090579446b781ffb3e5878a50449fc9d5996dd22a29bd4f8464536985c4",
+      "dataset": "CL-RuTerm3"
+    }
+  ],
+  "implementation": [
+    {
+      "path": "scripts/reproduce_no_witness.py",
+      "bytes": 13303,
+      "sha256": "122498ac42a9ecb60af71742f90034b0e92946d7c29dcf2e2d86bbf2c08778ad"
+    },
+    {
+      "path": "src/ate_paper/analysis/io.py",
+      "bytes": 4538,
+      "sha256": "1bbe4d8b5dde288887f8bcea96f7515065cbb88de3f22d28d4fe877a59fd3f63"
+    },
+    {
+      "path": "src/ate_paper/analysis/statistics.py",
+      "bytes": 1248,
+      "sha256": "cadfd72e72abfbd3ae001b5882fdbe826042669e3b70345b1288bca9ba470db7"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "bootstrap.csv",
+      "bytes": 38124,
+      "sha256": "0e094d831fe4dba30066d8a3bb2d565334b345df38b81e244b14bc44ac05b800"
+    },
+    {
+      "path": "configuration_pairs.csv",
+      "bytes": 40320,
+      "sha256": "c9455ab8336dae9e2bcbe60c59c5915f2503aab461c5016e4bad9f570edc34a5"
+    },
+    {
+      "path": "run_pairs.csv",
+      "bytes": 638399,
+      "sha256": "e7409a564f7e7f754031741936e16c951db9c51ee632b3d3bc55e349c8227cf9"
+    }
+  ],
+  "bootstrap": "Saved shared document draws; nominal percentile 95%; fixed runs",
+  "interpretation": "Formal output proximity; any other-run output may witness many unmatched predictions; no semantic adjudication",
+  "limitations": [
+    "Fixed supervised runs only; no training-seed resampling",
+    "Nominal conditional percentile 95% intervals; configuration pairs share models and documents",
+    "Many-to-one overlap presence does not evaluate semantic validity"
+  ]
+}

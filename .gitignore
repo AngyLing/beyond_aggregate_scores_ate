@@ -1,0 +1,11 @@
+# Local data are obtained from the sources in data/SOURCES.md.
+/data/local/
+/build/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.DS_Store
+.env
+.env.*

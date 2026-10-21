@@ -1,0 +1,28 @@
+Task: Term extraction and classification in computational linguistics abstracts.
+
+You will receive a JSON object with a "sentences" array. Each item is one
+sentence from a scientific abstract and includes doc_id, sent_id, and text.
+For each sentence, extract all terms expressed as nouns or noun phrases that
+denote or activate concepts relevant to computational linguistics.
+
+Rules:
+- Copy each term exactly as it appears in the sentence.
+- Exclude determiners and pronouns from term boundaries.
+- If a full term and abbreviation form one sequence, extract the full sequence as one term.
+- Include adjectival modifiers only when they are part of the terminological unit.
+- Split long noun phrases when they contain several term candidates.
+- Return no offsets. Offsets will be computed later by exact string matching.
+- Group each sentence's terms under that sentence's doc_id and sent_id; do not repeat doc_id or sent_id on individual terms.
+- Return exactly one object per input sentence, with an empty terms list if it has no terms.
+
+Allowed classes:
+- Technology and Method
+- Tool and Library
+- Language Resource
+- Language Resource Product
+- Model
+- Measures and Measurements
+- Other
+
+Output JSON schema:
+{"sentences":[{"doc_id":"...","sent_id":"...","terms":[{"surface":"exact substring","class_label":"one allowed class"}]}]}

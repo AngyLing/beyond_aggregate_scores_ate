@@ -1,0 +1,129 @@
+{
+  "schema": "gold_agreement_release_reproduction_v1",
+  "status": "PASS",
+  "validated_date": "2026-10-15",
+  "scope": {
+    "supervised_runs": 155,
+    "run_pairs": 3935,
+    "configuration_pairs": 145
+  },
+  "input_contract": "Published text-free prediction exports + source-backed prepared local test gold + retained shared document multiplicities",
+  "checks_against_saved_results": {
+    "run_scores": {
+      "rows": 155,
+      "cells": 1240,
+      "all_saved_values_match": true
+    },
+    "run_pairs": {
+      "rows": 3935,
+      "cells": 216425,
+      "all_saved_values_match": true
+    },
+    "configuration_pairs": {
+      "rows": 145,
+      "cells": 3770,
+      "all_saved_values_match": true
+    },
+    "bootstrap": {
+      "rows": 1305,
+      "cells": 11745,
+      "all_saved_values_match": true
+    }
+  },
+  "prepared_gold": [
+    {
+      "path": "data/local/processed/acl/test.jsonl",
+      "bytes": 482095,
+      "sha256": "025b71ecff99c2dad85d227b4c01edd2eb0b27a5fb2fdfdd67a727612c74946b",
+      "dataset": "ACL RD-TEC 2.0"
+    },
+    {
+      "path": "data/local/processed/genia/test.jsonl",
+      "bytes": 10292230,
+      "sha256": "a2574c6264407766dd48e881ec271230f58b7572e9d08aaca14358b9eb331113",
+      "dataset": "GENIA"
+    },
+    {
+      "path": "data/local/processed/cl/test.jsonl",
+      "bytes": 32478089,
+      "sha256": "5e4cc090579446b781ffb3e5878a50449fc9d5996dd22a29bd4f8464536985c4",
+      "dataset": "CL-RuTerm3"
+    }
+  ],
+  "implementation": [
+    {
+      "path": "scripts/reproduce_gold_agreement.py",
+      "bytes": 23025,
+      "sha256": "7e624ab5587e837b08586043f4a4c7d2222f4aa1761aa3a308cbf6130e3ce92a"
+    },
+    {
+      "path": "src/ate_paper/analysis/matching.py",
+      "bytes": 6756,
+      "sha256": "5278dae1adafb00dad946fc975db700f365f5775272395c7d7ae68ea84af7c1a"
+    },
+    {
+      "path": "src/ate_paper/analysis/statistics.py",
+      "bytes": 1248,
+      "sha256": "cadfd72e72abfbd3ae001b5882fdbe826042669e3b70345b1288bca9ba470db7"
+    },
+    {
+      "path": "src/ate_paper/analysis/io.py",
+      "bytes": 4538,
+      "sha256": "1bbe4d8b5dde288887f8bcea96f7515065cbb88de3f22d28d4fe877a59fd3f63"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "ambiguous_units.csv",
+      "bytes": 1077,
+      "sha256": "bc846fa0a11f8dfdbe03e7e9b2aea7e93cf101a75f9bb69ab09309cd688de29a"
+    },
+    {
+      "path": "assignments_05.csv.gz",
+      "bytes": 8095348,
+      "sha256": "e03e99326494df43bc84cc9fbd1e3a021b16a09a0409820fab56d99bffb7e930"
+    },
+    {
+      "path": "bootstrap.csv",
+      "bytes": 159557,
+      "sha256": "ac5aecb50c5b41a86aaf1589d678637cea53f691c59abc1f828c60aa260307bb"
+    },
+    {
+      "path": "configuration_pairs.csv",
+      "bytes": 56326,
+      "sha256": "6bdcb0a54180f17aeddb48eba41cde2705f92cbb1429b06848a126983db77b98"
+    },
+    {
+      "path": "protocol.json",
+      "bytes": 604,
+      "sha256": "af8fe38331a9b88344f300066fea8f1f21f5add13a56c5e706cc1d055611d1ed"
+    },
+    {
+      "path": "run_pairs.csv",
+      "bytes": 1541639,
+      "sha256": "d53f541f9ccc0b9ddf5b945ae6b6b4fa472402a35da4bcd362d217a41276acb2"
+    },
+    {
+      "path": "run_scores.csv",
+      "bytes": 10809,
+      "sha256": "853bbee7593068a67aa27492ee848ed36e3117bfc7a4ec6187581d24debfcc57"
+    },
+    {
+      "path": "transitions.csv",
+      "bytes": 498629,
+      "sha256": "6eb7a434702a79d95d66b68d191fa7e3438d972ccd7be466634f70859a432d22"
+    }
+  ],
+  "bootstrap": {
+    "acl_draws": 5000,
+    "genia_draws": 5000,
+    "cl_draws": 10000,
+    "training_seeds_resampled": false,
+    "interval": "Nominal percentile 95% conditional on saved runs"
+  },
+  "limitations": [
+    "Same matching producer algorithm ported; this is reproduction, not an independent alternative matching implementation",
+    "This audit covers supervised gold-ID matching and its corresponding point estimates/intervals",
+    "Model training and LLM generation are not reproduced"
+  ]
+}

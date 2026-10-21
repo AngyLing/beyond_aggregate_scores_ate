@@ -1,0 +1,12 @@
+{
+  "status": "POST_HOC_DESCRIPTIVE_CALIBRATION",
+  "scope": "Current accepted supervised run scores and active applicable profile coordinates; 10/10/11 models x five saved seeds",
+  "original_margins": {
+    "pr_each": 0.02,
+    "maximum_profile": 0.05
+  },
+  "empirical_quantile": "Nearest rank, ceil(q*n)-1 on all within-configuration run pairs in a corpus; model pairs are dependent",
+  "radial_calibration": "q80 of max(max(|delta P|,|delta R|)/0.02, max profile distance/0.05), then scale both original margins equally",
+  "stable_condition": "Both configuration means pass the joint margins and at least 20 of 25 cross-configuration saved-run pairs pass them",
+  "limitations": "Thresholds chosen from the same test panel are exploratory reference scales, not equivalence margins, significance tests, or a new confirmatory screen. Profiles condition on fixed gold and five saved training seeds."
+}

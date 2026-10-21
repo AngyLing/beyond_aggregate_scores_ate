@@ -1,0 +1,12 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+# Source artifacts carry byte-level provenance hashes. Preserve their endings.
+results/** -text
+predictions/** -text
+prompts/** -text
+LICENSES/** -text
+*.gz binary
+*.pdf binary
+*.npz binary

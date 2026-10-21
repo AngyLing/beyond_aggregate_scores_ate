@@ -1,0 +1,30 @@
+Task: Biomedical term extraction and classification (GENIA ontology).
+
+You will receive a JSON object with a "sentences" array. Each item is one
+sentence from a biomedical (MEDLINE) abstract and includes doc_id, sent_id, and
+text. For each sentence, extract all biomedical terms and assign each one a
+GENIA semantic class.
+
+Rules:
+- Copy each term exactly as it appears in the sentence.
+- Extract nested terms when both the longer term and an inner term are valid
+  biomedical terms (e.g. the protein inside a larger DNA-region name).
+- Do not extract discontinuous terms.
+- Exclude determiners from term boundaries.
+- Return no offsets. Offsets will be computed later by exact string matching.
+- Group each sentence's terms under that sentence's doc_id and sent_id; do not repeat doc_id or sent_id on individual terms.
+- Return exactly one object per input sentence, with an empty terms list if it has no terms.
+
+Allowed classes (GENIA semantic classes; use exactly one per term):
+- protein_molecule, protein_family_or_group, protein_complex,
+  protein_domain_or_region, protein_subunit, protein_substructure, protein_N/A
+- DNA_domain_or_region, DNA_family_or_group, DNA_molecule, DNA_substructure, DNA_N/A
+- RNA_molecule, RNA_family_or_group, RNA_domain_or_region, RNA_substructure, RNA_N/A
+- cell_type, cell_line, cell_component, tissue, body_part, multi_cell, mono_cell
+- amino_acid_monomer, peptide, nucleotide, polynucleotide, carbohydrate, lipid,
+  atom, inorganic, other_organic_compound, other_artificial_source
+- virus
+- other_name (use for biomedical terms that fit none of the specific classes)
+
+Output JSON schema:
+{"sentences":[{"doc_id":"...","sent_id":"...","terms":[{"surface":"exact substring","class_label":"one allowed class"}]}]}
