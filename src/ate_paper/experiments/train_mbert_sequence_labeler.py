@@ -34,7 +34,7 @@ NON_SPAN_TEXT_UNIT_TYPES = {
 def normalize_surface(text):
     # Lowercase like every span gold's norm and the LLM writer's normalize_lower:
     # a case-preserving norm can never match the lowercased gold in norm-keyed
-    # metrics (type_f1, MentionTypeGap) -- review L-G1. Sole call site is the
+    # metrics (type_f1, MentionTypeGap). Sole call site is the
     # prediction row's "norm" field.
     return re.sub(r"\s+", " ", str(text).strip()).lower()
 
@@ -894,11 +894,8 @@ def train_model(model, tokenizer, train_features, dev_features, dev_units, id_to
             "dev_strict_span_f1": best_threshold_metrics["strict_span_f1"] if best_threshold_metrics else None,
             "dev_class_aware_f1": best_threshold_metrics["class_aware_f1"] if best_threshold_metrics else None,
             "dev_threshold_results": threshold_results,
-            # Wall-clock split: the training batches alone vs the whole epoch
-            # (training + dev loss + dev threshold sweep + checkpointing). The gap
-            # between the two is the CPU-bound dev post-processing this project's
-            # speed audit flagged; recorded so a recipe change's speed claim can be
-            # read off the report instead of re-profiled.
+            # Record training-batch time separately from total epoch time, which
+            # also includes dev loss, the dev threshold sweep and checkpointing.
             "train_seconds": train_seconds,
             "epoch_seconds": round(time.monotonic() - epoch_started, 1),
         })
@@ -1164,8 +1161,7 @@ def train_and_predict(args):
     # BertPreTokenizer, XLM-R uses WhitespaceSplit+Metaspace -- verified
     # statically on the local checkpoints, 2026-08-22), so the flag is a no-op
     # here; it is kept for uniformity across entry points and transformers
-    # versions, with a fallback where the kwarg is rejected. Runtime
-    # equivalence check: scripts/validate/check_tokenizer_flag_equivalence.py.
+    # versions, with a fallback where the kwarg is rejected.
     try:
         tokenizer = AutoTokenizer.from_pretrained(tokenizer_source, fix_mistral_regex=True, **tokenizer_load_kwargs)
     except TypeError:

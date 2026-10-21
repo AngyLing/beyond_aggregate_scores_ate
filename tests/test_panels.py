@@ -22,7 +22,7 @@ def row(doc,start,end,label='Specific',dataset='ACL RD-TEC 2.0',split='test'):
             'norm':text[start:end].lower() if start is not None else None,'class_label':label}
 
 
-@unittest.skipIf(panels is None, "Install requirements-analysis.lock for numerical tests")
+@unittest.skipIf(panels is None, "Install the analysis profile from requirements.lock for numerical tests")
 class PanelsContracts(unittest.TestCase):
     def test_data_stats_preserve_duplicate_class_offsets_and_negative_units(self):
         rows=[row('a',0,16),row('a',0,10),row('a',0,5),row('a',0,5,'Common'),
@@ -144,6 +144,9 @@ class PanelsContracts(unittest.TestCase):
             self.assertIn('0.6666666666666666',text)
             self.assertFalse((out/'bootstrap.csv').exists())
             self.assertTrue(manifest['inputs_unchanged'])
+            tracked = {Path(item['path']).resolve() for item in manifest['inputs']}
+            self.assertIn(Path(panels.__file__).resolve().parents[1] / 'io.py', tracked)
+            self.assertIn(Path(panels.__file__).resolve().parent / 'matching.py', tracked)
             with self.assertRaises(FileExistsError):panels.reproduce_panels(root,source,out,skip_bootstrap=True)
             def fake_draws(_root,dataset,unit_docs):
                 docs=sorted(unit_docs,reverse=True)

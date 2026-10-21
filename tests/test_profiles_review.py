@@ -67,6 +67,10 @@ class ProfilesReviewContracts(unittest.TestCase):
         self.assertEqual(names,['LOCAL_PREDICTIONS/acl/supervised/m_seed42/predictions.jsonl',
                                 'LOCAL_PREDICTIONS/acl/supervised/m_seed43/predictions.jsonl'])
         self.assertEqual(len(set(names)),2)
+        shared = Path(fixed.__file__).resolve().parents[1] / 'io.py'
+        receipts = [item for item in result['implementation'] if item['path'] == shared.name]
+        self.assertEqual(len(receipts), 1)
+        self.assertEqual(receipts[0]['sha256'], fixed.sha256(shared))
 
     def test_saved_and_fresh_profiles_reject_missing_negative_test_unit(self):
         with tempfile.TemporaryDirectory() as folder:

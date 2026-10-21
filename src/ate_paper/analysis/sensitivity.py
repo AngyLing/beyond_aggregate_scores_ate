@@ -15,6 +15,8 @@ from collections import defaultdict
 from fractions import Fraction
 from pathlib import Path
 
+from ate_paper.io import write_csv
+
 import numpy as np
 
 from .io import DATASETS, SLUGS, nesting_categories, read_csv, span_set
@@ -338,16 +340,6 @@ def receipt(path):
     return {"path": str(path), "sha256": sha256(path), "bytes": path.stat().st_size}
 
 
-def write_csv(path, rows):
-    if not rows:
-        return
-    fields = list(dict.fromkeys(k for row in rows for k in row))
-    with path.open("x", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
-
-
 def verify_producer(root, source, required, prediction_root):
     manifest_path = source / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -467,12 +459,13 @@ def run(root, gold_output, data_dir, output, datasets=DATASETS,
     paths = [output / "summary.json", output / "configuration_sensitivity.csv"]
     status = "COMPUTED" if prediction_root is not None else "PASS"
     paths[0].write_text(json.dumps({"status": status, "results": results}, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
-    write_csv(paths[1], detail)
+    write_csv(paths[1], detail, empty="skip")
     if ambiguity:
         path = output / "ambiguity_sensitivity.csv"
-        write_csv(path, ambiguity)
+        write_csv(path, ambiguity, empty="skip")
         paths.append(path)
-    implementations = [Path(__file__), root / "src/ate_paper/analysis/matching.py",
+    implementations = [Path(__file__), Path(__file__).parents[1] / "io.py",
+                       root / "src/ate_paper/analysis/matching.py",
                        root / "src/ate_paper/analysis/statistics.py", root / "src/ate_paper/analysis/io.py",
                        root / "scripts/reproduce_sensitivity.py"]
     manifest = {"status": status, "checks_against_saved_results": checks,

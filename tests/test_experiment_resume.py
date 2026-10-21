@@ -15,7 +15,8 @@ class ExperimentResumeTest(unittest.TestCase):
         self.addCleanup(self.folder.cleanup)
         self.root = (Path(self.folder.name) / "repo").resolve()
         for name in ["src/ate_paper/experiments/example.py", "scripts/run_experiments.py",
-                     "src/ate_paper/prepare/__init__.py", "prompts/shared_system_base.txt"]:
+                     "src/ate_paper/prepare/__init__.py", "src/ate_paper/io.py",
+                     "prompts/shared_system_base.txt"]:
             p = self.root / name
             p.parent.mkdir(parents=True, exist_ok=True)
             p.write_text("# toy fixture\n")
@@ -62,6 +63,12 @@ class ExperimentResumeTest(unittest.TestCase):
         item = self.item()
         self.save_plan(item)
         (self.root / "src/ate_paper/experiments/example.py").write_text("# changed fixture\n")
+        self.reject_without_work([item], "code or prompts differ")
+
+    def test_changed_shared_file_helper_prevents_resume(self):
+        item = self.item()
+        self.save_plan(item)
+        (self.root / "src/ate_paper/io.py").write_text("# changed shared fixture\n")
         self.reject_without_work([item], "code or prompts differ")
 
     def test_changed_prompt_prevents_resume(self):

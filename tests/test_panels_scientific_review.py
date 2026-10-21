@@ -72,7 +72,7 @@ def reference_draws(gold,predictions,docs,weights):
     return {name:np.array(values) for name,values in answers.items()}
 
 
-@unittest.skipIf(panels is None, "Install requirements-analysis.lock for numerical tests")
+@unittest.skipIf(panels is None, "Install the analysis profile from requirements.lock for numerical tests")
 class IndependentScientificContracts(unittest.TestCase):
     def test_boundary_gap_ties_follow_saved_order_and_unique_offsets(self):
         gold=[row('d',0,1),row('d',0,3),row('d',0,1,'Other')]

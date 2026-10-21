@@ -92,7 +92,7 @@ class CLIParsing(unittest.TestCase):
         try:
             from ate_paper.analysis.sensitivity import run
         except ImportError:
-            self.skipTest('Install requirements-analysis.lock for numerical runtime import')
+            self.skipTest('Install the analysis profile from requirements.lock for numerical runtime import')
         with self.assertRaisesRegex(ValueError, 'only available for the saved prediction release'):
             run(ALT, ALT / 'no_producer', ALT / 'no_data', ALT / 'build/no_writes',
                 ['ACL RD-TEC 2.0'], ALT / 'fresh', skip_bootstrap=True, check_saved=True)

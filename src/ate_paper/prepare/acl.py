@@ -1,6 +1,5 @@
 """ACL RD-TEC 2.0 sentence conversion; retain term-free sentence placeholders.
 
-Adapted from the study's scripts/convert/acl_rd_tec2_converter.py.
 Only annotator1 and annotator2 inputs are read; duplicated derived views are ignored.
 """
 import random
@@ -105,8 +104,6 @@ def convert_xml(xml_file, split, annotator_id):
         if not terms:
             # Zero-term sentence: emit one sentence-level negative placeholder row
             # so the sentence survives conversion instead of contributing nothing.
-            # Same convention as ate_it_a_converter.py / acter_v15_converter.py /
-            # genia_converter.py.
             rows.append({
                 **base,
                 "surface": None,

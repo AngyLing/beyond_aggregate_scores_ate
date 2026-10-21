@@ -27,7 +27,10 @@ else:
 
 
 def script(name, candidate=False):
-    path = ROOT / 'scripts' / (name + '.py')
+    if name in {'reproduce_gold_agreement', 'reproduce_no_witness', 'reproduce_nesting_contrasts'}:
+        path = ROOT / 'src/ate_paper/analysis' / (name.removeprefix('reproduce_') + '.py')
+    else:
+        path = ROOT / 'scripts' / (name + '.py')
     spec = importlib.util.spec_from_file_location(name + ('_candidate' if candidate else ''), path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -42,7 +45,7 @@ def write_csv(path, rows, fields=None):
         writer.writerows(rows)
 
 
-@unittest.skipIf(sensitivity is None, "Install requirements-analysis.lock for numerical tests")
+@unittest.skipIf(sensitivity is None, "Install the analysis profile from requirements.lock for numerical tests")
 class GoldReviewCorners(unittest.TestCase):
     def test_common_six_is_fixed_when_only_acl_is_selected(self):
         module = script('reproduce_no_witness', True)
@@ -146,6 +149,10 @@ class GoldReviewCorners(unittest.TestCase):
                     patch.object(analysis_io, 'load_document_draws', side_effect=AssertionError('bootstrap was skipped')):
                 result = sensitivity.run(root, source, data, output, ['CL-RuTerm3'], fresh, True)
             self.assertEqual(result['status'], 'COMPUTED')
+            shared = Path(sensitivity.__file__).resolve().parents[1] / 'io.py'
+            receipts = [item for item in result['implementation'] if item['path'] == str(shared)]
+            self.assertEqual(len(receipts), 1)
+            self.assertEqual(receipts[0]['sha256'], hashlib.sha256(shared.read_bytes()).hexdigest())
             summary = json.loads((output / 'summary.json').read_text(),
                                  parse_constant=lambda x: (_ for _ in ()).throw(ValueError(x)))
             self.assertEqual(summary['results']['cl_equal_optimum_assignments']['global_equal_optimum_combinations'], 1)

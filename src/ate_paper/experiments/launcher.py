@@ -136,7 +136,8 @@ def plan_record(record: dict, processed_root: Path, output_root: Path,
 def execution_sources(items: list[dict]) -> dict[str, str]:
     """Bind a resumed run to the actual local programs and prompts it uses."""
     files = set((ROOT / "src/ate_paper/experiments").glob("*.py"))
-    files.update({ROOT / "scripts/run_experiments.py", ROOT / "src/ate_paper/prepare/__init__.py"})
+    files.update({ROOT / "scripts/run_experiments.py", ROOT / "src/ate_paper/prepare/__init__.py",
+                  ROOT / "src/ate_paper/io.py"})
     for item in items:
         for relative in item.get("prompt_files", []):
             path = ROOT / relative

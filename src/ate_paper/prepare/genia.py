@@ -1,7 +1,6 @@
 """GENIA 3.02 conversion for the paper: span coordination, drop fragments, 36 labels.
 
-Adapted from the study's scripts/convert/genia_converter.py. The XML walker
-recurses through unclassified wrappers to retain classified descendants.
+The XML walker recurses through unclassified wrappers to retain classified descendants.
 """
 import random
 import re

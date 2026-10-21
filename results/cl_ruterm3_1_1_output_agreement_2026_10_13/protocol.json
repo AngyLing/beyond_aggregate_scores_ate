@@ -11,7 +11,6 @@
     "flat_tp_turnover",
     "fp_no_witness_share"
   ],
-  "draw_source": "results/cl_ruterm3_1_1_dependencies_2026_10_13/statistics/document_draws.npz",
   "draw_seed": 12345,
   "draws": 10000,
   "sampling": "317 full text units with replacement; shared multiplicities across all fixed outputs",
@@ -19,5 +18,6 @@
   "within_reference": "larger available within-configuration mean, recomputed in each draw",
   "zero_denominators": "undefined constituent invalidates fixed-population mean",
   "intervals": "nominal exploratory percentile 95%; no multiplicity adjustment or equivalence claim",
-  "profile": "current CL raw recall slices at support >=30 plus applicable Class/Boundary/Nested gaps; family weighting exploratory"
+  "profile": "current CL raw recall slices at support >=30 plus applicable Class/Boundary/Nested gaps; family weighting exploratory",
+  "historical_draw_file": "document_draws.npz"
 }

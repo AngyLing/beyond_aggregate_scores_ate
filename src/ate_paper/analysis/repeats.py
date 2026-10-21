@@ -1,8 +1,7 @@
 """Exact full-test F1 movement for the article's 25 selected LLM pairs.
 
-Port of OLD scripts/validate/build_llm_full_repeat_limitations.py. The only
-scoring helpers retained from evaluate_minimal_metrics.py are exact span sets
-and PRF; CL is scored directly against its prepared current test reference.
+Scores exact span sets using precision, recall and F1.
+CL is scored against its prepared current test reference.
 """
 from __future__ import annotations
 

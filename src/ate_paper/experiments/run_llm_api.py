@@ -155,7 +155,7 @@ def usage_counts(prompt, payload, text, usage):
 def build_raw_record(args, batch_id, provider_model, meta, text, usage, created_at, prompt, payload, attempt):
     prompt_tokens, completion_tokens, batch_total, usage_source = usage_counts(prompt, payload, text, usage)
     # Flag output-cap saturation at capture time, so truncated/degenerate outputs
-    # are distinguishable from JSON-contract failures downstream (L-transport-1).
+    # are distinguishable from JSON-contract failures downstream.
     provider_completion = (usage or {}).get("completion_tokens") or (usage or {}).get("output_tokens")
     cap_hit = bool(args.max_output_tokens) and bool(provider_completion) and provider_completion >= args.max_output_tokens
     return {

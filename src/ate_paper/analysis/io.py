@@ -2,20 +2,16 @@
 
 from __future__ import annotations
 
-import csv
 from collections import defaultdict
 from pathlib import Path
+
+from ate_paper.io import read_csv
 
 from ate_paper.predictions import CorpusIndex, inside_root, read_jsonl, sha256, release_record, validate_record
 
 DATASETS = ("ACL RD-TEC 2.0", "GENIA", "CL-RuTerm3")
 SLUGS = {"ACL RD-TEC 2.0": "acl", "GENIA": "genia", "CL-RuTerm3": "cl"}
 DRAW_NAMES = {"ACL RD-TEC 2.0": "acl_rd_tec_2_0", "GENIA": "genia_3_02", "CL-RuTerm3": "cl_ruterm3_1_1"}
-
-
-def read_csv(path: Path) -> list[dict]:
-    with path.open(newline="", encoding="utf-8") as stream:
-        return list(csv.DictReader(stream))
 
 
 def span_set(records, dataset):
@@ -80,7 +76,6 @@ def load_fixed_dataset(root: Path, gold_dir: Path, dataset: str, prediction_root
     return specs, gold, predictions, docs, weights, [source, draw_path, config_path, *input_paths]
 
 
-
 def nesting_categories(keys):
     sentences = defaultdict(list)
     for key in keys:
@@ -96,7 +91,6 @@ def nesting_categories(keys):
             categories[key] = ("both" if inner and outer else "inner-only" if inner
                                else "outer-only" if outer else "flat")
     return categories
-
 
 
 def base_roster(root: Path, dataset: str, groups=None) -> tuple[list[dict], Path]:

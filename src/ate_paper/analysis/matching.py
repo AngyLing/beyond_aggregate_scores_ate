@@ -160,3 +160,25 @@ def match_unit(
     assert len({g for g, *_ in out}) == len(out)
     assert len({p for _, p, *_ in out}) == len(out)
     return sorted(out), ambiguous
+
+
+def near_boundary_mask(keys, prediction_keys, threshold=0.5):
+    """Original many-to-one presence screen; exact membership is a fast path."""
+    by_sentence = defaultdict(list)
+    for key in prediction_keys:
+        by_sentence[key[:2]].append(key[2:])
+    result = np.zeros(len(keys), dtype=bool)
+    for i, key in enumerate(keys):
+        if key in prediction_keys:
+            result[i] = True
+            continue
+        start, end = key[2:]
+        for other_start, other_end in by_sentence[key[:2]]:
+            if other_end <= start or end <= other_start:
+                continue
+            overlap = max(0, min(end, other_end) - max(start, other_start))
+            union = max(end, other_end) - min(start, other_start)
+            if union and overlap / union >= threshold:
+                result[i] = True
+                break
+    return result

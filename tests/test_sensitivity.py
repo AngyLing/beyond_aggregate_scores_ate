@@ -18,7 +18,7 @@ else:
         verify_producer, check_producer_inputs)
 
 
-@unittest.skipIf(aggregate is None, "Install requirements-analysis.lock for numerical tests")
+@unittest.skipIf(aggregate is None, "Install the analysis profile from requirements.lock for numerical tests")
 class SensitivityTest(unittest.TestCase):
     def test_distance_and_undefined(self):
         row = {"exact_a": 2, "exact_b": 4, "exact_common": 1}

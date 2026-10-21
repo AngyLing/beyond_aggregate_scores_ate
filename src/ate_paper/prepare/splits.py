@@ -1,7 +1,7 @@
 """The paper's document holdout: seed 42, rounded 10% annotation-row target.
 
 Negative placeholders count as rows. Whole documents are added until the target
-is reached or exceeded. Adapted from prepare_mbert_train_dev_splits.py.
+is reached or exceeded.
 """
 import random
 from collections import defaultdict

@@ -34,7 +34,7 @@ NON_SPAN_TEXT_UNIT_TYPES = {
 }
 
 
-def normalize_surface(text):  # lowercases: see train_mbert_sequence_labeler.normalize_surface (L-G1)
+def normalize_surface(text):  # lowercases: see train_mbert_sequence_labeler.normalize_surface
     return re.sub(r"\s+", " ", str(text).strip()).lower()
 
 
@@ -422,11 +422,8 @@ def build_span_features(
         # "gold span was inside a window but no candidate matched its exact offsets"
         # (a genuine tokenizer-boundary/candidate-generation miss). Both used to be
         # folded into one counter, which conflates a windowing config choice with an
-        # actual property of the encoder being evaluated (see
-        # probe_span_encoder_alignment.py, which reuses this same code path to gate
-        # domain-encoder acceptance -- a window-truncation-inflated number there would
-        # unfairly penalize whichever tokenizer happens to be least compact per
-        # character, independent of how well it aligns term boundaries).
+        # actual property of the encoder being evaluated. Keeping the counters
+        # separate distinguishes window truncation from term-boundary alignment.
         unit_window_ranges = []
 
         for window_index in range(window_count):
@@ -685,9 +682,7 @@ def load_model_bundle(model_dir, device=None, scibert_do_lower_case=None):
     model_dir = Path(model_dir)
     config = read_json(model_dir / "span_classifier_config.json")
     # Deliberately plain (no fix_mistral_regex, unlike the BIO entry points):
-    # the flag is a no-op for the tokenizers this pipeline loads (see
-    # scripts/validate/check_tokenizer_flag_equivalence.py), and the published
-    # span pipeline is left byte-stable rather than unified cosmetically.
+    # the flag is a no-op for the tokenizers this pipeline loads.
     stored_casing = config.get("scibert_do_lower_case")
     if scibert_do_lower_case is not None and stored_casing is not None and scibert_do_lower_case != stored_casing:
         raise ValueError("SciBERT casing differs from the trained model bundle.")

@@ -1,6 +1,5 @@
 """Convert the official CL-RuTerm3 1.1 train/dev/test files without repartitioning.
 
-Adapted from the study's scripts/convert/cl_ruterm3_converter.py.
 ROW_VERSION preserves the original normalized-row identifier, not corpus release.
 """
 import json

@@ -2,6 +2,7 @@
 /data/local/
 /build/
 .venv/
+.idea/
 __pycache__/
 *.py[cod]
 *.egg-info/

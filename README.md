@@ -4,6 +4,8 @@ Code, **214 saved prediction files** and numerical references for **Beyond Aggre
 
 On 2026-10-20, all **17 calculation blocks** were recomputed on ACL RD-TEC 2.0, GENIA Term Corpus v3.02 and CL-RuTerm3 1.1 / test reference v4. All comparisons passed at absolute tolerance `1e-10`; the maximum difference was `2.22e-16` (floating-point rounding).
 
+A later code reorganization was checked with synthetic fixtures; full-corpus calculations were not repeated.
+
 ## Recompute results from the saved predictions
 
 Run the following commands from the repository root in a POSIX shell (for example, bash or zsh) with `mktemp` available. Python **3.11.5**, NumPy **2.4.6** and SciPy **1.17.1** were used for the checked analysis. This workflow uses the included predictions; it needs no GPU, model weights or API keys.
@@ -13,10 +15,10 @@ Run the following commands from the repository root in a POSIX shell (for exampl
 ```sh
 python3.11 -m venv build/venvs/analysis &&
 . build/venvs/analysis/bin/activate &&
-python -m pip install -r requirements-analysis.lock
+python scripts/install_dependencies.py analysis
 ```
 
-Keep this environment active for preparation and all seven calculations. The scripts work directly from the checkout; installing the repository as a Python package is unnecessary.
+The single [requirements.lock](requirements.lock) stores exact versions in separate TOML profiles; use the installer above to select one. It checks the recorded CPython version (including the patch version), installs the selected packages and runs `pip check`. Ensure `python3.11` is **CPython 3.11.5** before creating the analysis environment. Keep this environment active for preparation and all seven calculations. The scripts work directly from the checkout; installing the repository as a Python package is unnecessary.
 
 ### 2. Obtain and prepare the corpora
 
@@ -83,23 +85,45 @@ The output JSON reports compare calculated values with the saved references. In 
 - [predictions/](predictions/): 214 text-free gzip JSONL files, the run/hash manifest and the 25 LLM repeat-pair definitions; about 29 MB, without Git LFS.
 - [results/](results/): full-precision numerical references and the three shared document-draw arrays.
 - [data/](data/): source links, input identities and split definitions; corpora are obtained separately.
-- [src/ate_paper/](src/ate_paper/) and [scripts/](scripts/): preparation, scoring and calculation code; experiment-generation programs are also retained.
+- [scripts/](scripts/): command-line entry points and artifact-maintenance tools. [src/ate_paper/](src/ate_paper/): shared preparation, scoring and calculation modules; experiment-generation programs are also retained.
 - [prompts/](prompts/): the prompts used by the saved LLM runs.
 - [run_settings.json](run_settings.json): the settings registry for all 214 selected artifacts.
-- [tests/](tests/): code checks; [requirements-analysis.lock](requirements-analysis.lock) pins analysis dependencies. Other `requirements-*.lock` files cover optional training and LLM generation.
+- [tests/](tests/): code checks; [requirements.lock](requirements.lock) contains `analysis`, `supervised-cu128`, `llm-july` and `llm-august` dependency profiles. Install each required profile in its own virtual environment; their NumPy and SDK versions differ.
 - [LICENSES/](LICENSES/): retained dataset notices and their scope.
+
+### Dependencies for generating new predictions
+
+Use a separate virtual environment for each required profile. The LLM profiles use **CPython 3.11.5** on Linux or macOS:
+
+```sh
+python3.11 -m venv build/venvs/llm-july &&
+build/venvs/llm-july/bin/python scripts/install_dependencies.py llm-july
+
+python3.11 -m venv build/venvs/llm-august &&
+build/venvs/llm-august/bin/python scripts/install_dependencies.py llm-august
+```
+
+The training profile uses **CPython 3.13.15 with GIL**, Linux x86_64, glibc ≥2.28 and the CUDA 12.8 build of PyTorch. Ensure `python3.13` has that version:
+
+```sh
+python3.13 -m venv build/venvs/supervised &&
+build/venvs/supervised/bin/python scripts/install_dependencies.py supervised-cu128
+```
+
+These commands install dependencies only. Training additionally requires a compatible NVIDIA driver/GPU. To inspect any profile without installing it, use `python scripts/install_dependencies.py analysis --show`, replacing `analysis` with the required profile name.
 
 ## Optional checks
 
 ```sh
-make verify
-make test
+python scripts/verify_predictions.py
+python scripts/verify_saved_results.py
+PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
-These optional checks require `make`. `make verify` checks prediction hashes/schema and saved numerical arithmetic against the retained numeric references. It only reads the package and prints its report. `make test` runs synthetic tests with the analysis dependencies installed above. Neither command trains models or calls a hosted service.
+The first two commands check prediction hashes/schema and saved numerical arithmetic against the retained numeric references. They only read the package and print their reports. The last command runs synthetic tests with the analysis dependencies installed above. These checks do not train models or call a hosted service.
 
 ## Interpretation and licenses
 
 The calculations are conditional on fixed saved outputs. Seed SD is descriptive; the document-bootstrap intervals are nominal and do not establish linguistic validity or confirmatory significance. Historical provenance limitations include SciBERT tokenizer/runtime binding, three unavailable original Gemini raw responses and the independence of repeat pair P07. These do not prevent rescoring the included predictions.
 
-Source links and citations are recorded in [data/SOURCES.md](data/SOURCES.md); notices are under [LICENSES/](LICENSES/). These notices apply to their respective materials. Git commits, a publication remote and new experiment runs are not requirements for using the local saved-prediction workflow.
+Source links and citations are recorded in [data/SOURCES.md](data/SOURCES.md); notices are under [LICENSES/](LICENSES/). These notices apply to their respective materials.

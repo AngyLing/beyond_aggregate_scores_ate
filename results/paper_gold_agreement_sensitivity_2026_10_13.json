@@ -2,8 +2,7 @@
   "status": "PASS",
   "sources": [
     "results/relaxed_gold_id_agreement_2026_10_13/run_pairs.csv",
-    "results/relaxed_gold_id_agreement_2026_10_13/configuration_pairs.csv",
-    "results/relaxed_gold_id_agreement_2026_10_13/assignments_05.csv.gz"
+    "results/relaxed_gold_id_agreement_2026_10_13/configuration_pairs.csv"
   ],
   "limitations": "ACL IoU=0.75 pair counts are independently checked against raw gold and predictions; GENIA and CL IoU=0.75 use accepted producer pair counts. All summaries are fixed-output point estimates.",
   "results": {
@@ -124,5 +123,8 @@
       "run_pairs_checked": 1225,
       "gold_offsets": 799
     }
-  }
+  },
+  "historical_source_files": [
+    "assignments_05.csv.gz"
+  ]
 }

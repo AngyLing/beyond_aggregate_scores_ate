@@ -189,9 +189,7 @@ def main():
     parser.add_argument("--class-scheme", choices=list(llm.GENIA_CLASS_SCHEMES), default="full",
                         help="genia ablation: class-scheme granularity 36 (full) vs 6 (coarse6); targets ClassGap.")
     parser.add_argument("--shots", type=int, choices=[0], default=0,
-                        help="few-shot arm: prepend k worked task demonstrations "
-                             "(train-split, built by build_fewshot_demos.py). "
-                             "Defined for cl_ruterm3_span_class and genia_span_class.")
+                        help="Number of demonstrations; only zero-shot extraction is supported.")
     parser.add_argument("--pilot", action="store_true")
     parser.add_argument("--pilot-frac", type=float, default=0.1)
     parser.add_argument("--pilot-max-items", type=int)

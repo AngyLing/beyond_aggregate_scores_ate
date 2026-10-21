@@ -26,7 +26,7 @@ ROOT = Path(ate_paper.__file__).resolve().parents[2]
 
 
 def script(name):
-    spec = importlib.util.spec_from_file_location(name, ROOT / "scripts" / (name + ".py"))
+    spec = importlib.util.spec_from_file_location(name, ROOT / "src/ate_paper/analysis" / (name.removeprefix("reproduce_") + ".py"))
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -40,7 +40,7 @@ def write_csv(path, rows, fields=None):
         writer.writerows(rows)
 
 
-@unittest.skipIf(interval is None, "Install requirements-analysis.lock for numerical tests")
+@unittest.skipIf(interval is None, "Install the analysis profile from requirements.lock for numerical tests")
 class AnalysisFreshEdgesTest(unittest.TestCase):
     def test_no_witness_empty_or_perfect_outputs_keep_undefined_ratios(self):
         module = script("reproduce_no_witness")

@@ -11,7 +11,7 @@ else:
     from ate_paper.analysis.statistics import interval, ratio, summarize_cloud
 
 
-@unittest.skipIf(interval is None, 'Install requirements-analysis.lock for numerical tests')
+@unittest.skipIf(interval is None, 'Install the analysis profile from requirements.lock for numerical tests')
 class AnalysisStatisticsTest(unittest.TestCase):
     def test_fixed_pair_means_and_within_max_are_recomputed_per_draw(self):
         values = np.array([[.8, .2, .1, .3], [.2, .4, .8, .1], [np.nan, .4, .1, .1]])

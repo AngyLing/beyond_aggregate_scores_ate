@@ -7,6 +7,7 @@ from collections import Counter
 from pathlib import Path
 
 from . import acl, acl_canonical, cl_ruterm3, genia, splits
+from ate_paper.io import sha256 as file_sha256
 
 
 DATASET_IDS = {"acl": "acl_rd_tec_2_0", "genia": "genia", "cl": "cl_ruterm3"}
@@ -17,14 +18,6 @@ EXPECTED_ROWS = {
 }
 UNIT_FIELDS = ("dataset", "version", "split", "language", "domain",
                "doc_id", "sent_id", "text", "unit_type")
-
-
-def file_sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
 
 
 def check_source_files(source_root: Path, dataset: str, manifest: dict) -> None:

@@ -1,6 +1,4 @@
 """Select one original annotation layer per ACL document, preferring ann1.
-
-Adapted from the study's scripts/convert/make_acl_rd_tec_2_canonical.py.
 """
 from collections import Counter, defaultdict
 

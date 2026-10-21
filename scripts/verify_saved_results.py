@@ -13,11 +13,14 @@ import itertools
 import json
 import math
 import statistics
+import sys
 from collections import defaultdict
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from ate_paper.io import read_csv as read_csv_file
 RESULTS = ROOT / "results"
 DATASETS = ("ACL RD-TEC 2.0", "GENIA", "CL-RuTerm3")
 
@@ -28,8 +31,7 @@ def require(condition: bool, message: str) -> None:
 
 
 def read_csv(relative: str) -> list[dict[str, str]]:
-    with (RESULTS / relative).open(encoding="utf-8", newline="") as stream:
-        return list(csv.DictReader(stream))
+    return read_csv_file(RESULTS / relative)
 
 
 def close(actual: float, expected: float, context: str) -> None:

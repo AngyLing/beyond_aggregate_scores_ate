@@ -175,11 +175,10 @@ def merge_prior_metadata(record, out):
     A run write and a parse write of one experiment target the same *_metadata.json: the
     run writer knows the decoding params (temperature/top_p/seed/api_model/base_url/
     max_output_tokens) but not the prediction output; parse is the reverse. Without this
-    merge the writer that runs last -- parse -- overwrote the run's frozen-decoding
-    provenance with nulls (58 committed records ended up decoding-null; see
-    reports/history/llm_pipeline_review_2026_08.md). Only null/absent fields are filled, never an
-    existing non-null value, so a genuinely different run (e.g. a differing batch size)
-    still differs on its own populated fields and is caught by preserve_superseded_metadata.
+    merge, a later parse write would overwrite the run's decoding provenance with
+    nulls. Only null/absent fields are filled, never an existing non-null value, so
+    a different run (e.g. a differing batch size) still differs on its own populated
+    fields and is caught by preserve_superseded_metadata.
     """
     out = Path(out)
     if not out.exists():
@@ -245,7 +244,7 @@ def stable_cache_key(provider, model, task, prompt_version, payload, temperature
     # prompt_sha hashes the ACTUAL system prompt sent, not just its version label:
     # a prompt file edited under the same version would otherwise resume from stale
     # cached responses. seed is part of the request for providers that honour it.
-    # Adding these fields changed every key once (2026-08-24, review L-G3): a resume
+    # Adding these fields changed every key once (2026-08-24): a resume
     # against a pre-existing raw cache misses and re-calls the API for those batches.
     body = json.dumps(
         {
@@ -632,7 +631,7 @@ def provider_api_call(provider, model, system_prompt, user_payload, schema, temp
             # No legacy google.generativeai fallback: it sent NO thinking config
             # (silently breaking the frozen decoding protocol for gemini-3 models)
             # and left no SDK marker in usage. Every documented runtime installs
-            # google-genai; require it (review L-transport-5).
+            # google-genai; require it.
             raise RuntimeError(
                 "The google-genai SDK is required for provider=gemini "
                 "(pip install google-genai); the legacy google.generativeai "
@@ -646,8 +645,7 @@ class LLMCallExhausted(ValueError):
     """Every retry produced unparseable output; carries the last raw response.
 
     Without this the failed-path raw record stored only str(exc) -- the parser's
-    error message -- and the model's actual final response text was lost
-    (code review L-parsing-5).
+    error message -- and the model's actual final response text was lost.
     """
 
     def __init__(self, message, last_text="", usage=None):
@@ -724,7 +722,7 @@ def prompt_content_hash(task, prompt_version=None, run_mode=None, ablation=None)
     """sha256 of the exact, fully-built system prompt (base + task text) sent to the
     model. `prompt_version` alone is a bare label -- it doesn't change when someone edits
     a task prompt file's *content* under the same name, so it can't distinguish two
-    different edits (task spec Gate 3: "record prompt version/hash"). This hash can.
+    different edits. This hash can.
     """
     text = build_system_prompt(task, prompt_version, run_mode, ablation)
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
@@ -909,7 +907,7 @@ def iter_sentence_terms(task, parsed):
             # A bare-string term (surface with no wrapper object) is the same
             # tolerated model quirk postprocess_spans coerces for grouped tasks;
             # .get() on a str would otherwise abort the whole parse run with an
-            # uncaught AttributeError (review L-parsing-3).
+            # uncaught AttributeError.
             if isinstance(term, str):
                 term = {"surface": term}
             if not isinstance(term, dict):
@@ -920,10 +918,9 @@ def iter_sentence_terms(task, parsed):
 def tolerant_source_lookup(source_by_id, doc_id, sent_id, stats):
     """Recover the source row when the model returned a mangled sentence header.
 
-    Applied only after the exact (doc_id, sent_id) lookup fails (review
-    L-parsing-2; e.g. GLM on GENIA echoed document MEDLINE:92142646 with a
-    bare-numeric doc_id, silently emptying the whole document). Two conservative
-    rules, each requiring a UNIQUE match within the batch:
+    Applied only after the exact (doc_id, sent_id) lookup fails. For example,
+    GLM on GENIA echoed document MEDLINE:92142646 with a bare-numeric doc_id.
+    Two conservative rules each require a UNIQUE match within the batch:
     1. same sent_id and a doc_id that is a substring of the real one (or vice
        versa) -- covers dropped/added prefixes like "MEDLINE:";
     2. a sent_id carried by exactly one row of the batch.
@@ -1003,7 +1000,7 @@ def postprocess_spans(task, batch_rows, parsed, stats, batch_id=None):
             if len(all_offsets) > 1:
                 # "Disambiguated" only when the context actually narrowed the
                 # candidates to ONE offset; a context that still matches several
-                # is counted separately (review L-grounding-3).
+                # is counted separately.
                 if len(offsets) == 1:
                     stats["context_disambiguated_surfaces"] = stats.get("context_disambiguated_surfaces", 0) + 1
                 else:
@@ -1015,10 +1012,8 @@ def postprocess_spans(task, batch_rows, parsed, stats, batch_id=None):
             stats["multiple_match_surfaces"] = stats.get("multiple_match_surfaces", 0) + 1
         for start, end in offsets:
             matched_surface = source.get("text", "")[start:end]
-            # Every span task lowercases norm: all span golds carry lowercased
-            # norms, and a case-preserving norm can never match one (review L-G1:
-            # acl_span_class alone fell to normalize_ws here, depressing every
-            # committed ACL type_f1 by +0.17..+0.21 and flipping MentionTypeGap).
+            # All span tasks use lowercased norms, matching the gold normalization
+            # required by norm-keyed metrics such as type_f1 and MentionTypeGap.
             norm = normalize_lower(matched_surface)
             row = {
                 "dataset": source.get("dataset"),
@@ -1172,7 +1167,7 @@ def run_pipeline(args):
     protocol = protocol_record(args, rows, run_datetime)
     system_prompt = build_system_prompt(args.task, args.prompt_version, "full")
     # Hash the prompt actually sent, so an edited prompt file (same version label)
-    # can never resume from stale cached responses (review L-G3).
+    # can never resume from stale cached responses.
     system_prompt_sha = hashlib.sha256(system_prompt.encode("utf-8")).hexdigest()
     schema = output_schema(args.task)
     # run_pipeline always builds the "full" prompt (see build_system_prompt call above), so

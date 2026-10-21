@@ -3,8 +3,7 @@
 
 A different submission path from run_llm_api.py (one async batch job at ~50%
 cost, best-effort within 24h) but it produces the *same* per-batch raw_*.json
-files, so parse_llm_outputs.py and summarize_llm_pilot.py consume the output
-unchanged.
+files, so parse_llm_outputs.py consumes the output unchanged.
 
 Each prepared batch (batch_0001 ...) is one JSONL line whose "custom_id" is the
 batch_id, so results (returned in arbitrary order) map straight back and any
@@ -67,7 +66,7 @@ def extract_from_output_line(line):
     if body.get("system_fingerprint") is not None:
         usage["system_fingerprint"] = body.get("system_fingerprint")
     # A 200 with EMPTY content must count as a failure (and so get re-run), not be
-    # written as an ok raw -- matches the Mistral/Anthropic runners (L-transport-4).
+    # written as an ok raw -- matches the Mistral/Anthropic runners.
     return resp.get("status_code") == 200 and bool(text), text, usage
 
 

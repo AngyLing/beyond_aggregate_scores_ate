@@ -5,12 +5,14 @@ output-agreement estimands preserve the original fixed-run/document-only rules.
 """
 from __future__ import annotations
 
-import csv
 import itertools
 import json
 import math
 from collections import Counter, defaultdict
 from pathlib import Path
+
+from ate_paper.io import write_csv
+from .matching import near_boundary_mask
 
 import numpy as np
 
@@ -41,11 +43,7 @@ def clean(value):
 
 
 def save_csv(path, records):
-    fields = list(dict.fromkeys(key for row in records for key in row))
-    with Path(path).open("x", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fields, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(clean(row) for row in records)
+    write_csv(Path(path), [clean(row) for row in records])
 
 
 def typed_status(spec):
@@ -168,22 +166,6 @@ def configuration_scores(dataset, scores):
             row[name + "_sample_sd"] = float(np.std(values, ddof=1)) if applicable and len(values) > 1 else None
         output.append(row)
     return output
-
-
-def near_boundary_mask(keys, prediction_keys, threshold=0.5):
-    by_sentence = defaultdict(list)
-    for key in prediction_keys:
-        by_sentence[key[:2]].append(key[2:])
-    result = np.zeros(len(keys), dtype=bool)
-    for i, key in enumerate(keys):
-        start, end = key[2:]
-        for other_start, other_end in by_sentence[key[:2]]:
-            overlap = max(0, min(end, other_end) - max(start, other_start))
-            union = max(end, other_end) - min(start, other_start)
-            if union and overlap / union >= threshold:
-                result[i] = True
-                break
-    return result
 
 
 def doc_vector(mask, key_docs, n_docs):
@@ -465,7 +447,8 @@ def reproduce_panels(root, data_dir, output_dir, prediction_root=None, skip_boot
     output_dir.mkdir(parents=True, exist_ok=False)
     outputs = defaultdict(list)
     inputs = {}
-    implementation = [Path(__file__), root / "scripts/reproduce_panels.py",
+    implementation = [Path(__file__), Path(__file__).parents[1] / "io.py",
+                      Path(__file__).parent / "matching.py", root / "scripts/reproduce_panels.py",
                       Path(io.__file__), root / "src/ate_paper/analysis/profiles.py",
                       root / "src/ate_paper/analysis/statistics.py", root / "src/ate_paper/evaluation.py"]
     for path in implementation:

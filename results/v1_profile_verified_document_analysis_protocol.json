@@ -22,24 +22,24 @@
   "examples": "Every configuration pair; first saved run; first two sorted unique keys per target/direction; no CI selection",
   "profile_sources": {
     "ACL RD-TEC 2.0": {
-      "manifest": "results/acl_v1_profile_recheck_manifest.json",
       "manifest_sha256": "8c156826d3b9d91a2da32a5809e1200e7ed9bb20b570ddf85ccf7ca70b968b95",
-      "verification": "results/acl_v1_profile_recheck_verification.json",
       "verification_sha256": "d700c6d4157df76ddb18399e26221fb9a96be145250ade819c26b69fb53a7cc0",
       "run_scores": "results/acl_v1_profile_recheck_run_scores.csv",
       "configuration_pairs": "results/acl_v1_profile_recheck_configuration_pairs.csv",
-      "raw_profile_verified": true
+      "raw_profile_verified": true,
+      "manifest_file": "acl_v1_profile_recheck_manifest.json",
+      "verification_file": "acl_v1_profile_recheck_verification.json"
     },
     "GENIA": {
-      "manifest": "results/genia_v1_profile_recheck_manifest.json",
       "manifest_sha256": "805b970e1611fc75fe63955566df4088c21e7869622d61d3656f1539fb6f434e",
-      "verification": "results/genia_v1_profile_recheck_verification.json",
       "verification_sha256": "be621177be639ae23826f4c4ca92a5fe5c78e99d374e7ce3b24f1b852ea97f30",
       "run_scores": "results/genia_v1_profile_recheck_run_scores.csv",
       "configuration_pairs": "results/genia_v1_profile_recheck_configuration_pairs.csv",
-      "raw_profile_verified": true
+      "raw_profile_verified": true,
+      "manifest_file": "genia_v1_profile_recheck_manifest.json",
+      "verification_file": "genia_v1_profile_recheck_verification.json"
     }
   },
-  "refresh_of": "results/v1_document_analysis_manifest.json",
-  "immutable_original_analysis": true
+  "immutable_original_analysis": true,
+  "refresh_of_file": "v1_document_analysis_manifest.json"
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""List or plan article experiments; use --execute only for an authorized run."""
+"""List or plan article experiments; --execute runs the selected commands."""
 import sys
 from pathlib import Path
 

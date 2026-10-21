@@ -6,7 +6,6 @@ CL uses the same slice definition and native greedy boundary convention.
 """
 from __future__ import annotations
 
-import csv
 import heapq
 import itertools
 import json
@@ -14,6 +13,8 @@ import math
 from collections import Counter, defaultdict
 from fractions import Fraction
 from pathlib import Path
+
+from ate_paper.io import read_csv, write_csv
 
 from ate_paper.predictions import CorpusIndex, inside_root, read_jsonl, sha256
 
@@ -200,19 +201,6 @@ def screens(within, cross, means, pr_margin: float, profile_margin: float):
             "within_profile_pass": sum(row["maximum"] <= profile_margin + 1e-12 for row in within),
             "mean_configuration_pairs_pass": mean_pass,
             "stable_configuration_pairs_pass": stable_pass}
-
-
-def read_csv(path: Path) -> list[dict]:
-    with path.open(newline="", encoding="utf-8") as stream:
-        return list(csv.DictReader(stream))
-
-
-def write_csv(path: Path, rows: list[dict]) -> None:
-    fields = list(dict.fromkeys(key for row in rows for key in row))
-    with path.open("x", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fields, lineterminator="\n")
-        writer.writeheader()
-        writer.writerows(rows)
 
 
 def gap_context(gold_rows: list[dict], predicted_rows: list[dict],
@@ -513,6 +501,7 @@ def reproduce_profiles(root: Path, gold_dir: Path, output_dir: Path,
         "interpretation": "Descriptive fixed-output checks; empirical q80 margins are post-hoc references, not calibrated equivalence boundaries.",
         "checks": checks, "inputs": [receipt(path) for path in sorted(input_paths)],
         "implementation": [receipt(Path(__file__)),
+                           receipt(Path(__file__).parents[1] / "io.py"),
                            receipt(root / "scripts/reproduce_profiles.py")],
     }
     (output_dir / "verification.json").write_text(json.dumps(verification, indent=2) + "\n")

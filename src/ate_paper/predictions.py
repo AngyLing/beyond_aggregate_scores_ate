@@ -15,6 +15,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, Iterator
 
+from .io import sha256
+
 RELEASE_FIELDS = frozenset({
     "dataset", "version", "split", "doc_id", "sent_id", "unit_hash",
     "unit_type", "start", "end", "class_label", "is_nomen",
@@ -22,18 +24,10 @@ RELEASE_FIELDS = frozenset({
 UNIT_METADATA = ("dataset", "version", "split", "doc_id", "sent_id", "text",
                  "language", "domain")
 MANIFEST_FIELDS = {
-    "dataset", "group", "run", "source_path", "source_sha256", "source_bytes",
+    "dataset", "group", "run", "source_file", "source_sha256", "source_bytes",
     "release_path", "release_sha256", "release_bytes", "rows", "null_spans",
 }
 HASH_RE = re.compile(r"[0-9a-f]{64}\Z")
-
-
-def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
 
 
 def read_jsonl(path: Path) -> Iterator[dict]:

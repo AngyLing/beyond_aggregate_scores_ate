@@ -1,21 +1,13 @@
 """Local adapters from prepared corpus splits; no work occurs on import."""
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 
 from ate_paper.prepare import text_units
+from ate_paper.io import sha256
 
 DATASETS = {"acl": "ACL RD-TEC 2.0", "genia": "GENIA", "cl": "CL-RuTerm3"}
-
-
-def sha256(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            h.update(block)
-    return h.hexdigest()
 
 
 def paths(processed_root: Path, output_root: Path, dataset: str) -> dict[str, Path]:

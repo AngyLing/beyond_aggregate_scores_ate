@@ -141,7 +141,7 @@ class PredictionTests(unittest.TestCase):
             with gzip.open(output, "wt") as stream:
                 stream.write(json.dumps(release_record(mention())) + "\n")
             entry = {"dataset": "synthetic", "group": "test", "run": "run",
-                     "source_path": "private/source.jsonl", "source_sha256": "a" * 64,
+                     "source_file": "source.jsonl", "source_sha256": "a" * 64,
                      "source_bytes": 1, "release_path": output.relative_to(root).as_posix(),
                      "release_sha256": sha256(output), "release_bytes": output.stat().st_size,
                      "rows": 1, "null_spans": 0}
@@ -178,7 +178,7 @@ class PredictionTests(unittest.TestCase):
                     stream.write(json.dumps(release_record(mention())) + "\n")
                 entries.append({
                     "dataset": "synthetic", "group": "test", "run": run,
-                    "source_path": "private/" + run, "source_sha256": "a" * 64,
+                    "source_file": run, "source_sha256": "a" * 64,
                     "source_bytes": 1, "release_path": output.relative_to(root).as_posix(),
                     "release_sha256": sha256(output), "release_bytes": output.stat().st_size,
                     "rows": 1, "null_spans": 0,

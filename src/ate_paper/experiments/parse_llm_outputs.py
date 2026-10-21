@@ -100,9 +100,8 @@ def parse_raw_outputs(args):
             response_path = Path(args.raw_dir) / f"{batch_id}_response.txt"
             text = response_path.read_text(encoding="utf-8") if response_path.exists() else ""
 
-        # Flag output-cap saturation so truncation is distinguishable from a plain
-        # JSON-contract failure (review L-transport-1: the cap was documented as
-        # "inert" while 17 committed batches actually saturated it).
+        # Flag output-cap saturation so truncation is distinguishable from a
+        # plain JSON-contract failure.
         completion_tokens = (raw.get("usage") or {}).get("completion_tokens") or (raw.get("usage") or {}).get("output_tokens")
         cap = raw.get("max_output_tokens")
         cap_hit = bool(cap) and bool(completion_tokens) and completion_tokens >= cap
@@ -155,7 +154,7 @@ def parse_raw_outputs(args):
             # AttributeError/TypeError: model output whose SHAPE validate_parsed
             # tolerates but postprocess cannot walk (e.g. bare-string terms before
             # the coercions landed) used to abort the ENTIRE parse run here; record
-            # it as a per-batch failure like any other (review L-parsing-3).
+            # it as a per-batch failure like any other.
             stats["invalid_schemas"] += 1
             failure = {"batch_id": batch_id, "failure_type": "postprocess_error", "message": str(exc), "parsed_response": parsed}
             append_failure(args.failed_output, failure)
@@ -298,9 +297,7 @@ def write_metadata(args, meta, started_at, completed_at, report):
         "batch_dir": args.batch_dir,
         "raw_output_dir": args.raw_dir,
         "prediction_output": args.output,
-        # Stamped at parse time so integrity check C6 can verify the prediction
-        # file on disk is the one this record describes (review L-validation-3:
-        # the field was designed for C6 but never written by any writer).
+        # Hash the emitted prediction file so metadata can verify its integrity.
         "prediction_sha256": (hashlib.sha256(Path(args.output).read_bytes()).hexdigest()
                               if Path(args.output).exists() else None),
         "report": str(report),
