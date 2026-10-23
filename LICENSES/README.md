@@ -1,10 +1,10 @@
-# Notices датасетов и библиотек
+# Dataset and library notices
 
-| Файл | Назначение |
+| File | Purpose |
 | --- | --- |
-| [ACL-RD-TEC-2.0-LICENSE.txt](ACL-RD-TEC-2.0-LICENSE.txt) | Полный исходный notice ACL RD-TEC 2.0 и условия underlying ARC. Байты сохранены. |
-| [GENIA-LICENSE.txt](GENIA-LICENSE.txt) | Полные условия GENIA, включая Attribution section. Совпадает с LICENSE member официального архива. |
+| [ACL-RD-TEC-2.0-LICENSE.txt](ACL-RD-TEC-2.0-LICENSE.txt) | Complete original ACL RD-TEC 2.0 notice and terms for the underlying ACL ARC corpus. Preserved byte for byte. |
+| [GENIA-LICENSE.txt](GENIA-LICENSE.txt) | Complete GENIA terms, including the Attribution section. Identical to the LICENSE member in the official archive. |
 
-Источники обоих notice и SHA-256 закреплены в [sources.json](../data/sources.json). Исходные корпуса и gold не распространяются. Для CL-RuTerm3 зафиксировано имеющееся индивидуальное разрешение; общей публичной лицензии не добавлено.
+The sources of both notices and their SHA-256 hashes are recorded in [sources.json](../data/sources.json). This repository does not redistribute the source corpora or gold annotations. The existing individual permission for CL-RuTerm3 is documented; no license for general public use has been added.
 
-Версии устанавливаемых библиотек закреплены в корневом `requirements.lock`. Они устанавливаются как зависимости; включённых библиотечных исходников, wheels или бинарных пакетов в проверенном составе не найдено, поэтому новые копии LICENSE/NOTICE зависимостей здесь не требуются. Если такие компоненты будут включены позднее, сохранить notices соответствующего дистрибутива.
+Library versions are pinned in the root `requirements.lock`. The libraries are installed as dependencies; no library source code, wheels or binary packages were found in the reviewed repository contents, so additional copies of dependency LICENSE/NOTICE files are not required here. If such components are included later, retain the notices supplied with the corresponding distribution.
