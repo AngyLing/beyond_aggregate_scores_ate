@@ -7,6 +7,7 @@ from pathlib import Path
 
 from ate_paper.experiments.inputs import DATASETS, paths, prepare_inputs, sha256
 from ate_paper.experiments.launcher import ROOT, checked_output_root, plan_record, records
+from ate_paper.experiments.make_gazetteer_predictions import normalize_text
 
 
 class ExperimentCommandsTest(unittest.TestCase):
@@ -82,8 +83,8 @@ class ExperimentInputsTest(unittest.TestCase):
                 result = prepare_inputs(source, out, ds)
                 p = paths(source, out, ds)
                 pool = [json.loads(l) for l in p["gazetteer_train"].read_text().splitlines()]
-                self.assertEqual(len(pool), 2 if ds == "cl" else 4)
-                self.assertEqual({r["split"] for r in pool}, {"train"} if ds == "cl" else {"train", "dev"})
+                self.assertEqual(len(pool), 2)
+                self.assertEqual({r["split"] for r in pool}, {"train"})
                 units = [json.loads(l) for l in p["test_units"].read_text().splitlines()]
                 self.assertEqual(len(units), 2)
                 self.assertTrue(all(not ({"start", "end", "class_label", "norm", "surface"} & r.keys()) for r in units))
@@ -92,6 +93,10 @@ class ExperimentInputsTest(unittest.TestCase):
                 self.assertTrue(all(r["class_label"] is None for r in untyped))
                 self.assertEqual(prepare_inputs(source, out, ds), result)
                 self.assertEqual(before, {s: sha256(source / ds / (s + ".jsonl")) for s in before})
+
+    def test_dictionary_normalization_ignores_null_and_preserves_lowercase_policy(self):
+        self.assertEqual(normalize_text(None), "")
+        self.assertEqual(normalize_text("  DNA \t Domain  "), "dna domain")
 
     def test_changed_source_and_malformed_annotation_fail(self):
         with tempfile.TemporaryDirectory() as folder:

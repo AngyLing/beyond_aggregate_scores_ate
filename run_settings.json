@@ -74257,98 +74257,10 @@
       "dataset": "ACL RD-TEC 2.0",
       "run": "gazetteer",
       "release_path": "predictions/acl_rd_tec_2_0/gazetteer/gazetteer.jsonl.gz",
-      "source_file": "gazetteer.jsonl",
-      "source_sha256": "bb3048f27eaefa333c624e89a9d14675bdd5c8f7b89e51f10c88469c573846cf",
-      "historical_report_settings": [
-        {
-          "source": {
-            "origin": "historical_source",
-            "file_name": "gazetteer_report.md",
-            "sha256": "7dbb109320a3b1dea711b2ff4c778e6f2d314a12203cc82d68e8e554e8e7dc84",
-            "bytes": 16580
-          },
-          "recorded_settings": {
-            "train_rows_read": {
-              "value": 36608,
-              "line": 5
-            },
-            "test_rows_read": {
-              "value": 2685,
-              "line": 6
-            },
-            "inventory_scope": {
-              "value": "dataset_language",
-              "line": 7
-            },
-            "min_term_chars": {
-              "value": 1,
-              "line": 27
-            },
-            "min_alnum_chars": {
-              "value": 1,
-              "line": 28
-            },
-            "min_term_tokens": {
-              "value": 1,
-              "line": 29
-            },
-            "drop_stopword_terms": {
-              "value": false,
-              "line": 30
-            },
-            "drop_single_letter_terms": {
-              "value": false,
-              "line": 31
-            },
-            "exclude_term_file": {
-              "value": null,
-              "line": 32
-            }
-          }
-        },
-        {
-          "source": {
-            "origin": "historical_source",
-            "file_name": "pooled_gazetteer_splits_report.md",
-            "sha256": "44289b1dc9dd239564494bc674d3dc3c45c1e2899b6df3e2a43df2a6bbfa6037",
-            "bytes": 1192
-          },
-          "recorded_settings": {}
-        }
-      ],
-      "linked_inventory": null,
-      "documented_recipe": {
-        "training_pool": "full training pool before supervised dev holdout",
-        "inventory_scope": "dataset_language",
-        "min_term_chars": 1,
-        "min_alnum_chars": 1,
-        "min_term_tokens": 1,
-        "drop_stopword_terms": false,
-        "drop_single_letter_terms": false,
-        "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
-        "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
-        "class_tie_break": "alphabetical",
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
-        "token_boundary_characters": [
-          "alphanumeric",
-          "hyphen",
-          "underscore"
-        ],
-        "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "recipe_source": {
-        "origin": "historical_source",
-        "file_name": "make_gazetteer_predictions.py",
-        "sha256": "db8b6b7e25cf3e8ac3649724d4e27b01cf28b9e5313a0f14c34bc34007c91509",
-        "bytes": 37154
-      },
-      "historical_notes": [
-        "original_exact_inventory_content_fingerprint_not_linked_to_output"
-      ],
-      "gaps": [],
+      "source_file": "pooled_train_only_gazetteer.jsonl",
+      "source_sha256": "7e50f4313e5f51548d8d1da46db0b504bd6e88a1a1a1e7a20f05dc93a278831a",
       "accepted_settings": {
-        "training_pool": "full training pool before supervised dev holdout",
+        "training_pool": "prepared train split only; dev excluded",
         "inventory_scope": "dataset_language",
         "min_term_chars": 1,
         "min_alnum_chars": 1,
@@ -74356,121 +74268,26 @@
         "drop_stopword_terms": false,
         "drop_single_letter_terms": false,
         "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
+        "normalization": "Unicode lower and whitespace collapse; null norm maps to empty",
         "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
         "class_tie_break": "alphabetical",
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
+        "inventory_rows": "nonempty annotated train mentions only",
         "token_boundary_characters": [
           "alphanumeric",
           "hyphen",
           "underscore"
         ],
         "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "setting_basis": {
-        "recipe_source": "recipe_source",
-        "report_fields": [
-          "inventory_scope",
-          "min_term_chars",
-          "min_alnum_chars",
-          "min_term_tokens",
-          "drop_stopword_terms",
-          "drop_single_letter_terms",
-          "exclude_term_file"
-        ],
-        "reports": "historical_report_settings",
-        "recipe_note": "Matching corpus/filter recipe and baseline reports; original inventory fingerprint is optional historical evidence.",
-        "inventory_rows": "Recorded verification of annotation-only inventory input: exclude empty placeholder rows before legacy inventory construction.",
-        "matching_details": "recipe_source: is_token_char / is_boundary_ok / exact_matches"
       }
     },
     {
       "dataset": "ACL RD-TEC 2.0",
       "run": "gazetteer_filtered",
       "release_path": "predictions/acl_rd_tec_2_0/gazetteer/gazetteer_filtered.jsonl.gz",
-      "source_file": "gazetteer_filtered.jsonl",
-      "source_sha256": "138e0ae58e19eb38793fc002b03a17396d1473c8003cf8f2fb5878044bdf6244",
-      "historical_report_settings": [
-        {
-          "source": {
-            "origin": "historical_source",
-            "file_name": "gazetteer_filtered_report.md",
-            "sha256": "e3f726518b174abfb9af8a1c6675550a5b549a20248e933b9cb44f9e8c4bf9c4",
-            "bytes": 17233
-          },
-          "recorded_settings": {
-            "train_rows_read": {
-              "value": 36608,
-              "line": 5
-            },
-            "test_rows_read": {
-              "value": 2685,
-              "line": 6
-            },
-            "inventory_scope": {
-              "value": "dataset_language",
-              "line": 7
-            },
-            "min_term_chars": {
-              "value": 1,
-              "line": 27
-            },
-            "min_alnum_chars": {
-              "value": 1,
-              "line": 28
-            },
-            "min_term_tokens": {
-              "value": 1,
-              "line": 29
-            },
-            "drop_stopword_terms": {
-              "value": true,
-              "line": 30
-            },
-            "drop_single_letter_terms": {
-              "value": true,
-              "line": 31
-            },
-            "exclude_term_file": {
-              "value": null,
-              "line": 32
-            }
-          }
-        }
-      ],
-      "linked_inventory": null,
-      "documented_recipe": {
-        "training_pool": "full training pool before supervised dev holdout",
-        "inventory_scope": "dataset_language",
-        "min_term_chars": 1,
-        "min_alnum_chars": 1,
-        "min_term_tokens": 1,
-        "drop_stopword_terms": true,
-        "drop_single_letter_terms": true,
-        "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
-        "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
-        "class_tie_break": "alphabetical",
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
-        "token_boundary_characters": [
-          "alphanumeric",
-          "hyphen",
-          "underscore"
-        ],
-        "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "recipe_source": {
-        "origin": "historical_source",
-        "file_name": "make_gazetteer_predictions.py",
-        "sha256": "db8b6b7e25cf3e8ac3649724d4e27b01cf28b9e5313a0f14c34bc34007c91509",
-        "bytes": 37154
-      },
-      "historical_notes": [
-        "original_exact_inventory_content_fingerprint_not_linked_to_output"
-      ],
-      "gaps": [],
+      "source_file": "pooled_train_only_gazetteer_filtered.jsonl",
+      "source_sha256": "a0d68dc148531aa4c238e411b21c382818d6163d28baabdb5a0140e3688ba5d0",
       "accepted_settings": {
-        "training_pool": "full training pool before supervised dev holdout",
+        "training_pool": "prepared train split only; dev excluded",
         "inventory_scope": "dataset_language",
         "min_term_chars": 1,
         "min_alnum_chars": 1,
@@ -74478,121 +74295,26 @@
         "drop_stopword_terms": true,
         "drop_single_letter_terms": true,
         "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
+        "normalization": "Unicode lower and whitespace collapse; null norm maps to empty",
         "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
         "class_tie_break": "alphabetical",
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
+        "inventory_rows": "nonempty annotated train mentions only",
         "token_boundary_characters": [
           "alphanumeric",
           "hyphen",
           "underscore"
         ],
         "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "setting_basis": {
-        "recipe_source": "recipe_source",
-        "report_fields": [
-          "inventory_scope",
-          "min_term_chars",
-          "min_alnum_chars",
-          "min_term_tokens",
-          "drop_stopword_terms",
-          "drop_single_letter_terms",
-          "exclude_term_file"
-        ],
-        "reports": "historical_report_settings",
-        "recipe_note": "Matching corpus/filter recipe and baseline reports; original inventory fingerprint is optional historical evidence.",
-        "inventory_rows": "Recorded verification of annotation-only inventory input: exclude empty placeholder rows before legacy inventory construction.",
-        "matching_details": "recipe_source: is_token_char / is_boundary_ok / exact_matches"
       }
     },
     {
       "dataset": "GENIA",
       "run": "gazetteer",
       "release_path": "predictions/genia_3_02/gazetteer/gazetteer.jsonl.gz",
-      "source_file": "gazetteer_genia.jsonl",
-      "source_sha256": "73237ee7214400f688618ebf4fde0f6aaedc6e5792c2fed9429adfdef49b2dcb",
-      "historical_report_settings": [
-        {
-          "source": {
-            "origin": "historical_source",
-            "file_name": "gazetteer_genia_report.md",
-            "sha256": "0c91c3472a7816dd07268d55729e7d2b68d77643dedbf234c3c5c3b66ae4fc8d",
-            "bytes": 15452
-          },
-          "recorded_settings": {
-            "train_rows_read": {
-              "value": 74031,
-              "line": 5
-            },
-            "test_rows_read": {
-              "value": 3696,
-              "line": 6
-            },
-            "inventory_scope": {
-              "value": "dataset_language",
-              "line": 7
-            },
-            "min_term_chars": {
-              "value": 1,
-              "line": 27
-            },
-            "min_alnum_chars": {
-              "value": 1,
-              "line": 28
-            },
-            "min_term_tokens": {
-              "value": 1,
-              "line": 29
-            },
-            "drop_stopword_terms": {
-              "value": false,
-              "line": 30
-            },
-            "drop_single_letter_terms": {
-              "value": false,
-              "line": 31
-            },
-            "exclude_term_file": {
-              "value": null,
-              "line": 32
-            }
-          }
-        }
-      ],
-      "linked_inventory": null,
-      "documented_recipe": {
-        "training_pool": "full training pool before supervised dev holdout",
-        "inventory_scope": "dataset_language",
-        "min_term_chars": 1,
-        "min_alnum_chars": 1,
-        "min_term_tokens": 1,
-        "drop_stopword_terms": false,
-        "drop_single_letter_terms": false,
-        "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
-        "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
-        "class_tie_break": "alphabetical",
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
-        "token_boundary_characters": [
-          "alphanumeric",
-          "hyphen",
-          "underscore"
-        ],
-        "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "recipe_source": {
-        "origin": "historical_source",
-        "file_name": "make_gazetteer_predictions.py",
-        "sha256": "db8b6b7e25cf3e8ac3649724d4e27b01cf28b9e5313a0f14c34bc34007c91509",
-        "bytes": 37154
-      },
-      "historical_notes": [
-        "original_exact_inventory_content_fingerprint_not_linked_to_output"
-      ],
-      "gaps": [],
+      "source_file": "genia_train_only_gazetteer.jsonl",
+      "source_sha256": "1e544ea99fcef08c8b97e966e34ba90c01ab4498904f50dd87c225ea1bc5684a",
       "accepted_settings": {
-        "training_pool": "full training pool before supervised dev holdout",
+        "training_pool": "prepared train split only; dev excluded",
         "inventory_scope": "dataset_language",
         "min_term_chars": 1,
         "min_alnum_chars": 1,
@@ -74600,121 +74322,26 @@
         "drop_stopword_terms": false,
         "drop_single_letter_terms": false,
         "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
+        "normalization": "Unicode lower and whitespace collapse; null norm maps to empty",
         "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
         "class_tie_break": "alphabetical",
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
+        "inventory_rows": "nonempty annotated train mentions only",
         "token_boundary_characters": [
           "alphanumeric",
           "hyphen",
           "underscore"
         ],
         "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "setting_basis": {
-        "recipe_source": "recipe_source",
-        "report_fields": [
-          "inventory_scope",
-          "min_term_chars",
-          "min_alnum_chars",
-          "min_term_tokens",
-          "drop_stopword_terms",
-          "drop_single_letter_terms",
-          "exclude_term_file"
-        ],
-        "reports": "historical_report_settings",
-        "recipe_note": "Matching corpus/filter recipe and baseline reports; original inventory fingerprint is optional historical evidence.",
-        "inventory_rows": "Recorded verification of annotation-only inventory input: exclude empty placeholder rows before legacy inventory construction.",
-        "matching_details": "recipe_source: is_token_char / is_boundary_ok / exact_matches"
       }
     },
     {
       "dataset": "GENIA",
       "run": "gazetteer_filtered",
       "release_path": "predictions/genia_3_02/gazetteer/gazetteer_filtered.jsonl.gz",
-      "source_file": "gazetteer_filtered_genia.jsonl",
-      "source_sha256": "41bf94c3c18dab86b3dc68bf4ceda767515fce5fa19cf714822c16a79338db24",
-      "historical_report_settings": [
-        {
-          "source": {
-            "origin": "historical_source",
-            "file_name": "gazetteer_filtered_genia_report.md",
-            "sha256": "6af7a3280335c6b6456f2be0c2c2d7098c7b3868a7c3199245fb064d0880de42",
-            "bytes": 15515
-          },
-          "recorded_settings": {
-            "train_rows_read": {
-              "value": 74031,
-              "line": 5
-            },
-            "test_rows_read": {
-              "value": 3696,
-              "line": 6
-            },
-            "inventory_scope": {
-              "value": "dataset_language",
-              "line": 7
-            },
-            "min_term_chars": {
-              "value": 1,
-              "line": 27
-            },
-            "min_alnum_chars": {
-              "value": 1,
-              "line": 28
-            },
-            "min_term_tokens": {
-              "value": 1,
-              "line": 29
-            },
-            "drop_stopword_terms": {
-              "value": true,
-              "line": 30
-            },
-            "drop_single_letter_terms": {
-              "value": true,
-              "line": 31
-            },
-            "exclude_term_file": {
-              "value": null,
-              "line": 32
-            }
-          }
-        }
-      ],
-      "linked_inventory": null,
-      "documented_recipe": {
-        "training_pool": "full training pool before supervised dev holdout",
-        "inventory_scope": "dataset_language",
-        "min_term_chars": 1,
-        "min_alnum_chars": 1,
-        "min_term_tokens": 1,
-        "drop_stopword_terms": true,
-        "drop_single_letter_terms": true,
-        "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
-        "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
-        "class_tie_break": "alphabetical",
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
-        "token_boundary_characters": [
-          "alphanumeric",
-          "hyphen",
-          "underscore"
-        ],
-        "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "recipe_source": {
-        "origin": "historical_source",
-        "file_name": "make_gazetteer_predictions.py",
-        "sha256": "db8b6b7e25cf3e8ac3649724d4e27b01cf28b9e5313a0f14c34bc34007c91509",
-        "bytes": 37154
-      },
-      "historical_notes": [
-        "original_exact_inventory_content_fingerprint_not_linked_to_output"
-      ],
-      "gaps": [],
+      "source_file": "genia_train_only_gazetteer_filtered.jsonl",
+      "source_sha256": "46e28c400bb59e1a481ef4aca9406a4856727b4eabccd7629c9c0242d70262c4",
       "accepted_settings": {
-        "training_pool": "full training pool before supervised dev holdout",
+        "training_pool": "prepared train split only; dev excluded",
         "inventory_scope": "dataset_language",
         "min_term_chars": 1,
         "min_alnum_chars": 1,
@@ -74722,127 +74349,26 @@
         "drop_stopword_terms": true,
         "drop_single_letter_terms": true,
         "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
+        "normalization": "Unicode lower and whitespace collapse; null norm maps to empty",
         "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
         "class_tie_break": "alphabetical",
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
+        "inventory_rows": "nonempty annotated train mentions only",
         "token_boundary_characters": [
           "alphanumeric",
           "hyphen",
           "underscore"
         ],
         "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "setting_basis": {
-        "recipe_source": "recipe_source",
-        "report_fields": [
-          "inventory_scope",
-          "min_term_chars",
-          "min_alnum_chars",
-          "min_term_tokens",
-          "drop_stopword_terms",
-          "drop_single_letter_terms",
-          "exclude_term_file"
-        ],
-        "reports": "historical_report_settings",
-        "recipe_note": "Matching corpus/filter recipe and baseline reports; original inventory fingerprint is optional historical evidence.",
-        "inventory_rows": "Recorded verification of annotation-only inventory input: exclude empty placeholder rows before legacy inventory construction.",
-        "matching_details": "recipe_source: is_token_char / is_boundary_ok / exact_matches"
       }
     },
     {
       "dataset": "CL-RuTerm3",
       "run": "gazetteer",
       "release_path": "predictions/cl_ruterm3_1_1/gazetteer/gazetteer.jsonl.gz",
-      "source_file": "gazetteer.jsonl",
-      "source_sha256": "bb3048f27eaefa333c624e89a9d14675bdd5c8f7b89e51f10c88469c573846cf",
-      "historical_report_settings": [],
-      "linked_inventory": {
-        "source": {
-          "origin": "historical_source",
-          "file_name": "manifest.json",
-          "sha256": "2bb850d14d8b04d00756981aed5ec8b484a52d1f191d62fda81c38e0e8afa501",
-          "bytes": 65869
-        },
-        "regeneration_source": {
-          "origin": "historical_source",
-          "file_name": "cl_ruterm3_1_1_dictionary_regeneration_verification_2026_10_13.json",
-          "sha256": "424c339aee38c126f16319ebabceb587419c66693d87d677da4c0e239091fdb2",
-          "bytes": 24029
-        },
-        "recipe": {
-          "class_assignment": "majority count of training mentions",
-          "class_tie_priority": {
-            "Common": 1,
-            "Nomen": 2,
-            "Specific": 0
-          },
-          "dev_tuning": "none; fixed historical filters",
-          "empty_input_documents": "complete text input; zero matching predictions is valid",
-          "exclude_term_file": null,
-          "inventory_fit_documents": 850,
-          "inventory_fit_split": "train",
-          "inventory_scope": "dataset_language",
-          "matches": "all occurrences; preserve nested and overlapping matches",
-          "matching": "case-insensitive literal regex on original text",
-          "min_alnum_chars": 1,
-          "min_term_chars": 1,
-          "min_term_tokens": 1,
-          "normalization": "lowercase and whitespace-normalize inventory/type norm; original input text preserved",
-          "offsets": "Python Unicode character indices, zero-based [start,end)",
-          "token_boundary_characters": "alphanumeric, hyphen, underscore"
-        },
-        "filter_recipe": {
-          "drop_single_letter_terms": false,
-          "drop_stopword_terms": false
-        },
-        "inventory_terms": 8782,
-        "inventory_semantic_sha256": "e317572c1706c0643aab055fe385ee358d2be4b9f60d733f8b93e68436896ae5",
-        "prediction_subset": {
-          "documents": 313,
-          "rows": 3935,
-          "semantic_multiset_sha256": "f13b56b7390033c55b16ec4865bd518a9e30848dc8f2678e2e2aedc7f50f925e",
-          "split_counts": {
-            "test": 3935
-          }
-        },
-        "status": "verified_input_compatible",
-        "regeneration_status": "verified_recipe_and_prediction_identity"
-      },
-      "documented_recipe": {
-        "training_pool": "official train only",
-        "inventory_scope": "dataset_language",
-        "min_term_chars": 1,
-        "min_alnum_chars": 1,
-        "min_term_tokens": 1,
-        "drop_stopword_terms": false,
-        "drop_single_letter_terms": false,
-        "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
-        "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
-        "class_tie_break": [
-          "Specific",
-          "Common",
-          "Nomen"
-        ],
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
-        "token_boundary_characters": [
-          "alphanumeric",
-          "hyphen",
-          "underscore"
-        ],
-        "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "recipe_source": {
-        "origin": "historical_source",
-        "file_name": "make_gazetteer_predictions.py",
-        "sha256": "db8b6b7e25cf3e8ac3649724d4e27b01cf28b9e5313a0f14c34bc34007c91509",
-        "bytes": 37154
-      },
-      "historical_notes": [],
-      "gaps": [],
+      "source_file": "pooled_train_only_gazetteer.jsonl",
+      "source_sha256": "7e50f4313e5f51548d8d1da46db0b504bd6e88a1a1a1e7a20f05dc93a278831a",
       "accepted_settings": {
-        "training_pool": "official train only",
+        "training_pool": "prepared train split only; dev excluded",
         "inventory_scope": "dataset_language",
         "min_term_chars": 1,
         "min_alnum_chars": 1,
@@ -74850,136 +74376,30 @@
         "drop_stopword_terms": false,
         "drop_single_letter_terms": false,
         "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
+        "normalization": "Unicode lower and whitespace collapse; null norm maps to empty",
         "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
         "class_tie_break": [
           "Specific",
           "Common",
           "Nomen"
         ],
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
+        "inventory_rows": "nonempty annotated train mentions only",
         "token_boundary_characters": [
           "alphanumeric",
           "hyphen",
           "underscore"
         ],
         "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "setting_basis": {
-        "recipe_source": "recipe_source",
-        "report_fields": [],
-        "reports": "historical_report_settings",
-        "recipe_note": "Matching corpus/filter recipe and baseline reports; original inventory fingerprint is optional historical evidence.",
-        "inventory_rows": "Recorded verification of annotation-only inventory input: exclude empty placeholder rows before legacy inventory construction.",
-        "matching_details": "recipe_source: is_token_char / is_boundary_ok / exact_matches",
-        "linked_inventory_fields": [
-          "training_pool",
-          "inventory_scope",
-          "min_term_chars",
-          "min_alnum_chars",
-          "min_term_tokens",
-          "drop_stopword_terms",
-          "drop_single_letter_terms",
-          "exclude_term_file",
-          "class_tie_break",
-          "token_boundary_characters",
-          "offsets"
-        ]
       }
     },
     {
       "dataset": "CL-RuTerm3",
       "run": "gazetteer_filtered",
       "release_path": "predictions/cl_ruterm3_1_1/gazetteer/gazetteer_filtered.jsonl.gz",
-      "source_file": "gazetteer_filtered.jsonl",
-      "source_sha256": "138e0ae58e19eb38793fc002b03a17396d1473c8003cf8f2fb5878044bdf6244",
-      "historical_report_settings": [],
-      "linked_inventory": {
-        "source": {
-          "origin": "historical_source",
-          "file_name": "manifest.json",
-          "sha256": "2bb850d14d8b04d00756981aed5ec8b484a52d1f191d62fda81c38e0e8afa501",
-          "bytes": 65869
-        },
-        "regeneration_source": {
-          "origin": "historical_source",
-          "file_name": "cl_ruterm3_1_1_dictionary_regeneration_verification_2026_10_13.json",
-          "sha256": "424c339aee38c126f16319ebabceb587419c66693d87d677da4c0e239091fdb2",
-          "bytes": 24029
-        },
-        "recipe": {
-          "class_assignment": "majority count of training mentions",
-          "class_tie_priority": {
-            "Common": 1,
-            "Nomen": 2,
-            "Specific": 0
-          },
-          "dev_tuning": "none; fixed historical filters",
-          "empty_input_documents": "complete text input; zero matching predictions is valid",
-          "exclude_term_file": null,
-          "inventory_fit_documents": 850,
-          "inventory_fit_split": "train",
-          "inventory_scope": "dataset_language",
-          "matches": "all occurrences; preserve nested and overlapping matches",
-          "matching": "case-insensitive literal regex on original text",
-          "min_alnum_chars": 1,
-          "min_term_chars": 1,
-          "min_term_tokens": 1,
-          "normalization": "lowercase and whitespace-normalize inventory/type norm; original input text preserved",
-          "offsets": "Python Unicode character indices, zero-based [start,end)",
-          "token_boundary_characters": "alphanumeric, hyphen, underscore"
-        },
-        "filter_recipe": {
-          "drop_single_letter_terms": true,
-          "drop_stopword_terms": true
-        },
-        "inventory_terms": 8776,
-        "inventory_semantic_sha256": "55a1f195496957974c9606c53863ddd3490857adbd728da6e248b82c2231aacd",
-        "prediction_subset": {
-          "documents": 311,
-          "rows": 3617,
-          "semantic_multiset_sha256": "c997f3647b03c9f194105f41171e3944d8cef09d3ac72e01ce4b996fe3e68d98",
-          "split_counts": {
-            "test": 3617
-          }
-        },
-        "status": "verified_input_compatible",
-        "regeneration_status": "verified_recipe_and_prediction_identity"
-      },
-      "documented_recipe": {
-        "training_pool": "official train only",
-        "inventory_scope": "dataset_language",
-        "min_term_chars": 1,
-        "min_alnum_chars": 1,
-        "min_term_tokens": 1,
-        "drop_stopword_terms": true,
-        "drop_single_letter_terms": true,
-        "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
-        "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
-        "class_tie_break": [
-          "Specific",
-          "Common",
-          "Nomen"
-        ],
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
-        "token_boundary_characters": [
-          "alphanumeric",
-          "hyphen",
-          "underscore"
-        ],
-        "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "recipe_source": {
-        "origin": "historical_source",
-        "file_name": "make_gazetteer_predictions.py",
-        "sha256": "db8b6b7e25cf3e8ac3649724d4e27b01cf28b9e5313a0f14c34bc34007c91509",
-        "bytes": 37154
-      },
-      "historical_notes": [],
-      "gaps": [],
+      "source_file": "pooled_train_only_gazetteer_filtered.jsonl",
+      "source_sha256": "a0d68dc148531aa4c238e411b21c382818d6163d28baabdb5a0140e3688ba5d0",
       "accepted_settings": {
-        "training_pool": "official train only",
+        "training_pool": "prepared train split only; dev excluded",
         "inventory_scope": "dataset_language",
         "min_term_chars": 1,
         "min_alnum_chars": 1,
@@ -74987,41 +74407,20 @@
         "drop_stopword_terms": true,
         "drop_single_letter_terms": true,
         "exclude_term_file": null,
-        "normalization": "lowercase and collapse whitespace for inventory strings",
+        "normalization": "Unicode lower and whitespace collapse; null norm maps to empty",
         "literal_matching": "case-insensitive on unchanged original text; keep nested and overlapping matches",
         "class_tie_break": [
           "Specific",
           "Common",
           "Nomen"
         ],
-        "inventory_rows": "annotated training mentions only; omit empty placeholder rows before legacy inventory construction",
+        "inventory_rows": "nonempty annotated train mentions only",
         "token_boundary_characters": [
           "alphanumeric",
           "hyphen",
           "underscore"
         ],
         "offsets": "Python Unicode code point indices, zero-based [start,end)"
-      },
-      "setting_basis": {
-        "recipe_source": "recipe_source",
-        "report_fields": [],
-        "reports": "historical_report_settings",
-        "recipe_note": "Matching corpus/filter recipe and baseline reports; original inventory fingerprint is optional historical evidence.",
-        "inventory_rows": "Recorded verification of annotation-only inventory input: exclude empty placeholder rows before legacy inventory construction.",
-        "matching_details": "recipe_source: is_token_char / is_boundary_ok / exact_matches",
-        "linked_inventory_fields": [
-          "training_pool",
-          "inventory_scope",
-          "min_term_chars",
-          "min_alnum_chars",
-          "min_term_tokens",
-          "drop_stopword_terms",
-          "drop_single_letter_terms",
-          "exclude_term_file",
-          "class_tie_break",
-          "token_boundary_characters",
-          "offsets"
-        ]
       }
     }
   ],

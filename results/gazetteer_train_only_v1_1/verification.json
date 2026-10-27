@@ -1,0 +1,82 @@
+{
+  "schema": "gazetteer_train_only_release_verification_v1_1",
+  "status": "PASS",
+  "date": "2026-10-27",
+  "source_primary_counts_sha256": "0e330a98286665fd41e3739a94f4ebdb46e24decfc7964e9f786420789b8f06a",
+  "active_score_rows": 14,
+  "published_prediction_files": 6,
+  "published_prediction_rows": 76380,
+  "generation_source_sha256": {
+    "inputs": "fcbed0565a05670ec3f3375d32523f5a420145f988a1a6e0eef6783b0495995b",
+    "gazetteer": "8c2a9f26005058cb1dd4ef20f94daab8b755388921f6c360d7e7dcfb51fd690c"
+  },
+  "checks": [
+    {
+      "dataset": "ACL RD-TEC 2.0",
+      "variant": "gazetteer",
+      "rows": 1164,
+      "prediction_sha256": "3cf89a8500d78882ab0bf544ac1c2b6e58b9ac43845079194dab416913b27428",
+      "train_rows": 3241,
+      "train_split_only": true,
+      "inventory_size": 2282,
+      "f1": 0.22924095771777891,
+      "projection_exact": true
+    },
+    {
+      "dataset": "ACL RD-TEC 2.0",
+      "variant": "gazetteer_filtered",
+      "rows": 1005,
+      "prediction_sha256": "4162821656af8792527041295ff2f0f6e73819a5e976f1462330863283712862",
+      "train_rows": 3241,
+      "train_split_only": true,
+      "inventory_size": 2279,
+      "f1": 0.24944567627494457,
+      "projection_exact": true
+    },
+    {
+      "dataset": "CL-RuTerm3",
+      "variant": "gazetteer",
+      "rows": 3935,
+      "prediction_sha256": "7c0d36a34403cb1eeab78ec943518f7e6497540b3ec82ed9cde0aaa6ecf3edd4",
+      "train_rows": 17802,
+      "train_split_only": true,
+      "inventory_size": 8782,
+      "f1": 0.18963958144942514,
+      "projection_exact": true
+    },
+    {
+      "dataset": "CL-RuTerm3",
+      "variant": "gazetteer_filtered",
+      "rows": 3617,
+      "prediction_sha256": "b690b8076204b704f642b959992bc1d6285490b426cee2b1b60b671db86e7cca",
+      "train_rows": 17802,
+      "train_split_only": true,
+      "inventory_size": 8776,
+      "f1": 0.1933526773938275,
+      "projection_exact": true
+    },
+    {
+      "dataset": "GENIA",
+      "variant": "gazetteer",
+      "rows": 35069,
+      "prediction_sha256": "d1b113d35d650b7ef84c2b2a6f6c0b6d061716e77e6d29482dc98e9694876841",
+      "train_rows": 66631,
+      "train_split_only": true,
+      "inventory_size": 25757,
+      "f1": 0.38596230066429726,
+      "projection_exact": true
+    },
+    {
+      "dataset": "GENIA",
+      "variant": "gazetteer_filtered",
+      "rows": 31590,
+      "prediction_sha256": "13f26dd7d25902641c6bbf999cd85217d40a18268c6a8e2b7ccde606050ccdf7",
+      "train_rows": 66631,
+      "train_split_only": true,
+      "inventory_size": 25747,
+      "f1": 0.4122796546098444,
+      "projection_exact": true
+    }
+  ],
+  "method": "Fresh generation from prepared train only; exact ordered safe-field projection equality with published files; current full-test score and inventory equality."
+}

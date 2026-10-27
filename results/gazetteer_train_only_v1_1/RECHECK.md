@@ -1,0 +1,28 @@
+# All-file recheck of train-only v1.1 dictionary results
+
+Checked 2026-10-27 against checkout HEAD `726a74c5207bcb94bfff273173287e87b29231d5` with pending migration changes; CPython 3.11.5. This check extends M08 as M09. The source `ate_eval_paper` remained read-only. No paper file, Git history, or historical audit snapshot was changed.
+
+## Current release: PASS
+
+- The 14 rows of `primary_counts.csv` match the 14 `train_only` rows of the source v1.1 file exactly. There are seven tasks, two variants per task, and no previous-arm rows.
+- All six ACL/GENIA/CL gzip hashes and row counts match `selection.json` and the active manifest; their 76,380 rows match the recorded fresh generation. All 214 release predictions pass `scripts/verify_predictions.py`: 1,922,280 rows, zero null spans.
+- Independent check against prepared test units and inventories rebuilt solely from prepared train: 76,380/76,380 valid offsets, known test units, terms in train inventories, and matching classes. No failures. There are 25,474 matches whose original test surface contains case distinctions from its lowercase form (ACL 272, GENIA 24,363, CL 839 across both variants). The generator uses Unicode `lower()` for inventory strings and case-insensitive literal matching on the untouched test text; released offsets preserve original character positions. Null/empty `norm` is skipped.
+- All 49 saved numerical source hashes pass `scripts/verify_saved_results.py`; 113 unit tests pass. The full A01–A17 reproduction from the migration has zero panel differences and zero missing references; its receipts remain in the isolated migration workspace. No numerical input changed during this recheck.
+- Search of active files outside the article and ignored audit snapshots found no old six release SHA-256 hashes, old source SHA-256 hashes, `source_pool` selection, or operational train+dev dictionary rule. The CL numerical tables are byte-identical to the earlier release because CL already used train only; their released gzip bytes were normalized and are bound to the current manifest.
+
+## Findings and disposition
+
+1. Local `docs/experiments.md` still contained a contradictory ACL/GENIA train+dev bullet. Local `docs/full_reproduction_plan.md` still described the old pool in the current recipe and listed the new generation as future work. Both documents were corrected; dated descriptions of the 19–20 October audits remain identified as historical. These `docs/` files are ignored by Git through `.git/info/exclude`, so this tracked report also records the correction.
+2. `paper/acl_draft_v1_revised.tex` still has train+dev prose and old ACL/GENIA gazetteer scores; text extracted from `paper/reference.pdf` confirms the same old rounded scores. The author explicitly deferred article editing. Both files remain untouched.
+3. At the initial check, seven dated, ignored `build/` workspaces contained six old gazetteer gzip files each: **42 old gzip files**. Every one matched the old HEAD bytes, while none matched the current top-level release. The seven redundant copies were deleted after the repeat verification; details are below. Other dated audit receipts and Git backups remain.
+4. The changes to the active release are still uncommitted. Current Git HEAD and earlier commits therefore retain old dictionary artifacts in history. No history rewrite was authorized or performed.
+
+**Conclusion after cleanup:** active `predictions/`, `results/`, settings, code and current operational documentation are consistent with train-only v1.1; no old gazetteer gzip remains in `build/`. Old data remain in the explicit paper exception, dated audit receipts/Git backups and Git history. The working-tree migration is still uncommitted.
+
+## Repeat verification and cleanup — 2026-10-27
+
+The M09 checks were repeated before deletion: exact equality of all 14 source train-only rows, six current SHA/row counts, all 76,380 offsets, train-inventory memberships and classes (including 25,474 case-distinct surfaces), `verify_predictions.py` for 214 files, `verify_saved_results.py` for 49 numerical sources, and 113 unit tests. All passed. All seven A01–A17 commands were rerun in an isolated copy; the panel reported zero differences and zero missing references, and the other commands passed.
+
+The [cleanup receipt](cleanup_receipt.json) lists the seven redundant pre-migration workspaces removed from ignored `build/`: 2,670 files, 480,611,635 bytes, including the 42 old gzip files. Before deletion, each gzip was verified against its old Git HEAD SHA. Prepared corpus files needed for the independent check were copied to an isolated ignored temporary directory; no corpus text was added to the tracked release. After deletion, active prediction/manifest/primary-count SHA values were unchanged, and no old gazetteer gzip remained under `build/`. The 214-file and 49-source verifiers and all 113 tests passed again. A fresh post-deletion panel calculation using the isolated prepared data reported zero differences and zero missing references.
+
+**M10 — PASS for removing redundant workspaces.** Dated audit receipts and Git backup bundles were retained because they document other historical checks. They may still mention old dictionary values; they are not current results. The paper and PDF remain unchanged by the author's earlier instruction. Git HEAD/history still contain the pre-migration artifacts until a separate commit/history decision.

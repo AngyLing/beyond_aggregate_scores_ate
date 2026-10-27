@@ -58,7 +58,7 @@ CLASS_TIE_PRIORITIES = {
 
 
 def normalize_text(text):
-    return re.sub(r"\s+", " ", str(text).strip().lower())
+    return re.sub(r"\s+", " ", ("" if text is None else str(text)).strip().lower())
 
 
 def alnum_count(text):

@@ -79,11 +79,10 @@ def prepare_inputs(processed_root: Path, output_root: Path, dataset: str) -> dic
     if any(documents[a] & documents[b] for a, b in
            (("train", "dev"), ("train", "test"), ("dev", "test"))):
         raise ValueError("Prepared train/dev/test document IDs overlap")
-    pool = rows["train"] + ([] if dataset == "cl" else rows["dev"])
     derived = {"test_units": text_units(rows["test"]),
                "train_untyped": [{**r, "class_label": None} for r in rows["train"]],
                "dev_untyped": [{**r, "class_label": None} for r in rows["dev"]],
-               "gazetteer_train": [r for r in pool if r.get("start") is not None]}
+               "gazetteer_train": [r for r in rows["train"] if r.get("start") is not None]}
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     for key, data in derived.items():
         with p[key].open("w", encoding="utf-8", newline="\n") as stream:

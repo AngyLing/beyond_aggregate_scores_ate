@@ -2,8 +2,8 @@
   "base_outputs": 185,
   "published_repeat_pairs": 25,
   "released_files": 214,
-  "released_bytes": 28694902,
-  "released_rows": 1923533,
+  "released_bytes": 28685468,
+  "released_rows": 1922280,
   "null_spans": 0,
   "excluded_fields": [
     "text",

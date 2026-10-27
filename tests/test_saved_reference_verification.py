@@ -38,7 +38,7 @@ class SavedReferenceVerification(unittest.TestCase):
             verifier.main()
         result = json.loads(stdout.getvalue())
         self.assertEqual(result["status"], "PASS")
-        self.assertEqual(result["sources"]["files"], 46)
+        self.assertEqual(result["sources"]["files"], 49)
         self.assertEqual(self.fingerprints(), before)
         self.assertFalse((self.root / "build").exists())
 

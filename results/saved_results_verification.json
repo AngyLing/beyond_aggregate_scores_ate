@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "sources": {
-    "files": 46,
+    "files": 49,
     "all_source_sha256_match": true,
     "no_text_surface_norm_columns": true
   },
@@ -109,5 +109,6 @@
     },
     "cl_maximum_without_llama": 0.01162553661262511
   },
-  "scope": "Saved aggregate arithmetic and manuscript consistency; no new raw matching or bootstrap"
+  "scope": "Saved aggregate arithmetic against retained numerical references; article text excluded from this update.",
+  "dictionary_version": "gazetteer_train_only_v1_1"
 }

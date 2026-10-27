@@ -1,0 +1,79 @@
+{
+  "schema": "gazetteer_train_only_release_v1_1",
+  "active_arm": "train_only",
+  "datasets": [
+    "ACL RD-TEC 2.0",
+    "ACTER v1.2",
+    "ACTER v1.5",
+    "ATE-IT A",
+    "ATE-IT B",
+    "CL-RuTerm3",
+    "GENIA"
+  ],
+  "variants": [
+    "gazetteer",
+    "gazetteer_filtered"
+  ],
+  "primary_counts": {
+    "path": "results/gazetteer_train_only_v1_1/primary_counts.csv",
+    "sha256": "90820c68f89e80a6169f9301df0a477ff6ec2d8e6913647f8b426147ec9001b1",
+    "rows": 14
+  },
+  "published_prediction_scope": [
+    "ACL RD-TEC 2.0",
+    "GENIA",
+    "CL-RuTerm3"
+  ],
+  "published_predictions": [
+    {
+      "dataset": "ACL RD-TEC 2.0",
+      "variant": "gazetteer",
+      "path": "predictions/acl_rd_tec_2_0/gazetteer/gazetteer.jsonl.gz",
+      "sha256": "3cf89a8500d78882ab0bf544ac1c2b6e58b9ac43845079194dab416913b27428",
+      "rows": 1164
+    },
+    {
+      "dataset": "ACL RD-TEC 2.0",
+      "variant": "gazetteer_filtered",
+      "path": "predictions/acl_rd_tec_2_0/gazetteer/gazetteer_filtered.jsonl.gz",
+      "sha256": "4162821656af8792527041295ff2f0f6e73819a5e976f1462330863283712862",
+      "rows": 1005
+    },
+    {
+      "dataset": "GENIA",
+      "variant": "gazetteer",
+      "path": "predictions/genia_3_02/gazetteer/gazetteer.jsonl.gz",
+      "sha256": "d1b113d35d650b7ef84c2b2a6f6c0b6d061716e77e6d29482dc98e9694876841",
+      "rows": 35069
+    },
+    {
+      "dataset": "GENIA",
+      "variant": "gazetteer_filtered",
+      "path": "predictions/genia_3_02/gazetteer/gazetteer_filtered.jsonl.gz",
+      "sha256": "13f26dd7d25902641c6bbf999cd85217d40a18268c6a8e2b7ccde606050ccdf7",
+      "rows": 31590
+    },
+    {
+      "dataset": "CL-RuTerm3",
+      "variant": "gazetteer",
+      "path": "predictions/cl_ruterm3_1_1/gazetteer/gazetteer.jsonl.gz",
+      "sha256": "7c0d36a34403cb1eeab78ec943518f7e6497540b3ec82ed9cde0aaa6ecf3edd4",
+      "rows": 3935
+    },
+    {
+      "dataset": "CL-RuTerm3",
+      "variant": "gazetteer_filtered",
+      "path": "predictions/cl_ruterm3_1_1/gazetteer/gazetteer_filtered.jsonl.gz",
+      "sha256": "b690b8076204b704f642b959992bc1d6285490b426cee2b1b60b671db86e7cca",
+      "rows": 3617
+    }
+  ],
+  "nonpublished_prediction_scope": [
+    "ACTER v1.2",
+    "ACTER v1.5",
+    "ATE-IT A",
+    "ATE-IT B"
+  ],
+  "source_verification": "ate_eval_paper/results/gazetteer_train_only_v1_1/audit_manifest.json",
+  "verification_file": "results/gazetteer_train_only_v1_1/verification.json"
+}

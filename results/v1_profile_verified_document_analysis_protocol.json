@@ -1,45 +1,33 @@
 {
-  "status": "Post-pilot all-pair document-only analysis; exploratory, not preregistered",
-  "iterations": 5000,
-  "rng_seed_base": 20261013,
-  "datasets": [
-    "ACL RD-TEC 2.0",
-    "GENIA"
+  "analysis_blocks": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A07",
+    "A08"
   ],
-  "sampling": "N original documents with replacement; shared draws for every fixed run and pair in each corpus",
-  "fixed_runs": "All saved runs and all distinct within/cross-run pairs retain equal weights; no seed-ID resampling",
-  "comparisons": "All 190 configuration pairs per dataset, irrespective of P/R/profile closeness or CI sign",
+  "skipped_blocks": [],
+  "A05_A06": "existing supervised profiles/calibration command",
+  "prediction_mode": "saved_release",
+  "profile_support_minimum": 30,
   "targets": [
     "tp_turnover",
     "fp_turnover",
     "flat_tp_turnover",
     "fp_no_witness_share"
   ],
-  "within_reference": "Recompute larger available within-configuration mean in each replicate",
-  "zero_denominators": "Undefined constituent invalidates the fixed-population mean; each CI reports its own finite replicate count",
-  "interval": "Percentile 95%; conditional on saved runs; nominal, exploratory, no FWER or equivalence claim",
-  "profile_sensitivity": "ACL and GENIA independently rebuilt from raw gold/train/predictions with configured-typing applicability correction; maximum/support-weighted summaries remain exploratory, not bootstrap equivalence tests",
-  "examples": "Every configuration pair; first saved run; first two sorted unique keys per target/direction; no CI selection",
-  "profile_sources": {
-    "ACL RD-TEC 2.0": {
-      "manifest_sha256": "8c156826d3b9d91a2da32a5809e1200e7ed9bb20b570ddf85ccf7ca70b968b95",
-      "verification_sha256": "d700c6d4157df76ddb18399e26221fb9a96be145250ade819c26b69fb53a7cc0",
-      "run_scores": "results/acl_v1_profile_recheck_run_scores.csv",
-      "configuration_pairs": "results/acl_v1_profile_recheck_configuration_pairs.csv",
-      "raw_profile_verified": true,
-      "manifest_file": "acl_v1_profile_recheck_manifest.json",
-      "verification_file": "acl_v1_profile_recheck_verification.json"
-    },
-    "GENIA": {
-      "manifest_sha256": "805b970e1611fc75fe63955566df4088c21e7869622d61d3656f1539fb6f434e",
-      "verification_sha256": "be621177be639ae23826f4c4ca92a5fe5c78e99d374e7ce3b24f1b852ea97f30",
-      "run_scores": "results/genia_v1_profile_recheck_run_scores.csv",
-      "configuration_pairs": "results/genia_v1_profile_recheck_configuration_pairs.csv",
-      "raw_profile_verified": true,
-      "manifest_file": "genia_v1_profile_recheck_manifest.json",
-      "verification_file": "genia_v1_profile_recheck_verification.json"
-    }
-  },
-  "immutable_original_analysis": true,
-  "refresh_of_file": "v1_document_analysis_manifest.json"
+  "bootstrap": "shared saved document multiplicities; fixed run pairs",
+  "run_weighting": "equal actual between-run and distinct within-configuration pairs; no seed resampling",
+  "within_reference": "larger available within-configuration mean, recomputed in each draw",
+  "zero_denominators": "undefined constituent invalidates fixed-population mean",
+  "intervals": "nominal exploratory percentile 95%; valid replicate counts reported separately",
+  "score_sd": "sample SD across fixed seeds; single outputs have no SD; untyped typed metrics are N/A",
+  "profiles": "all recall slices plus applicable gaps; support-weighted family distances are post-hoc",
+  "comparison_with_saved_numbers": "not asserted; fresh output differences remain visible",
+  "datasets": [
+    "ACL RD-TEC 2.0",
+    "GENIA"
+  ],
+  "dictionary_version": "gazetteer_train_only_v1_1"
 }

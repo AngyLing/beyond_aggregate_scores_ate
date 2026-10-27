@@ -1,12 +1,12 @@
 {
-  "schema": "selected_numeric_results_v1",
-  "source_snapshot": "acl_draft_v1_revised working tree, 2026-10-15",
+  "schema": "selected_numeric_results_train_only_v1_1",
+  "source_snapshot": "non-dictionary sources retained from 2026-10-15; dictionary-dependent results recomputed for train-only v1.1 on 2026-10-27",
   "files": [
     {
       "path": "results/acl_v1_panel_summary.csv",
-      "bytes": 7157,
-      "sha256": "789a656b1da3ffd24809b093f048c2eca39536b4dfa9b823a1cf27ecd741085c",
-      "source_file": "acl_v1_panel_summary.csv"
+      "bytes": 7192,
+      "sha256": "9a9ef79db150ab6975effb36dbe4a74b7fb97293b90bfc753f6b40d06805b8d1",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/paper_gold_agreement_sensitivity_2026_10_13.json",
@@ -19,24 +19,21 @@
     },
     {
       "path": "results/acl_v1_profile_recheck_configuration_pairs.csv",
-      "bytes": 84367,
-      "sha256": "201bd0bd0e1e10e46570fb42aacf1bef8bfe1c8209032161b267b2bc96999991",
-      "source_file": "acl_v1_profile_recheck_configuration_pairs.csv"
+      "bytes": 84539,
+      "sha256": "cf3ea7663ee606fe3e95b9010c529ce43c4612a2d44893cd7e68afb97c320317",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/acl_v1_profile_recheck_run_scores.csv",
       "bytes": 12476,
-      "sha256": "732509a1d6ef18c3f413f2194a25d7b849cbc3400a95d15d54f8a36e6d11c93f",
-      "source_file": "acl_v1_profile_recheck_run_scores.csv",
-      "source_sha256": "237bc4097b6be62035fb82af14e6023393d1f3a627190572f168a0fb5c6ff65d",
-      "source_bytes": 12660,
-      "transformation": "Historical path metadata cleaned; all numerical values retained."
+      "sha256": "05f91b05c54440295b2b02e33daf464643b7e5cb8ebeddd0b599959d6cf15b26",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/acl_v1_profile_recheck_profiles.csv",
-      "bytes": 250468,
-      "sha256": "fd8ce1b064678c1dd686eae8936ddeb21267f2dc4799230964478b55b53b876f",
-      "source_file": "acl_v1_profile_recheck_profiles.csv"
+      "bytes": 250329,
+      "sha256": "d5c8f274d16e1acd857980e5af7c914aa7fb7cb3c11558145f564320c0c2758a",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/acl_v1_profile_recheck_slice_supports.csv",
@@ -46,30 +43,27 @@
     },
     {
       "path": "results/acl_v1_profile_recheck_gap_context.csv",
-      "bytes": 23279,
-      "sha256": "cae46803ac46c4e1b33c150b1b30521e7baf380168c5f54f9d91d3981ebf2c99",
-      "source_file": "acl_v1_profile_recheck_gap_context.csv"
+      "bytes": 23317,
+      "sha256": "03323d66b470470e4d9ee8b0174af5485767ed2e6564f094986076773ce0a407",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/genia_v1_profile_recheck_configuration_pairs.csv",
-      "bytes": 85570,
-      "sha256": "58deb04227347661814df416ea7d8aa1a819258901c70bc3baa4033c2547953c",
-      "source_file": "genia_v1_profile_recheck_configuration_pairs.csv"
+      "bytes": 85569,
+      "sha256": "e33d6d0de16d07b2a34b04026c21842b74c4a2bc54c4bc93f948038cfe3c53d2",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/genia_v1_profile_recheck_run_scores.csv",
-      "bytes": 12080,
-      "sha256": "1e0dfd61c3314d5d4ac2d9a3e301d82002cf9cf80740d042725bf01e93b31b4c",
-      "source_file": "genia_v1_profile_recheck_run_scores.csv",
-      "source_sha256": "7dcfd9a7f44dbcf0926ca3c9752e7f48433dd1e7408fb52745249a675fd696c7",
-      "source_bytes": 12126,
-      "transformation": "Historical path metadata cleaned; all numerical values retained."
+      "bytes": 12082,
+      "sha256": "b61e2d016350f5c309668e5a1eb8afcaa2e95a0547060be5e213891254663c9b",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/genia_v1_profile_recheck_profiles.csv",
-      "bytes": 420381,
-      "sha256": "b4d7381e0e7b45a7cb4a12f3b845c7f35c633a778ec1fdef215af52eb5994383",
-      "source_file": "genia_v1_profile_recheck_profiles.csv"
+      "bytes": 420186,
+      "sha256": "132b48f5b4f53570b0f22c4af8a7fd53f664bc2c0bead660a3ad6bf031298c9f",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/genia_v1_profile_recheck_slice_supports.csv",
@@ -79,60 +73,51 @@
     },
     {
       "path": "results/genia_v1_profile_recheck_gap_context.csv",
-      "bytes": 45601,
-      "sha256": "235f94dabf74921eec37d592ae2577c07a2a0c85c4eea913358215cf30b650d2",
-      "source_file": "genia_v1_profile_recheck_gap_context.csv"
+      "bytes": 45598,
+      "sha256": "ad280571fa8132055bbd4b197cad7dfa358daf30356b4908cfe5e612c85a4d89",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/acl_v1_profile_recheck_run_pairs.csv",
-      "bytes": 672422,
-      "sha256": "68878f1346110a9ba22aa90c1df1c4e587a43fca21c1b60fb812df46dad2f024",
-      "source_file": "acl_v1_profile_recheck_run_pairs.csv"
+      "bytes": 672515,
+      "sha256": "081426f65f8fc7f42b456f07a74e831329b39d441a79084317a51f92175965b0",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/v1_profile_verified_document_analysis_configuration_pairs.csv",
-      "bytes": 336989,
-      "sha256": "d40f96791f87d6d79ac8320751d9bf9914483f7ba987378840df2cd34fb3b92b",
-      "source_file": "v1_profile_verified_document_analysis_configuration_pairs.csv",
-      "source_sha256": "2d91dbc8c253eb5c88b7f84dd8767191c72e3533c3aaa7e5a57af71e7ee4b87c",
-      "source_bytes": 354493,
-      "transformation": "Historical path metadata cleaned; all numerical values retained."
+      "bytes": 311119,
+      "sha256": "15b4742fc8e42b8fdf0d3383d7eb4e3b9043cf9d1f1998d5b40abbcccd23c653",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/v1_profile_verified_document_analysis_run_pairs.csv",
-      "bytes": 1007953,
-      "sha256": "fe8e2004fbfd1b6594d3d4f5d9a3fafa97ca92b9ec0886219c4461a4d0aff626",
-      "source_file": "v1_profile_verified_document_analysis_run_pairs.csv"
+      "bytes": 1007458,
+      "sha256": "8c1595606103e901a65a169d9cce8e3db17dd43d1561c505c65281140bd8d932",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/v1_profile_verified_document_analysis_run_scores.csv",
-      "bytes": 25555,
-      "sha256": "f9916e55494b1d8f1072601412b39299b4d45a61b43b6800a291da2bc6f3e9f6",
-      "source_file": "v1_profile_verified_document_analysis_run_scores.csv",
-      "source_sha256": "9b31785fa70b259313fefc0f446565622ccb935c148ae77d51619fa7c2719474",
-      "source_bytes": 25785,
-      "transformation": "Historical path metadata cleaned; all numerical values retained."
+      "bytes": 25557,
+      "sha256": "ab130b3e5972a553f48e3a71ea84dea9c6cd1dff7785c79865d00697397fa8f5",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/v1_profile_verified_document_analysis_bootstrap.csv",
-      "bytes": 348731,
-      "sha256": "2ee496e4225766102bf09eb35254666dad7c8b01922291fb3c0d9e28b62eb987",
-      "source_file": "v1_profile_verified_document_analysis_bootstrap.csv"
+      "bytes": 348634,
+      "sha256": "22c5af2d1332e0ee005ce250581fc5d2664d434a7671159da4f74f6de11e103f",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/v1_profile_verified_document_analysis_within_configuration.csv",
       "bytes": 8612,
       "sha256": "971d11f1061f269f5168794c74f8f56cb146a60a7f715edcf100b9ceb80e6f22",
-      "source_file": "v1_profile_verified_document_analysis_within_configuration.csv"
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/v1_profile_verified_document_analysis_protocol.json",
-      "bytes": 2564,
-      "sha256": "ce3d2e5b6491175e4f99ba08913409a252e433df752fe69cf4a801127411887c",
-      "source_file": "v1_profile_verified_document_analysis_protocol.json",
-      "source_sha256": "b76370910a1b1ccd0b29080f2e644a9a73ee3c9d577e42f6a8a3df890827b8e3",
-      "source_bytes": 2579,
-      "transformation": "Historical path metadata cleaned; all numerical values retained."
+      "bytes": 1223,
+      "sha256": "af00665ae1529c1f13c6c30a29ff6a076879eeb90395e48950f87f180a79e6f1",
+      "origin": "train-only v1.1 recomputation or source-verified transfer"
     },
     {
       "path": "results/relaxed_gold_id_agreement_2026_10_13/configuration_pairs.csv",
@@ -307,6 +292,24 @@
       "bytes": 1120101,
       "sha256": "16305d15023c27e797573405a96b0e0349418ce8f4ec320d1f7ecac652a9ec97",
       "source_file": "document_arrays.npz"
+    },
+    {
+      "path": "results/gazetteer_train_only_v1_1/primary_counts.csv",
+      "bytes": 2150,
+      "sha256": "90820c68f89e80a6169f9301df0a477ff6ec2d8e6913647f8b426147ec9001b1",
+      "origin": "train-only v1.1 release"
+    },
+    {
+      "path": "results/gazetteer_train_only_v1_1/selection.json",
+      "bytes": 2432,
+      "sha256": "47bd06aadbd9d4a62f9627980ff8f39ac03861d968b38afc8609af1d4e840cc1",
+      "origin": "train-only v1.1 release"
+    },
+    {
+      "path": "results/gazetteer_train_only_v1_1/verification.json",
+      "origin": "train-only v1.1 release",
+      "bytes": 2782,
+      "sha256": "d43b5957e0eb79534672ae29f567ac36843086a1d532c1c8933e98ddc0257487"
     }
   ],
   "omissions": [

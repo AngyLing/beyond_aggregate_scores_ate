@@ -1,10 +1,10 @@
 # Beyond Aggregate Scores in Automatic Term Extraction
 
-Code, **214 saved prediction files** and numerical references for **Beyond Aggregate Scores: Comparing System Outputs in Automatic Term Extraction**. The main workflow recomputes the article's results from these fixed predictions.
+Code, **214 saved prediction files** and numerical references for **Beyond Aggregate Scores: Comparing System Outputs in Automatic Term Extraction**. The included ACL, GENIA and CL gazetteers use the corrected **train-only v1.1** recipe. Current scores for all seven dictionary tasks are in [primary_counts.csv](results/gazetteer_train_only_v1_1/primary_counts.csv), with [fresh generation and score checks](results/gazetteer_train_only_v1_1/verification.json) for the three published corpora. The main workflow recomputes the fixed-output analyses from the included predictions.
 
-On 2026-10-20, all **17 calculation blocks** were recomputed on ACL RD-TEC 2.0, GENIA Term Corpus v3.02 and CL-RuTerm3 1.1 / test reference v4. All comparisons passed at absolute tolerance `1e-10`; the maximum difference was `2.22e-16` (floating-point rounding).
+The non-dictionary numerical inputs originate from the checked 2026-10-15 source snapshot. The dictionary predictions and all dependent saved numerical references were replaced with train-only v1.1 on 2026-10-27. The [train-only release notes](results/gazetteer_train_only_v1_1/README.md) describe the current checks and scope.
 
-A later code reorganization was checked with synthetic fixtures; full-corpus calculations were not repeated.
+The paper files remain unchanged pending the author's review of the numerical update; use the current `results/` files for dictionary comparisons. Seven redundant pre-migration workspaces in ignored `build/` were removed after the repeat check; dated audit receipts and Git backups remain. The current workflow reads the top-level `predictions/` and `results/`.
 
 ## Recompute results from the saved predictions
 

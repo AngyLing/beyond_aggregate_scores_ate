@@ -1,0 +1,66 @@
+{
+  "schema": "old_dictionary_snapshot_deletion_receipt_v1",
+  "manifest_sha256": "bb29b35bdcdabf690c97f89a3a2679983ace2abebed0c25369413c92eb8f2895",
+  "deleted_snapshots": [
+    {
+      "path": "build/analysis/20261020_saved_predictions/workspace",
+      "files": 433,
+      "bytes": 203842084,
+      "old_gazetteer_gzip": 6
+    },
+    {
+      "path": "build/critical_recheck/20261021_01_saved_workflow/public_copy",
+      "files": 373,
+      "bytes": 40762108,
+      "old_gazetteer_gzip": 6
+    },
+    {
+      "path": "build/critical_recheck/20261021_02_public_workflow_review/public_copy",
+      "files": 368,
+      "bytes": 40709106,
+      "old_gazetteer_gzip": 6
+    },
+    {
+      "path": "build/critical_recheck/20261021_02_public_workflow_review/public_copy_attempt2",
+      "files": 368,
+      "bytes": 40709091,
+      "old_gazetteer_gzip": 6
+    },
+    {
+      "path": "build/critical_recheck/20261021_02_public_workflow_review/public_copy_attempt3",
+      "files": 368,
+      "bytes": 40709091,
+      "old_gazetteer_gzip": 6
+    },
+    {
+      "path": "build/critical_recheck/20261021_04_git_inventory/public_copy",
+      "files": 367,
+      "bytes": 40708787,
+      "old_gazetteer_gzip": 6
+    },
+    {
+      "path": "build/critical_recheck/20261021_05_git_history_cleanup/clean_clone",
+      "files": 393,
+      "bytes": 73171368,
+      "old_gazetteer_gzip": 6
+    }
+  ],
+  "deleted_files": 2670,
+  "deleted_bytes": 480611635,
+  "verified_old_gazetteer_gzip": 42,
+  "active_release_hashes_unchanged": true,
+  "repeat_verification": {
+    "source_train_only_rows": 14,
+    "published_gazetteer_rows": 76380,
+    "case_distinct_surfaces": 25474,
+    "prediction_files": 214,
+    "saved_numeric_sources": 49,
+    "unit_tests": 113,
+    "analysis_blocks": "A01-A17 PASS",
+    "panel_difference_count": 0,
+    "panel_references_missing": 0,
+    "post_deletion_panel_difference_count": 0,
+    "post_deletion_panel_references_missing": 0
+  },
+  "scope_note": "Dated audit receipts, Git backups, paper and Git history were retained."
+}
