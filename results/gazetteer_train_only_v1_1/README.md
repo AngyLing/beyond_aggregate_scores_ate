@@ -33,6 +33,6 @@ LLM repeats passed. `scripts/verify_predictions.py`,
 `scripts/verify_saved_results.py` and **113 unit tests** passed. The numerical
 source hashes are in `results/release_result_sources.json` (49 files).
 
-The local paper TeX and PDF were updated on 2026-10-27 after the author's direct instruction. The ACL and GENIA gazetteer rows now use the current full-precision tables, while the CL rows retain their verified train-only values. The [article update receipt](article_update_receipt.json) and [verification](article_update_verification.json) record the source identities, row checks and PDF build. These local `paper/` files remain outside the tracked numerical release because of the local Git exclusion.
+The local paper TeX and PDF were updated on 2026-10-27. The ACL and GENIA gazetteer rows now use the current full-precision tables, while the CL rows retain their verified train-only values. The [article update receipt](article_update_receipt.json) and [verification](article_update_verification.json) record the source identities, row checks and PDF build. These local `paper/` files remain outside the tracked numerical release because of the local Git exclusion.
 
 An [all-file recheck](RECHECK.md) records the earlier pre-article state, followed by a dated article-update entry, and distinguishes the active release from dated, ignored audit receipts and Git backups. Seven redundant pre-migration workspaces were removed after verification; see the [cleanup receipt](cleanup_receipt.json).

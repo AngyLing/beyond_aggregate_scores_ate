@@ -1,7 +1,9 @@
 {
   "schema": "train_only_v1_1_article_update_receipt_v1",
+  "record_type": "Public summary of the recorded checks",
+  "summary_updated": "2026-10-30",
   "date": "2026-10-27",
-  "authorization": "Direct user instruction to implement the checked article update",
+  "authorization": "Author-approved article update",
   "base_head": "e2075a464b7abc9d056bc784938eec5093f022dd",
   "status": "PASS_DELIVERED_LOCAL",
   "method": "ACL and GENIA gazetteers now use only prepared train annotations; CL remains official train only; dev/test annotations excluded; Unicode lowercase and original-text offsets specified",
@@ -210,30 +212,25 @@
       25
     ]
   },
-  "commands": [
+  "command_summaries": [
     "python scripts/verify_predictions.py",
     "python scripts/verify_saved_results.py",
     "python scripts/publish_active_profile_slices.py (isolated copy)",
     "python scripts/plot_v1_output_evidence.py (isolated copy)",
-    "CODEX_TECTONIC_PATH=/Applications/ChatGPT.app/Contents/Resources/tectonic/tectonic python scripts/build_paper.py (isolated copy)"
+    "python scripts/build_paper.py (Tectonic 0.17.0, isolated copy)"
   ],
   "python": "3.11.5",
-  "delivery_note": "Local article files and 16 other deliverables have verified SHA-256 values; the receipt cannot hash itself. Git exclusions require explicit transfer of paper/, docs/, AGENTS.md, the paper builder and two visual receipts.",
+  "delivery_note": "The listed article and verification files have SHA-256 values; the receipt cannot hash itself. Local article sources, the builder and visual receipts require separate transfer.",
   "delivery": {
     "verified_files": {
-      "AGENTS.md": "391b7429090f607d45e1acd5b7c48166319731fb254eebdd44d17781a6828c5f",
-      "README.md": "9c9e6672ded3b20824645d1b1413db5c3871fee78b1a738187f1bc2b718a2c21",
-      "docs/critical_recheck_plan.md": "77e91473f5645742714a0daa1eafc1ffa539a830786f58cc3c09b8741ceeb8ca",
-      "docs/full_reproduction_plan.md": "35f3ed413493a7f356417dc7ab97c0039209aa3f8deb1e6e9dc0a58db2f3189f",
-      "docs/reproduction.md": "9f25cebcdedd95fac85b888e84523a25322ae7444abd312c2ee6949b6e48ec30",
-      "docs/results.md": "ea6edd284ee4ec1fae5e3256bf91ee6def7690c4163a8bbeb948d5c349f1a70b",
+      "README.md": "91aa2d63fb2d980fdeb3f5bd710025dc4cb7614b3fb6aa44869780b7ca31cc2c",
       "paper/README.md": "04bbcd7766a5b9339369534c68dffc252761cc819504f317067c61b218ef1c71",
       "paper/acl_draft_v1_revised.tex": "4b032a9c85ec68f17c3e0fbee90adc8327328d4ca48c8189148b44237930bde6",
       "paper/reference.pdf": "05ecbd168c2d358d8e5725ba150ecdbcd64f3f5f5d60c081351aa288c2d010de",
       "results/active_profile_slices_2026_10_13/verification.json": "2b14c6ace29d19c557dc5c2b2f79ddc3e320bfa55d59b90df126006868d5ae02",
-      "results/gazetteer_train_only_v1_1/ARTICLE_UPDATE_PLAN.md": "22be1006373c01bc052d4ef5a7b75293c23111c6a64ee10287b2752551b3a1c8",
-      "results/gazetteer_train_only_v1_1/README.md": "3bcab6f558fa33e5472276c45e04781b1e8f0540afde626d9ca044a3f2cb1ae7",
-      "results/gazetteer_train_only_v1_1/RECHECK.md": "151ce9d4ffd68476ddae23d9fcdf2a0cb2a7d7061fc1ec202df359e17a953bf1",
+      "results/gazetteer_train_only_v1_1/ARTICLE_UPDATE_PLAN.md": "958e44526284aace0ebf118cb7eb168701bc6e30cd920522b30f8f54b60091b8",
+      "results/gazetteer_train_only_v1_1/README.md": "64b033223c2c7f3519a4f7398df2429d5d5fafd90e057c72cf20ad5e91500a4b",
+      "results/gazetteer_train_only_v1_1/RECHECK.md": "93f2026fa40c65f47970db06656039fb22e4e4832c38049c0b47cbdf163d62df",
       "results/gazetteer_train_only_v1_1/article_update_verification.json": "468037d92edc5bd1af5eeae129a1dec0f59b93c873fe1eb4ea52fa0be2970e56",
       "results/paper_v1_output_visuals_manifest.json": "a534c87096631bd5f2caa65086699420371815d2e44550b8fd415df8df6cf396",
       "scripts/build_paper.py": "9e781e82b845106a2eab091f85880bcc9dbe80781c243414693b67409b2f165d"
@@ -241,9 +238,7 @@
     "post_transfer_verify_predictions": "PASS: 214 files, 1,922,280 rows",
     "post_transfer_verify_saved_results": "PASS: 49 sources",
     "post_transfer_pdf_and_manifest_check": "PASS: 25 pages, current method and rows, current input/output hashes",
-    "git_excluded_files": [
-      "AGENTS.md",
-      "docs/",
+    "article_related_git_excluded_files": [
       "paper/",
       "results/active_profile_slices_2026_10_13/verification.json",
       "results/paper_v1_output_visuals_manifest.json",
@@ -251,7 +246,7 @@
     ],
     "git_commit_created": false,
     "remote_publication": false,
-    "verified_file_count_excluding_self": 16,
+    "verified_file_count_excluding_self": 11,
     "receipt_self_hash": "omitted: a file cannot contain its own stable SHA-256"
   },
   "critical_recheck": {
@@ -271,9 +266,7 @@
       25
     ],
     "documentation_fixes": [
-      "AGENTS.md no longer says the article is unchanged",
-      "delivery inventory now includes the plan and AGENTS.md hashes, with an explicit self-hash exception",
-      "docs/full_reproduction_plan.md now dates the old read-only instruction and identifies the current train-only article update"
+      "Local article-status wording and the delivery inventory were corrected"
     ],
     "unchanged_in_recheck": [
       "paper/acl_draft_v1_revised.tex",
@@ -282,6 +275,6 @@
       "numerical source CSVs"
     ],
     "limit": "Private prepared train/test gold is absent in this checkout. This recheck did not perform a new raw-gold rescore or fresh model generation; earlier verification.json and migration receipts record those checks.",
-    "git_state": "No commit, push, publication, or Git history rewrite. Paper, docs, AGENTS.md, the paper builder and two visual receipts are locally excluded from ordinary Git status."
+    "git_state": "No commit, push, publication, or Git history rewrite. Article sources, the builder and two visual receipts are locally excluded from ordinary Git status."
   }
 }
