@@ -4,7 +4,7 @@ Code, **214 saved prediction files** and numerical references for **Beyond Aggre
 
 The non-dictionary numerical inputs originate from the checked 2026-10-15 source snapshot. The dictionary predictions and all dependent saved numerical references were replaced with train-only v1.1 on 2026-10-27. The [train-only release notes](results/gazetteer_train_only_v1_1/README.md) describe the current checks and scope.
 
-The [train-only v1.1 verification receipt](results/gazetteer_train_only_v1_1/article_update_receipt.json) records the checks for the updated gazetteer results. The current workflow reads the top-level `predictions/` and `results/`.
+The [train-only v1.1 release verification](results/gazetteer_train_only_v1_1/verification.json) records the gazetteer generation checks. The current workflow reads the top-level `predictions/` and `results/`.
 
 ## Recompute results from the saved predictions
 

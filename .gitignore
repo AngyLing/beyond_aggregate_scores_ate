@@ -10,3 +10,24 @@ __pycache__/
 .DS_Store
 .env
 .env.*
+
+# Local manuscript and project working files.
+/paper/
+/docs/
+/AGENTS.md
+/Makefile
+/requirements-figures.lock
+/scripts/build_paper.py
+/scripts/verify_paper.py
+/scripts/plot_v1_output_evidence.py
+/scripts/publish_active_profile_slices.py
+/results/paper_v1_output_visuals_manifest.json
+/results/active_profile_slices_2026_10_13/verification.json
+
+# Internal review and delivery records.
+/results/gazetteer_train_only_v1_1/ARTICLE_UPDATE_PLAN.md
+/results/gazetteer_train_only_v1_1/RECHECK.md
+/results/gazetteer_train_only_v1_1/article_update_receipt.json
+/results/gazetteer_train_only_v1_1/article_update_verification.json
+/results/gazetteer_train_only_v1_1/cleanup_receipt.json
+/results/release_result_checks.json
